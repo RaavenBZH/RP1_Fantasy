@@ -1,4 +1,9 @@
-from packageF1.rp1 import *
+from packageF1.Pilote import *
+from packageF1.fonctions import *
+from packageF1.Joueur import *
+from packageF1.EnsembleJoueur import *
+from packageF1.fonctions import *
+
 from d1 import *
 from d2 import *
 from d3 import *
@@ -36,6 +41,6 @@ classementFinal = triParValeur(classementFinal) # tri du classement
 
 ### Ecriture ######################################################################################
 
-ecritureClassementJoueur(classementFinal)
+ecritureSortie(classementFinal)
 
 ###################################################################################################

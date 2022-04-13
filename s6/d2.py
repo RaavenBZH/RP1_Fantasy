@@ -1,4 +1,8 @@
-from packageF1.rp1 import *
+from packageF1.Pilote import *
+from packageF1.GrandPrix import *
+from packageF1.Joueur import *
+from packageF1.EnsembleJoueur import *
+from packageF1.fonctions import *
 
 #
 # Saison 6
