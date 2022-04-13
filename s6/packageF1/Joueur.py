@@ -11,9 +11,9 @@ class Joueur():
         - __init__(discord : str) -> None : construit les objets <Joueur>.
         - getEquipe() -> str : récupère l'équipe du joueur.
         - getDiscord() -> str : récupère le discord du joueur.
-        - ajoutEquipe(listePilotes : list<str>) -> None : ajoute l'équipe de pilotes représentés par leur gamertag.
+        - addEquipe(listePilotes : list<str>) -> None : ajoute l'équipe de pilotes représentés par leur gamertag.
         - updatePoints(generalPoints : dict<str : int>) -> None : actualise les points de l'équipe du joueur.
-        - calculeScore() -> int : calcule et renvoie le score du joueur.
+        - calcScore() -> int : calcule et renvoie le score du joueur.
     '''
 
     def __init__(self, discord : str) -> None:
@@ -26,12 +26,12 @@ class Joueur():
     def getDiscord(self) -> str:
         return self.__discord
 
-    def ajoutEquipe(self, listePilotes : list) -> None:
+    def addEquipe(self, listePilotes : list) -> None:
         if len(listePilotes)%3 == 0:
             for i in listePilotes:
                 self.__equipe[i] = 0
         else:
-            print("Pilote.ajoutEquipe.Erreur : listePilote fausse.")
+            print("Pilote.addEquipe.Erreur : listePilote fausse.")
 
     def updatePoints(self, generalPoints : dict) -> None:
         for i in self.__equipe:
@@ -40,7 +40,7 @@ class Joueur():
             except:
                 pass
 
-    def calculeScore(self) -> int: 
+    def calcScore(self) -> int: 
         liste = [i for i in self.__equipe.values()]
         for i in range(len(liste)):
             if i%3 == 0:

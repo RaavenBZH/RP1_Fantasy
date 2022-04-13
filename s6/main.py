@@ -25,7 +25,7 @@ for i in range(len(infosJoueurs)):
     d = infosJoueurs[i][0] # discord
     j = Joueur(d) # joueur
     e = infosJoueurs[i][1:13] # equipe de pilotes
-    j.ajoutEquipe(e)
+    j.addEquipe(e)
     joueurs.addJoueur(j)
 
 # update et création du classement
@@ -35,7 +35,7 @@ classementFinal = {}
 
 # écriture des points associés aux joueurs
 for i in classementTemporaire:
-    classementFinal[i.getDiscord()] = str(i.calculeScore())
+    classementFinal[i.getDiscord()] = str(i.calcScore())
 
 classementFinal = triParValeur(classementFinal) # tri du classement
 

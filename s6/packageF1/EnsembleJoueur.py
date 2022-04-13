@@ -21,7 +21,7 @@ class EnsembleJoueur():
     def __str__(self) -> str:
         affichage = "Classement : \n"
         for i in self.__listeJoueurs:
-            affichage += i.getDiscord() + " : " + str(i.calculeScore()) + "\n"
+            affichage += i.getDiscord() + " : " + str(i.calcScore()) + "\n"
         return affichage[:-1]
 
     def getListeJoueurs(self):

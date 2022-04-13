@@ -17,8 +17,8 @@ class GrandPrix:
         - getQualification() -> str : récupère le classement de la qualification.
         - getCourse() -> str : récupère le classement de la course.
         - resultat(mode : str, resultat : list <Pilote>) -> None : enregistre un résultat de session.
-        - calculePointsQ() -> None : calcule les points selon la qualification.
-        - calculePointsC() -> None : calcule les points selon la course.
+        - calcPointsQ() -> None : calcule les points selon la qualification.
+        - calcPointsC() -> None : calcule les points selon la course.
         - crash(mode : str, gamertag : str) -> None : retire des points au pilote s'étant crash.
         - meileurTour(gamertag : str) -> None : attribue un bonus pour le meilleur tour.
     ''' 
@@ -113,7 +113,7 @@ class GrandPrix:
         else:
             print("GrandPrix.resultat.Erreur : mode {'q','c'} invalide.")
 
-    def calculePointsQ(self) -> None:
+    def calcPointsQ(self) -> None:
 
         # Calcul qualif
         memo = []
@@ -151,10 +151,10 @@ class GrandPrix:
                 try:
                     self.__dico[p.getGamertag()] = bonus
                 except:
-                    print("GrandPrix.calculePointsQ.Erreur : erreur inconnue.")
+                    print("GrandPrix.calcPointsQ.Erreur : erreur inconnue.")
                     break
 
-    def calculePointsC(self) -> None:
+    def calcPointsC(self) -> None:
 
         # Calcul course
         memo = []
@@ -209,7 +209,7 @@ class GrandPrix:
                 try:
                     self.__dico[p1.getGamertag()] = bonus
                 except:
-                    print("GrandPrix.calculePointsC.Erreur : erreur inconnue.")
+                    print("GrandPrix.calcPointsC.Erreur : erreur inconnue.")
                     break
         
     def crash(self, mode : str, gamertag : str) -> None:
