@@ -52,7 +52,7 @@ def getPointsD1() -> dict:
 
     # Course 1
     
-    result01 = GrandPrix(None)
+    result01 = GrandPrix("Autriche")
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
@@ -67,3 +67,5 @@ def getPointsD1() -> dict:
     result01.resultat("c", course01)
 
     # évènements ponctuels
+
+    return {}

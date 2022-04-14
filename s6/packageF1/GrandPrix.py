@@ -109,7 +109,7 @@ class GrandPrix:
                 else:
                     print("GrandPrix.resultat.Erreur : mode invalide.")
             else:
-                print("GrandPrix.resultat.Erreur : résultat invalide.")
+                print("GrandPrix.resultat.Erreur : contenu invalide.")
         else:
             print("GrandPrix.resultat.Erreur : mode {'q','c'} invalide.")
 

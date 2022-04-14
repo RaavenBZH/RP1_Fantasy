@@ -21,18 +21,14 @@ def mergeDict(dico1 : dict, dico2 : dict) -> None:
     Permet de fusionner deux dictionnaires aux clés strictements différentes.
     '''
 
-    newDico = {}
-
-    for i in dico1:
-        if i in newDico:
-            print("Elément commun.")
-            return -1
-        else:
-            newDico[i] = dico1[i]
+    newDico = dico1.copy()
 
     for i in dico2:
+        if i == None:
+            print("mergeDict.Erreur : element nul.")
+            return -1
         if i in newDico:
-            print("Elément commun.")
+            print("mergeDict.Erreur : element commun.")
             return -1
         else:
             newDico[i] = dico2[i]
@@ -44,7 +40,7 @@ def input() -> list:
     Permet de lire le fichier en entrée.
     '''
 
-    theFile = open(r'C:\Users\emali\OneDrive\Documents\Work\Perso\Projets\RP1\entrees_rp1.csv')
+    theFile = open('entrees_rp1.csv')
     theReader = csv.reader(theFile)
 
     # Récupération des lignes
@@ -89,7 +85,7 @@ def output(classement : dict, equipes : dict = {}) -> None:
     Permet d'écrire le classement dans un fichier csv.
     '''
 
-    f = open(r'C:\Users\emali\OneDrive\Documents\Work\Perso\Projets\RP1\GitHub\sorties_rp1.csv', 'w', newline="")
+    f = open('sorties_rp1.csv', 'w', newline="")
     writer = csv.writer(f)
 
     for i in classement:
