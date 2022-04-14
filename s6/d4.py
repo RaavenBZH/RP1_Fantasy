@@ -85,13 +85,13 @@ def getPointsD4() -> dict:
         non4me_pagaa,
         rp1_owain,
         non4me_jordy,
-        tx3_soap,
+        tx3_soap, # remplacé par PuR Ultraaa
         ert_tiiste,
         ert_ricky,
         rp1_ice,
         ltr_coach,
         alexsch71,
-        crz_iquazz,
+        crz_iquazz, # remplacé par NxS xTiga
         rp1_fifou,
         playnum11,
         jancker21,
