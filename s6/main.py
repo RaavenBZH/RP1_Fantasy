@@ -25,7 +25,7 @@ joueurs = EnsembleJoueur() # traite et opère
 for i in range(len(infosJoueurs)):
     d = infosJoueurs[i][1] # discord
     j = Joueur(d) # joueur
-    e = infosJoueurs[i][1:13] # equipe de pilotes
+    e = infosJoueurs[i][2:] # equipe de pilotes
     j.addEquipe(e)
     joueurs.addJoueur(j)
 
@@ -39,10 +39,9 @@ for i in classementTemporaire:
     classementFinal[i.getDiscord()] = i.calcScore()
 
 classementFinal = sortedDict(classementFinal) # tri du classement
-print(classementFinal)
 
 ### Ecriture ######################################################################################
 
-output(classementFinal)
+output(classementFinal, joueurs.getListeJoueurs())
 
 ###################################################################################################
