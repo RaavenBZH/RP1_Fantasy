@@ -61,12 +61,6 @@ def input() -> list:
     for i in traitement1:
         traitement2.append(i.split(";"))
 
-    # Suppression des colonnes vides
-    for i in range(len(traitement2)):
-        for j in range(6):
-            traitement2[i].pop(-1)
-        traitement2[i].pop(0)
-
     # Suppression de l'affichage des équipes des pilotes.
     for i in range(len(traitement2)):
         for j in range(len(traitement2[i])):
