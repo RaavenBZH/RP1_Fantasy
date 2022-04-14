@@ -1,6 +1,6 @@
 import csv
 
-def triParValeur(dico) -> dict:
+def sortedDict(dico) -> dict:
     '''
     Permet de trier un dictionnaire selon ses valeurs.
     '''
@@ -16,7 +16,7 @@ def triParValeur(dico) -> dict:
                 dico[i] = None
     return newDico
 
-def fusionDico(dico1 : dict, dico2 : dict) -> None:
+def mergeDict(dico1 : dict, dico2 : dict) -> None:
     '''
     Permet de fusionner deux dictionnaires aux clés strictements différentes.
     '''
@@ -39,7 +39,7 @@ def fusionDico(dico1 : dict, dico2 : dict) -> None:
 
     return newDico
 
-def lecture() -> list:
+def input() -> list:
     '''
     Permet de lire le fichier en entrée.
     '''
@@ -84,12 +84,12 @@ def lecture() -> list:
 
     return traitement2
 
-def ecritureSortie(classement : dict, equipes : dict = {}) -> None:
+def output(classement : dict, equipes : dict = {}) -> None:
     '''
-    Permet d'écrire dans un fichier csv le classement
+    Permet d'écrire le classement dans un fichier csv.
     '''
 
-    f = open(r'C:\Users\emali\OneDrive\Documents\Work\Perso\Projets\RP1\sorties_rp1.csv', 'w', newline="")
+    f = open(r'C:\Users\emali\OneDrive\Documents\Work\Perso\Projets\RP1\GitHub\sorties_rp1.csv', 'w', newline="")
     writer = csv.writer(f)
 
     for i in classement:

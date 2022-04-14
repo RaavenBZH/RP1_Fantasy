@@ -12,12 +12,12 @@ from d4 import *
 ### Récupération des points des 4 divisons ########################################################
 
 d1, d2, d3, d4 = getPointsD1(), getPointsD2(), getPointsD3(), getPointsD4() # points de chaque div
-totalPoints = fusionDico(fusionDico(fusionDico(d1, d2), d3), d4) # fusion de toutes les div
+totalPoints = mergeDict(mergeDict(mergeDict(d1, d2), d3), d4) # fusion de toutes les div
 
 ### Création du classement ########################################################################
 
 # récupère les données
-infosJoueurs = lecture()[1:] # récupère les équipes des joueurs
+infosJoueurs = input()[1:] # récupère les équipes des joueurs
 joueurs = EnsembleJoueur() # traite et opère
 
 # infos vers un objet EnsembleJoueur
@@ -37,10 +37,10 @@ classementFinal = {}
 for i in classementTemporaire:
     classementFinal[i.getDiscord()] = str(i.calcScore())
 
-classementFinal = triParValeur(classementFinal) # tri du classement
+classementFinal = sortedDict(classementFinal) # tri du classement
 
 ### Ecriture ######################################################################################
 
-ecritureSortie(classementFinal)
+output(classementFinal)
 
 ###################################################################################################
