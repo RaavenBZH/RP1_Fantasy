@@ -18,11 +18,12 @@ totalPoints = mergeDict(mergeDict(mergeDict(d1, d2), d3), d4) # fusion de toutes
 
 # récupère les données
 infosJoueurs = input()[1:] # récupère les équipes des joueurs
+
 joueurs = EnsembleJoueur() # traite et opère
 
 # infos vers un objet EnsembleJoueur
 for i in range(len(infosJoueurs)):
-    d = infosJoueurs[i][0] # discord
+    d = infosJoueurs[i][1] # discord
     j = Joueur(d) # joueur
     e = infosJoueurs[i][1:13] # equipe de pilotes
     j.addEquipe(e)
@@ -35,9 +36,10 @@ classementFinal = {}
 
 # écriture des points associés aux joueurs
 for i in classementTemporaire:
-    classementFinal[i.getDiscord()] = str(i.calcScore())
+    classementFinal[i.getDiscord()] = i.calcScore()
 
 classementFinal = sortedDict(classementFinal) # tri du classement
+print(classementFinal)
 
 ### Ecriture ######################################################################################
 

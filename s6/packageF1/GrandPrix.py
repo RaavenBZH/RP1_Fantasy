@@ -1,3 +1,4 @@
+from unittest import expectedFailure
 from packageF1.Pilote import *
 
 class GrandPrix:
@@ -212,7 +213,11 @@ class GrandPrix:
                     print("GrandPrix.calcPointsC.Erreur : erreur inconnue.")
                     break
         
-    def crash(self, mode : str, gamertag : str) -> None:
+    def crash(self, mode : str, pilote : Pilote) -> None:
+        try:
+            gamertag = pilote.getGamertag()
+        except:
+            print("GrandPrix.crash.Erreur : pas un pilote.")
         if mode in ("q", "c"):
             if mode == "q":
                 value = 5
@@ -238,7 +243,11 @@ class GrandPrix:
         else:
             print("GrandPrix.crash.Erreur : mode {'q','c'} invalide.")
 
-    def meilleurTour(self, gamertag : str) -> None:
+    def meilleurTour(self, pilote : Pilote) -> None:
+        try:
+            gamertag = pilote.getGamertag()
+        except:
+            print("GrandPrix.meilleurTour.Erreur : pas un pilote.")
         try:
             self.__dico[gamertag] += 2
             for p in self.__course:

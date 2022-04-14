@@ -40,7 +40,7 @@ class Joueur():
             except:
                 pass
 
-    def calcScore(self) -> int: 
+    def calcScore(self) -> int:
         liste = [i for i in self.__equipe.values()]
         for i in range(len(liste)):
             if i%3 == 0:
