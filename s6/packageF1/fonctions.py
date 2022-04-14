@@ -41,7 +41,7 @@ def input() -> list:
     Permet de lire le fichier en entrée.
     '''
 
-    theFile = open('entrees_rp1.csv')
+    theFile = open('GitHub\entrees_rp1.csv')
     theReader = csv.reader(theFile)
 
     # Récupération des lignes
@@ -80,7 +80,7 @@ def output(classement : dict, equipes : dict = {}) -> None:
     Permet d'écrire le classement dans un fichier csv.
     '''
 
-    f = open('sorties_rp1.csv', 'w', newline="")
+    f = open('GitHub\sorties_rp1.csv', 'w', newline="")
     writer = csv.writer(f)
 
     for i in classement:
