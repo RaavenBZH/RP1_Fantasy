@@ -1,4 +1,5 @@
 import csv
+from encodings import utf_8
 
 def sortedDict(dico) -> dict:
     '''
