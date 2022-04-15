@@ -239,7 +239,7 @@ class GrandPrix:
             try:
                 self.__dico[gamertag] -= value
             except:
-                print("GrandPrix.crash.Erreur : pilote non trouvé.")
+                print("GrandPrix.crash.Erreur : pilote (" + gamertag + ") non trouvé.")
         else:
             print("GrandPrix.crash.Erreur : mode {'q','c'} invalide.")
 
