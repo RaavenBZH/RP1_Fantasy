@@ -43,7 +43,7 @@ def getPointsD4() -> dict:
     rp1_owain = Pilote("RP1 Owain", "AlfaRomeo")
     ert_tiiste = Pilote("ERT Tiiste", "AlfaRomeo")
 
-    crz_iquazz = Pilote("CRZ iQuaZz", "Williams") 
+    ert_iquazz = Pilote("ERT iQuaZz", "Williams") 
     ert_ricky = Pilote("ERT Ricky", "Williams")
 
     tx3_soap = Pilote("TX3 Soap", "Haas") 
@@ -73,7 +73,7 @@ def getPointsD4() -> dict:
         jancker21,
         rp1_lito,
         rp1_owain,
-        crz_iquazz, # remplacé par NxS xTiga
+        ert_iquazz, # remplacé par NxS xTiga
         ert_ricky,
         rp1_fifou,
         is_honoka,
@@ -91,7 +91,7 @@ def getPointsD4() -> dict:
         rp1_ice,
         ltr_coach,
         alexsch71,
-        crz_iquazz, # remplacé par NxS xTiga
+        ert_iquazz, # remplacé par NxS xTiga
         rp1_fifou,
         playnum11,
         jancker21,
@@ -121,4 +121,10 @@ def getPointsD4() -> dict:
     
     result01.meilleurTour(jancker21)
 
+    """
+    for i in result01.getCourse():
+        if i.getGamertag() == "ERT iQuaZz":
+            print(i.getHistorique())
+    """
+    
     return result01.getPoints()
