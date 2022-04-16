@@ -126,4 +126,14 @@ def getPointsD4() -> dict:
         print(i.getGamertag(), i.getHistorique())
     """
     
+    # Ideal : Non4me Pagaa, RP1 Owain, ERT Ricky
+
+    ###################################################################################################
+
+    # Course 2
+
+    result02 = GrandPrix("Chine")
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    
     return result01.getPoints()

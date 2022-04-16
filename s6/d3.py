@@ -127,4 +127,14 @@ def getPointsD3() -> dict:
         print(i.getGamertag(), i.getHistorique())
     """
     
+    # Ideal : AlexGT500, ERT Wartos, CHZ Olivz
+
+    ###################################################################################################
+
+    # Course 2
+
+    result02 = GrandPrix("Chine")
+
+    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+    
     return result01.getPoints()
