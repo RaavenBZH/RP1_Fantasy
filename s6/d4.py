@@ -123,8 +123,7 @@ def getPointsD4() -> dict:
 
     """
     for i in result01.getCourse():
-        if i.getGamertag() == "ERT iQuaZz":
-            print(i.getHistorique())
+        print(i.getGamertag(), i.getHistorique())
     """
     
     return result01.getPoints()

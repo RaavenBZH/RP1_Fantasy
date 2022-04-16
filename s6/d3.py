@@ -122,10 +122,9 @@ def getPointsD3() -> dict:
 
     result01.meilleurTour(rp1_gachette)
 
-    """
+
     for i in result01.getCourse():
-        if i.getGamertag() == "ERT iQuaZz":
-            print(i.getHistorique())
-    """
+        print(i.getGamertag(), i.getHistorique())
+
     
     return result01.getPoints()
