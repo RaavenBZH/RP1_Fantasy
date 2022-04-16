@@ -18,7 +18,7 @@ def getPointsD3() -> dict:
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
-    ecs_finesse = Pilote("ESC Finesse", "Mercedes")
+    ecs_finesse = Pilote("ECS Finesse", "Mercedes")
     ert_wartors = Pilote("ERT Wartors", "Mercedes")
 
     non4me_cami = Pilote("Non4ame Cami", "RedBull")
@@ -122,9 +122,9 @@ def getPointsD3() -> dict:
 
     result01.meilleurTour(rp1_gachette)
 
-    """
+
     for i in result01.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
+
     
     return result01.getPoints()
