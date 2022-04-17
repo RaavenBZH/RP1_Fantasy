@@ -12,6 +12,7 @@ from d4 import *
 ### Récupération des points des 4 divisons ########################################################
 
 d1, d2, d3, d4 = getPointsD1(), getPointsD2(), getPointsD3(), getPointsD4() # points de chaque div
+
 totalPoints = mergeDict(mergeDict(mergeDict(d1, d2), d3), d4) # fusion de toutes les div
 
 ### Création du classement ########################################################################

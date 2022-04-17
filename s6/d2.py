@@ -83,10 +83,10 @@ def getPointsD2() -> dict:
     course01 = [
         raavenbzh,
         pur_vincent,
-        mvt_thomas,
         pur_ilton,
         vrt_tribion,
         xrt_darkfly,
+        mvt_thomas,
         fct_coco,
         aft_lowky,
         o2_oxygen,
