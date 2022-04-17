@@ -129,12 +129,4 @@ def getPointsD3() -> dict:
     
     # Ideal : Knacki Ball, ERT Wartors, MCR Papyx
 
-    ###################################################################################################
-
-    # Course 2
-
-    result02 = GrandPrix("Chine")
-
-    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-    
     return result01.getPoints()
