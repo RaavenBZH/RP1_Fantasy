@@ -82,19 +82,19 @@ def getPointsD3() -> dict:
     course01 = [
         knacki_ball,
         eroziah_spl,
-        chr_olivz,
-        ert_wartors,
+        ert_wartors, 
         mcr_papyx,
         pur_marth,
+        ert_mirage,
         soo_skyzzz,
+        chr_olivz,
         alexgt500,
         ert_aurelius,
         ecs_finesse,
-        ert_mirage,
         rp1_gachette,
         ducpascharlie,
-        non4me_cami,
         rp1_fifi,
+        non4me_cami,  
         ert_toon,
         ert_matfax,
         istoozen_eko,
@@ -127,7 +127,7 @@ def getPointsD3() -> dict:
         print(i.getGamertag(), i.getHistorique())
     """
     
-    # Ideal : AlexGT500, ERT Wartos, CHZ Olivz
+    # Ideal : Knacki Ball, ERT Wartors, MCR Papyx
 
     ###################################################################################################
 

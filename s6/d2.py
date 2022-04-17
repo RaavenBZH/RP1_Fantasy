@@ -129,4 +129,6 @@ def getPointsD2() -> dict:
         print(i.getGamertag(), i.getHistorique())
     '''
 
+    # Ideal : RaavenBZH, MVT Thomas, FcT Coco
+
     return result01.getPoints()
