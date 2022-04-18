@@ -95,7 +95,6 @@ def getPointsD1() -> dict:
         mcr_jayrko,
         shz_noctis,
         tx3_enzo,
-        tx3_enzo,
         rp1_chadoo,
         xrt_arthur,
         modz_scboy,
@@ -121,11 +120,11 @@ def getPointsD1() -> dict:
 
     result01.meilleurTour(fct_adam)
     
-    '''
+    """
     for i in result01.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    '''
+    """
 
-    # Ideal : FcT Theo, LDL Oli, TX3 Enzo
+    # Ideal : FcT Theo, LDL Oli, PuR Stitoxxe
 
     return result01.getPoints()
