@@ -30,7 +30,7 @@ def getPointsD4() -> dict:
     yozana = Pilote("Yozana", "Ferrari")
     non4me_livai = Pilote("Non4me Livai", "Ferrari")
 
-    xrt_aots = Pilote("XRT Aots", "AlphaTauri")
+    pur_ultraaa = Pilote("PuR Ultraaa", "AlphaTauri")
     rp1_lito = Pilote("RP1 Lito", "AlphaTauri")
 
     alexsch71 = Pilote("AlexSCH71", "Alpine")
@@ -73,7 +73,7 @@ def getPointsD4() -> dict:
         ert_ricky,
         rp1_fifou,
         is_honoka,
-        xrt_aots
+        pur_ultraaa
     ]
 
     course01 = [
@@ -95,7 +95,7 @@ def getPointsD4() -> dict:
         is_honoka,
         non4me_livai,
         yozana,
-        xrt_aots,
+        pur_ultraaa,
         rp1_lito
     ]
 
@@ -107,22 +107,29 @@ def getPointsD4() -> dict:
     result01.calcPointsC()
 
     # évènements ponctuels
-    result01.crash("q", xrt_aots)
+    result01.crash("q", pur_ultraaa)
     result01.crash("q", rp1_owain)
 
     result01.crash("c", rp1_lito)
-    result01.crash("c", xrt_aots)
+    result01.crash("c", pur_ultraaa)
     result01.crash("c", yozana)
     result01.crash("c", non4me_jordy)
     
     result01.meilleurTour(jancker21)
 
+    # final
+    pt01 = result01.getPoints()
+
     """
+    print(sortedDict(result01.getPoints()))
+
     for i in result01.getCourse():
         print(i.getGamertag(), i.getHistorique())
     """
     
     # Ideal : Non4me Pagaa, RP1 Owain, ERT Ricky
+
+    result01.resetHist()
 
     ###################################################################################################
     # Course 2
@@ -130,7 +137,82 @@ def getPointsD4() -> dict:
     result02 = GrandPrix("Chine")
 
     qualif02 = [
-
+        rp1_owain,
+        non4me_livai,
+        yozana,
+        playnum11,
+        rp1_ice,
+        ert_redevils,
+        non4me_jordy,
+        pur_ultraaa,
+        non4me_pagaa,
+        ert_tiiste,
+        ltr_coach,
+        tx3_soap,
+        jancker21,
+        rp1_lito,
+        ert_iquazz,
+        rp1_durtom,
+        ert_ricky,
+        alexsch71,
+        rp1_fifou,
+        is_honoka
     ]
 
-    return result01.getPoints()
+    course02 = [
+        rp1_owain,
+        yozana,
+        pur_ultraaa,
+        playnum11,
+        ltr_coach,
+        ert_tiiste,
+        non4me_jordy,
+        non4me_pagaa,
+        rp1_ice,
+        ert_iquazz,
+        rp1_lito,
+        rp1_durtom,
+        non4me_livai,
+        alexsch71,
+        ert_redevils,
+        ert_ricky,
+        rp1_fifou,
+        jancker21,
+        is_honoka,
+        tx3_soap
+    ]
+
+    # classements
+    result02.resultat("q", qualif02)
+    result02.resultat("c", course02)
+
+    result02.calcPointsQ()
+    result02.calcPointsC()
+
+    # évènements ponctuels
+    result02.crash("q", tx3_soap)
+
+    result02.crash("c", tx3_soap)
+    result02.crash("c", is_honoka)
+
+    result02.meilleurTour(rp1_durtom)
+
+    # final 
+    pt02 = result02.getPoints()
+
+    """
+    print(sortedDict(result02.getPoints()))
+    
+    for i in result02.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+    
+    # Ideal : ERT iQuaZz, LTR Coach, PuR Ultraaa
+
+    ###################################################################################################
+    
+    final = addDict(pt01, pt02)
+    
+    # print(final)
+
+    return final

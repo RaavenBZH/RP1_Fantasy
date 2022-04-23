@@ -22,6 +22,7 @@ class GrandPrix:
         - calcPointsC() -> None : calcule les points selon la course.
         - crash(mode : str, gamertag : str) -> None : retire des points au pilote s'étant crash.
         - meileurTour(gamertag : str) -> None : attribue un bonus pour le meilleur tour.
+        - resetHist() -> None : réinitialise l'historique des pilotes du grand prix.
     ''' 
 
     def __init__(self, circuit : str) -> None:
@@ -256,3 +257,7 @@ class GrandPrix:
 
         except:
             print("GrandPrix.meilleurTour.Erreur : pilote non trouvé.")
+
+    def resetHist(self) -> None:
+        for i in self.__course:
+            i.resetHistorique()
