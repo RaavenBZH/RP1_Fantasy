@@ -1,4 +1,3 @@
-from unittest import result
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 from packageF1.Joueur import *
@@ -50,12 +49,9 @@ def getPointsD4() -> dict:
     is_honoka = Pilote("IS Honoka", "Haas")
 
     ###################################################################################################
-
     # Course 1
 
     result01 = GrandPrix("Autriche")
-
-    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
     qualif01 = [
         rp1_ice,
@@ -127,5 +123,14 @@ def getPointsD4() -> dict:
     """
     
     # Ideal : Non4me Pagaa, RP1 Owain, ERT Ricky
+
+    ###################################################################################################
+    # Course 2
+
+    result02 = GrandPrix("Chine")
+
+    qualif02 = [
+
+    ]
 
     return result01.getPoints()
