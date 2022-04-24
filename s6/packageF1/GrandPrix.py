@@ -56,7 +56,7 @@ class GrandPrix:
             'Melbourne',
             'Jeddah',
             'AbuDhabi',
-            'Shanghai'
+            'Chine'
         ]
         if circuit in listeCircuits:
             self.__circuit = circuit
