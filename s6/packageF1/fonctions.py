@@ -15,6 +15,7 @@ def sortedDict(dico) -> dict:
             if dico[i] == elem:
                 newDico[i] = elem
                 dico[i] = None
+
     return newDico
 
 def mergeDict(dico1 : dict, dico2 : dict) -> None:
