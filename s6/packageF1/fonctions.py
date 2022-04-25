@@ -45,7 +45,14 @@ def sumDict(dico1 : dict, dico2 : dict) -> dict:
     dico = dico1.copy()
 
     for i in dico2 :
-        dico[i] = dico1[i] + dico2[i]
+        try:
+            dico[i] = dico1[i] + dico2[i]
+        except:
+            print("nouvelle clé :", i)
+            dico[i] = dico2[i]
+
+    if len(dico) != max(len(dico1), len(dico2)):
+        print("Le dicitonnaire de retour a une taille non maximale.")
 
     return dico
 

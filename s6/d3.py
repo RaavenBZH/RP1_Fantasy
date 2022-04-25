@@ -203,6 +203,8 @@ def getPointsD3() -> dict:
     result02.crash("c", ert_matfax)
     result02.crash("c", ert_mirage)
 
+    result02.meilleurTour(ert_mirage)
+
     # final
     pt02 = result02.getPoints()
 
