@@ -213,7 +213,7 @@ def getPointsD3() -> dict:
         print(i.getGamertag(), i.getHistorique())
     """
 
-    # Ideal : 
+    # Ideal : ECS Finesse, SKS Flyart, PuR Marth
 
     ###################################################################################################
 
