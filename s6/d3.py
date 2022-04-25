@@ -49,12 +49,9 @@ def getPointsD3() -> dict:
     ert_toon = Pilote("ERT Toon", "Haas") 
 
     ###################################################################################################
-
     # Course 1
 
     result01 = GrandPrix("Autriche")
-
-    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
     qualif01 = [
         knacki_ball,
@@ -122,11 +119,106 @@ def getPointsD3() -> dict:
 
     result01.meilleurTour(rp1_gachette)
 
+    # final
+    pt01 = result01.getPoints()
+
     """
+    print(sortedDict(result01.getPoints()))
+    
     for i in result01.getCourse():
         print(i.getGamertag(), i.getHistorique())
     """
     
     # Ideal : Knacki Ball, ERT Wartors, MCR Papyx
 
-    return result01.getPoints()
+    result01.resetHist()
+
+    ###################################################################################################
+    # Course 2
+
+    result02 = GrandPrix("Chine")
+
+    qualif02 = [
+        ert_aurelius,
+        nygraal,
+        soo_skyzzz,
+        ert_wartors, # remplacé par RP1 Ice
+        rp1_fifi, # remplacé par XRT Alpha
+        ducpascharlie,
+        knacki_ball,
+        chr_olivz, # remplacé par Yozana
+        alexgt500,
+        ert_matfax,
+        sks_flyart,
+        ecs_finesse,
+        eroziah_spl,
+        istoozen_eko, # remplacé par RP1 Durtom
+        rp1_gachette,
+        ert_toon, # remplacé par QRL Blanco
+        non4me_cami,
+        ert_mirage,
+        mcr_papyx,
+        pur_marth
+    ]
+
+    course02 = [
+        nygraal,
+        ert_aurelius,
+        sks_flyart,
+        ecs_finesse,
+        chr_olivz,
+        rp1_fifi,
+        pur_marth,
+        mcr_papyx,
+        rp1_gachette,
+        non4me_cami,
+        ert_wartors,
+        ert_toon,
+        ert_mirage,
+        ert_matfax,
+        eroziah_spl,
+        ducpascharlie,
+        soo_skyzzz,
+        alexgt500,
+        knacki_ball,
+        istoozen_eko
+    ]
+
+    # classements
+    result02.resultat("q", qualif02)
+    result02.resultat("c", course02)
+
+    result02.calcPointsQ()
+    result02.calcPointsC()
+
+    # évènements ponctuels
+    result02.crash("q", rp1_gachette)
+
+    result02.crash("c", istoozen_eko)
+    result02.crash("c", knacki_ball)
+    result02.crash("c", alexgt500)
+    result02.crash("c", soo_skyzzz)
+    result02.crash("c", ducpascharlie)
+    result02.crash("c", eroziah_spl,)
+    result02.crash("c", ert_matfax)
+    result02.crash("c", ert_mirage)
+
+    # final
+    pt02 = result02.getPoints()
+
+    """
+    print(sortedDict(result02.getPoints()))
+    
+    for i in result02.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal : 
+
+    ###################################################################################################
+
+    final = sumDict(pt01, pt02)
+
+    # print(final)
+
+    return final

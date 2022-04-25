@@ -37,7 +37,7 @@ def mergeDict(dico1 : dict, dico2 : dict) -> None:
 
     return newDico
 
-def addDict(dico1 : dict, dico2 : dict) -> dict:
+def sumDict(dico1 : dict, dico2 : dict) -> dict:
     '''
     Permet d'ajouter à un dictionnaire les valeurs d'un autre. Les clés des deux dictionnaires sont les mêmes.
     '''
