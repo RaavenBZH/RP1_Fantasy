@@ -27,7 +27,7 @@ def getPointsD3() -> dict:
     knacki_ball = Pilote("Knacki Ball", "McLaren")
     pur_marth = Pilote("PuR Marth", "McLaren") 
 
-    nygraal = Pilote("Nygraal", "Ferrari")
+    pur_nygraal = Pilote("PuR Nygraal", "Ferrari")
     chr_olivz = Pilote("CHR Olivz", "Ferrari") 
 
     eroziah_spl = Pilote("EroziaH SPL", "AlphaTauri")
@@ -62,7 +62,7 @@ def getPointsD3() -> dict:
         soo_skyzzz,
         ert_matfax,
         pur_marth, # remplacé par LTR Coach
-        nygraal,
+        pur_nygraal,
         ert_aurelius,
         alexgt500,
         chr_olivz, # remplacé par Yozana
@@ -95,7 +95,7 @@ def getPointsD3() -> dict:
         ert_toon,
         ert_matfax,
         istoozen_eko,
-        nygraal,
+        pur_nygraal,
         sks_flyart
     ]
 
@@ -113,7 +113,7 @@ def getPointsD3() -> dict:
     result01.crash("q", soo_skyzzz)
 
     result01.crash("c", sks_flyart)
-    result01.crash("c", nygraal)
+    result01.crash("c", pur_nygraal)
     result01.crash("c", istoozen_eko)
     result01.crash("c", ert_matfax)
 
@@ -140,7 +140,7 @@ def getPointsD3() -> dict:
 
     qualif02 = [
         ert_aurelius,
-        nygraal,
+        pur_nygraal,
         soo_skyzzz,
         ert_wartors, # remplacé par RP1 Ice
         rp1_fifi, # remplacé par XRT Alpha
@@ -162,7 +162,7 @@ def getPointsD3() -> dict:
     ]
 
     course02 = [
-        nygraal,
+        pur_nygraal,
         ert_aurelius,
         sks_flyart,
         ecs_finesse,
