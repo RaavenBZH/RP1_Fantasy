@@ -50,12 +50,9 @@ def getPointsD1() -> dict:
     modz_scboy = Pilote("Modz Scboy", "Haas")
 
     ###################################################################################################
-
     # Course 1
     
     result01 = GrandPrix("Autriche")
-
-    # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
     qualif01 = [
         fct_theo,
@@ -119,12 +116,106 @@ def getPointsD1() -> dict:
     result01.crash("c", mcr_path)
 
     result01.meilleurTour(fct_adam)
+
+    # final
+    pt01 = result01.getPoints()
     
     """
+    print(sortedDict(result01.getPoints()))
+
     for i in result01.getCourse():
         print(i.getGamertag(), i.getHistorique())
     """
 
     # Ideal : FcT Theo, LDL Oli, PuR Stitoxxe
 
-    return result01.getPoints()
+    result01.resetHist()
+
+    ###################################################################################################
+    # Course 2
+    
+    result02 = GrandPrix("Chine")
+
+    qualif02 = [
+        fct_adam,
+        ert_niloboo,
+        fct_theo,
+        rp1_winterr,
+        rp1_okwaru,
+        pur_varane, # remplacé par SHZ Ewan
+        rp1_luca,
+        pur_voltha,
+        ldl_oli,
+        vinboy,
+        rp1_chadoo,
+        pur_stitoxxe,
+        shz_noctis,
+        ldl_saumon,
+        ripply_spl,
+        xrt_arthur, # remplacé par MCR Skriniar
+        tx3_enzo, # remplacé par RaavenBZH
+        mcr_jayrko,
+        modz_scboy,
+        mcr_path
+    ]
+
+    course02 = [
+        rp1_winterr,
+        fct_theo,
+        rp1_okwaru,
+        pur_voltha,
+        ert_niloboo,
+        pur_varane,
+        shz_noctis,
+        ldl_oli,
+        vinboy,
+        ldl_saumon,
+        mcr_jayrko,
+        pur_stitoxxe,
+        tx3_enzo,
+        mcr_path,
+        rp1_chadoo,
+        fct_adam,
+        xrt_arthur,
+        modz_scboy,
+        ripply_spl,
+        rp1_luca
+    ]
+
+    # classements
+    result02.resultat("q", qualif02)
+    result02.resultat("c", course02)
+
+    result02.calcPointsQ()
+    result02.calcPointsC()
+
+    # évènements ponctuels
+    result02.crash("q", ripply_spl)
+
+    result02.crash("c", rp1_luca)
+    result02.crash("c", ripply_spl)
+    result02.crash("c", modz_scboy)
+    result02.crash("c", xrt_arthur)
+    result02.crash("c", fct_adam)
+
+    result02.meilleurTour(fct_adam)
+
+    # final
+    pt02 = result02.getPoints()
+
+    """
+    print(sortedDict(result02.getPoints()))
+    
+    for i in result02.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal : RP1 Winterr, SHZ Noctis, TX3 Enzo
+
+    ###################################################################################################
+
+    final = sumDict(pt01, pt02)
+
+    # print(final)
+
+    return final
