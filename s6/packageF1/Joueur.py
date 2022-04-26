@@ -43,6 +43,8 @@ class Joueur():
     def calcScore(self) -> int:
         liste = [i for i in self.__equipe.values()]
         for i in range(len(liste)):
+            if liste[i] == None:
+                liste[i] = 0
             if i%3 == 0:
                 liste[i] *= 2
         return sum(liste)

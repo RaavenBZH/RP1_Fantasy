@@ -1,12 +1,13 @@
 import csv
 from encodings import utf_8
 
-def sortedDict(dico) -> dict:
+def sortedDict(entree) -> dict:
     '''
     Permet de trier un dictionnaire selon ses valeurs.
     '''
 
     newDico = {}
+    dico = entree.copy()
     v = sorted(dico.values(), reverse = True)
     
     for i in range(len(v)):
