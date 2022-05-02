@@ -1,5 +1,4 @@
 import csv
-from encodings import utf_8
 
 def sortedDict(entree) -> dict:
     '''
@@ -121,3 +120,51 @@ def output(classement : dict, equipes : dict = {}) -> None:
             line += i + ";" + str(equipe[i]) + ";"
 
         writer.writerow([line[:-1]])
+
+def generateRound(roundNum : int, track : str = "") -> None:
+    '''
+    Génère le corps du code pour une manche.
+    '''
+    f = open("newRound.py", "w")
+    w = f.write
+
+    if roundNum < 1:
+        w("# Error.generateRound : inférieur à 0.")
+
+    elif roundNum < 10:
+        num = "0"+str(roundNum)
+
+        w("###################################################################################################\n")
+        w(f"# Course {str(roundNum)}\n")
+        w("\n")
+        w(f"result03 = GrandPrix(\"{track}\")\n")
+        w("\n")
+        w(f"qualif{num} = [\n]\n")
+        w("\n")
+        w(f"course{num} = [\n]\n")
+        w("\n")
+        w("# classements\n")
+        w(f"result{num}.resultat(\"q\", qualif{num})\n")
+        w(f"result{num}.resultat(\"q\", course{num}\n")
+        w("\n")
+        w(f"result{num}.calcPointsQ()\n")
+        w(f"result{num}.calcPointsC()\n")
+        w("\n")
+        w("# évènements ponctuels\n")
+        w("\n")
+        w(f"result{num}.meilleurTour()\n")
+        w("\n")
+        w("# final\n")
+        w(f"pt{num} = result{num}.getPoints()\n")
+        w("\n")
+        w("\"\"\"\n")
+        w(f"print(sortedDict(result{num}.getPoints()))\n")
+        w("\n")
+        w(f"for i in result{num}.getCourse():\n")
+        w("\tprint(i.getGamertag(), i.getHistorique())\n")
+        w("\"\"\"\n")
+        w("\n")
+        w("# Ideal :\n")
+        w("\n")
+        w(f"result{num}.resetHist()")
+        w("\n")

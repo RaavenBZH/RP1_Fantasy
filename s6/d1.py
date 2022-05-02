@@ -212,10 +212,50 @@ def getPointsD1() -> dict:
 
     # Ideal : RP1 Winterr, SHZ Noctis, TX3 Enzo
 
+    result02.resetHist()
+
     ###################################################################################################
+    # Course 3
 
+    result03 = GrandPrix("Imola")
+
+    qualif03 = [
+    ]
+
+    course03 = [
+    ]
+
+    # classements
+    result03.resultat("q", qualif03)
+    result03.resultat("c", course03)
+
+    result03.calcPointsQ()
+    result03.calcPointsC()
+
+    # évènements ponctuels
+    
+
+    result03.meilleurTour()
+
+    # final 
+    pt03 = result03.getPoints()
+
+    """
+    print(sortedDict(result03.getPoints()))
+    
+    for i in result03.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+    
+    # Ideal : 
+
+    result03.resetHist()
+
+    ###################################################################################################
+    
     final = sumDict(pt01, pt02)
-
+    final = sumDict(final, pt03)
+    
     # print(final)
 
     return final
