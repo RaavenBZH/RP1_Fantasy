@@ -217,9 +217,49 @@ def getPointsD4() -> dict:
     result03 = GrandPrix("Imola")
 
     qualif03 = [
+        ltr_coach,
+        non4me_pagaa,
+        rp1_ice,
+        playnum11, # remplacé par X7PK KaranoX
+        ert_iquazz,
+        ert_ricky,
+        non4me_livai,
+        tx3_soap,
+        ert_tiiste,
+        yozana,
+        rp1_fifou,
+        is_honoka,
+        rp1_lito,
+        rp1_durtom,
+        rp1_owain,
+        non4me_jordy,
+        pur_ultraaa,
+        jancker21,
+        alexsch71, # remplacé par NathanHrx
+        ert_redevils        
     ]
 
     course03 = [
+        ltr_coach,
+        ert_ricky,
+        non4me_pagaa,
+        rp1_ice,
+        ert_redevils,
+        yozana,
+        pur_ultraaa,
+        ert_tiiste,
+        non4me_jordy,
+        rp1_fifou,
+        alexsch71,
+        ert_iquazz,
+        playnum11,
+        jancker21,
+        rp1_lito,
+        tx3_soap,
+        rp1_owain,
+        rp1_durtom,
+        non4me_livai,
+        is_honoka
     ]
 
     # classements
@@ -230,9 +270,11 @@ def getPointsD4() -> dict:
     result03.calcPointsC()
 
     # évènements ponctuels
-    
+    result03.crash("c", is_honoka)
+    result03.crash("c", non4me_livai)
+    result03.crash("c",rp1_durtom)
 
-    result03.meilleurTour()
+    result03.meilleurTour(rp1_owain)
 
     # final 
     pt03 = result03.getPoints()

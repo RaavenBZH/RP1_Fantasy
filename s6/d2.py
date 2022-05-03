@@ -1,3 +1,4 @@
+from unittest import SkipTest
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 from packageF1.Joueur import *
@@ -220,9 +221,49 @@ def getPointsD2() -> dict:
     result03 = GrandPrix("Imola")
 
     qualif03 = [
+        pur_racing,
+        mvt_thomas,
+        aft_lowky,
+        vrt_tribion,
+        raavenbzh,
+        ert_batxone,
+        xrt_darkfly,
+        pur_vincent,
+        o2_oxygen,
+        legion_tomoe,
+        fct_lasouche, # remplacé par RP1 Gachette
+        benbdby,
+        pur_ilton, # remplacé par SkS Flyart
+        rp1_virlix, # remplacé par iF1 Supreme
+        tx3_matt,
+        fct_coco,
+        fct_deadpool,
+        xrt_baka,
+        xrt_nico2a,
+        rp1_woody # remplacé par iF1 Meister
     ]
 
     course03 = [
+        rp1_virlix,
+        aft_lowky,
+        pur_ilton,
+        o2_oxygen,
+        legion_tomoe,
+        fct_coco,
+        raavenbzh,
+        xrt_darkfly,
+        pur_racing,
+        benbdby,
+        fct_lasouche,
+        mvt_thomas,
+        fct_deadpool,
+        vrt_tribion,
+        xrt_baka,
+        ert_batxone,
+        tx3_matt,
+        rp1_woody,
+        xrt_nico2a,
+        pur_vincent
     ]
 
     # classements
@@ -233,9 +274,18 @@ def getPointsD2() -> dict:
     result03.calcPointsC()
 
     # évènements ponctuels
-    
+    result03.crash("q", o2_oxygen)
 
-    result03.meilleurTour()
+    result03.crash("c", pur_vincent)
+    result03.crash("c", xrt_nico2a)
+    result03.crash("c", rp1_woody)
+    result03.crash("c", tx3_matt)
+    result03.crash("c", ert_batxone)
+    result03.crash("c", xrt_baka)
+    result03.crash("c", vrt_tribion)
+    result03.crash("c", fct_deadpool)
+
+    result03.meilleurTour(pur_racing)
 
     # final 
     pt03 = result03.getPoints()

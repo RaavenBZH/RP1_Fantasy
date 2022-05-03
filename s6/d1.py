@@ -1,4 +1,3 @@
-from unittest import result
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 from packageF1.Joueur import *
@@ -220,9 +219,49 @@ def getPointsD1() -> dict:
     result03 = GrandPrix("Imola")
 
     qualif03 = [
+        fct_adam,
+        rp1_winterr,
+        rp1_okwaru,
+        pur_varane,
+        rp1_luca,
+        ldl_oli,
+        shz_noctis,
+        pur_voltha,
+        vinboy,
+        ldl_saumon,
+        rp1_chadoo,
+        pur_stitoxxe,
+        xrt_arthur,
+        fct_theo,
+        ert_niloboo,
+        tx3_enzo, # remplacé par RaavenBZH
+        ripply_spl,
+        mcr_jayrko,
+        modz_scboy, # remplacé par Modz ScBoy
+        mcr_path
     ]
 
     course03 = [
+        rp1_luca,
+        fct_adam,
+        fct_theo,
+        ert_niloboo,
+        shz_noctis,
+        ldl_oli,
+        rp1_winterr,
+        vinboy,
+        ldl_saumon,
+        ripply_spl,
+        pur_voltha,
+        tx3_enzo,
+        modz_scboy,
+        mcr_path,
+        xrt_arthur,
+        mcr_jayrko,
+        pur_varane,
+        rp1_okwaru,
+        rp1_chadoo,
+        pur_stitoxxe
     ]
 
     # classements
@@ -233,9 +272,14 @@ def getPointsD1() -> dict:
     result03.calcPointsC()
 
     # évènements ponctuels
-    
+    result03.crash("q", ert_niloboo)
+    result03.crash("q", mcr_path)
 
-    result03.meilleurTour()
+    result03.crash("c", pur_stitoxxe)
+    result03.crash("c", rp1_chadoo)
+    result03.crash("c", rp1_okwaru)
+
+    result03.meilleurTour(rp1_winterr)
 
     # final 
     pt03 = result03.getPoints()
