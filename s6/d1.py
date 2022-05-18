@@ -296,9 +296,92 @@ def getPointsD1() -> dict:
     result03.resetHist()
 
     ###################################################################################################
+    # Course 4
+
+    result04 = GrandPrix("EtatsUnis")
+
+    qualif04 = [
+        fct_theo, # remplacé par RP1 Virlix
+        rp1_winterr,
+        fct_adam,
+        ert_niloboo,
+        pur_voltha,
+        rp1_okwaru,
+        rp1_luca,
+        pur_varane,
+        ldl_oli,
+        shz_noctis,
+        ldl_saumon,
+        ripply_spl,
+        vinboy,
+        rp1_chadoo,
+        pur_stitoxxe, # remplacé par PuR Vincent
+        xrt_arthur,
+        mcr_path,
+        tx3_enzo, # remplacé par ERT BatXOne
+        mcr_jayrko,
+        modz_scboy # remplacé par MCR Skriniar
+    ]
+
+    course04 = [
+        fct_adam,
+        fct_theo,
+        ert_niloboo,
+        rp1_okwaru,
+        rp1_winterr,
+        pur_voltha,
+        rp1_luca,
+        ldl_saumon,
+        pur_stitoxxe,
+        mcr_jayrko,
+        modz_scboy,
+        vinboy,
+        xrt_arthur,
+        rp1_chadoo,
+        pur_varane,
+        mcr_path,
+        shz_noctis,
+        tx3_enzo,
+        ldl_oli,
+        ripply_spl
+    ]
+
+    # classements
+    result04.resultat("q", qualif04)
+    result04.resultat("c", course04)
+
+    result04.calcPointsQ()
+    result04.calcPointsC()
+
+    # évènements ponctuels
+    result04.crash("c",ripply_spl)
+    result04.crash("c",ldl_oli)
+    result04.crash("c",tx3_enzo)
+    result04.crash("c",shz_noctis)
+    result04.crash("c",mcr_path)
+    result04.crash("c",pur_varane)
+
+    result04.meilleurTour(fct_theo)
+
+    # final
+    pt04 = result04.getPoints()
+
+    """
+    print(sortedDict(result04.getPoints()))
+
+    for i in result04.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result04.resetHist()
+
+    ###############################################################################################
     
     final = sumDict(pt01, pt02)
     final = sumDict(final, pt03)
+    final = sumDict(final, pt04)
     
     # print(final)
 

@@ -196,7 +196,13 @@ class GrandPrix:
                     difference = j-i
                     code = str("Pos. "+ str(difference))
             
-            difference *= 2
+            # debug
+            try:
+                difference *= 2
+            except:
+                print("GrandPrix.calcPointsQ.Erreur : un pilote est introuvable.")
+                break
+            
             while abs(difference) > 10:
                 if difference < -10:
                     difference += 1
