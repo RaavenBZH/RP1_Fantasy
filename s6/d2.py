@@ -1,4 +1,3 @@
-from unittest import SkipTest
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 from packageF1.Joueur import *
@@ -381,11 +380,96 @@ def getPointsD2() -> dict:
 
     result04.resetHist()
 
+    ###################################################################################################
+    # Course 5
+
+    result05 = GrandPrix("Jeddah")
+
+    qualif05 = [
+        ert_batxone,
+        vrt_tribion,
+        mvt_thomas,
+        tx3_matt, # remplacé par PuR NyGraal
+        xrt_baka,
+        aft_lowky,
+        pur_vincent, # remplacé par Soo Skyzzz
+        o2_oxygen,
+        raavenbzh,
+        pur_racing,
+        pur_ilton, # remplacé par ERT Aurelius
+        fct_deadpool,
+        rp1_woody, # remplacé par AlexGT500
+        xrt_nico2a, # remplacé par DucPasCharlie
+        benbdby,
+        fct_coco,
+        legion_tomoe,
+        xrt_darkfly,
+        rp1_virlix,
+        mcr_skriniar
+    ]
+
+    course05 = [
+        mvt_thomas,
+        tx3_matt,
+        raavenbzh,
+        aft_lowky,
+        legion_tomoe,
+        rp1_virlix,
+        o2_oxygen,
+        ert_batxone,
+        mcr_skriniar,
+        fct_coco,
+        xrt_darkfly,
+        pur_vincent,
+        pur_ilton,
+        rp1_woody,
+        xrt_baka,
+        vrt_tribion,
+        benbdby,
+        xrt_nico2a,
+        fct_deadpool
+    ]
+
+    # classements
+    result05.resultat("q", qualif05)
+    result05.resultat("c", course05)
+
+    result05.calcPointsQ()
+    result05.calcPointsC()
+
+    # évènements ponctuels
+    result05.crash("q", legion_tomoe)
+    result05.crash("q", pur_racing)
+    result05.crash("q", aft_lowky)
+
+    result05.crash("c", fct_deadpool)
+    result05.crash("c", xrt_nico2a)
+    result05.crash("c", benbdby)
+    result05.crash("c", vrt_tribion)
+    result05.crash("c", xrt_baka)
+
+    result05.meilleurTour(pur_ilton)
+
+    # final
+    pt05 = result05.getPoints()
+
+    """
+    print(sortedDict(result05.getPoints()))
+
+    for i in result05.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result05.resetHist()
+
     ###############################################################################################
     
     final = sumDict(pt01, pt02)
     final = sumDict(final, pt03)
     final = sumDict(final, pt04)
+    final = sumDict(final, pt05)
     
     # print(final)
 

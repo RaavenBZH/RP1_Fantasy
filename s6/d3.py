@@ -387,10 +387,98 @@ def getPointsD3() -> dict:
     result04.resetHist()
 
     ###################################################################################################
+    # Course 5
+
+    result05 = GrandPrix("Jeddah")
+
+    qualif05 = [
+        pur_nygraal,
+        ert_wartors, # remplacé par Non4meGeckoz
+        ert_aurelius,
+        ert_matfax,
+        soo_skyzzz,
+        non4me_cami,
+        istoozen_eko,
+        sks_flyart, # remplacé par LDL ZePro
+        alexgt500,
+        ducpascharlie,
+        ecs_finesse,
+        ert_mirage, # remplacé par PuR Ultraaa
+        pur_marth,
+        ert_toon,
+        eroziah_spl,
+        rp1_gachette,
+        knacki_ball,
+        chr_olivz,
+        mcr_papyx,
+        rp1_fifi
+    ]
+
+    course05 = [
+        knacki_ball,
+        soo_skyzzz,
+        alexgt500,
+        ert_matfax,
+        ert_aurelius,
+        chr_olivz,
+        ecs_finesse,
+        ert_mirage,
+        pur_nygraal,
+        istoozen_eko,
+        ert_wartors,
+        rp1_fifi,
+        mcr_papyx,
+        ducpascharlie,
+        rp1_gachette,
+        non4me_cami,
+        sks_flyart,
+        pur_marth,
+        eroziah_spl,
+        ert_toon
+    ]
+
+    # classements
+    result05.resultat("q", qualif05)
+    result05.resultat("c", course05)
+
+    result05.calcPointsQ()
+    result05.calcPointsC()
+
+    # évènements ponctuels
+    result05.crash("q", rp1_fifi)
+    result05.crash("q", pur_marth)
+    result05.crash("q", eroziah_spl)
+
+    result05.crash("c", ert_toon)
+    result05.crash("c", eroziah_spl)
+    result05.crash("c", pur_marth)
+    result05.crash("c", sks_flyart)
+    result05.crash("c", non4me_cami)
+    result05.crash("c", rp1_gachette)
+    result05.crash("c", ducpascharlie)
+
+    result05.meilleurTour(ert_matfax)
+
+    # final
+    pt05 = result05.getPoints()
+
+    """
+    print(sortedDict(result05.getPoints()))
+
+    for i in result05.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result05.resetHist()
+
+    ###################################################################################################
     
     final = sumDict(pt01, pt02)
     final = sumDict(final, pt03)
     final = sumDict(final, pt04)
+    final = sumDict(final, pt05)
     
     # print(final)
 

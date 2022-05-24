@@ -1,3 +1,4 @@
+from operator import mod
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 from packageF1.Joueur import *
@@ -376,6 +377,87 @@ def getPointsD1() -> dict:
     # Ideal :
 
     result04.resetHist()
+
+    ###################################################################################################
+	# Course 5
+
+    result05 = GrandPrix("Jeddah")
+
+    qualif05 = [
+        rp1_winterr,
+        fct_adam,
+        ert_niloboo,
+        pur_varane,
+        fct_theo,
+        ldl_oli,
+        ldl_saumon, # remplacé par RaavenBZH
+        rp1_okwaru,
+        vinboy,
+        shz_noctis,
+        pur_voltha,
+        ripply_spl,
+        rp1_chadoo,
+        pur_stitoxxe,
+        rp1_luca,
+        mcr_jayrko,
+        mcr_path,
+        tx3_enzo, # remplacé par BatXOne
+        xrt_arthur,
+        modz_scboy #remplacé par RP1 Woody
+    ]
+
+    course05 = [
+        fct_theo,
+        rp1_winterr,
+        ert_niloboo,
+        ldl_oli,
+        shz_noctis,
+        rp1_luca,
+        rp1_okwaru,
+        pur_stitoxxe,
+        mcr_jayrko,
+        xrt_arthur,
+        pur_varane,
+        tx3_enzo,
+        fct_adam,
+        rp1_chadoo,
+        mcr_path,
+        modz_scboy,
+        ripply_spl,
+        ldl_saumon,
+        pur_voltha,
+        vinboy
+    ]
+
+    # classements
+    result05.resultat("q", qualif05)
+    result05.resultat("c", course05)
+
+    result05.calcPointsQ()
+    result05.calcPointsC()
+
+    # évènements ponctuels
+    result05.crash("q", rp1_luca)
+
+    result05.crash("c", vinboy)
+    result05.crash("c", pur_voltha)
+    result05.crash("c", ldl_saumon)
+
+    result05.meilleurTour(fct_adam)
+
+    # final
+    pt05 = result05.getPoints()
+
+    """
+    print(sortedDict(result05.getPoints()))
+
+    for i in result05.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result05.resetHist()
 
     ###############################################################################################
     
