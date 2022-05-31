@@ -474,11 +474,104 @@ def getPointsD3() -> dict:
     result05.resetHist()
 
     ###################################################################################################
+    # Course 6
+
+    result06 = GrandPrix("Hongrie")
+
+    qualif06 = [
+        pur_nygraal,
+        soo_skyzzz,
+        ert_matfax,
+        alexgt500,
+        ert_aurelius,
+        eroziah_spl,
+        ecs_finesse,
+        ducpascharlie,
+        chr_olivz,
+        sks_flyart, # remplacé par Non4me STUNO
+        pur_marth,
+        ert_mirage,
+        knacki_ball, # remplacé par LTR Coach
+        istoozen_eko,
+        ert_wartors,
+        ert_toon,
+        rp1_gachette,
+        mcr_papyx,
+        rp1_fifi,
+        non4me_cami
+    ]
+
+    course06 = [
+        pur_nygraal,
+        eroziah_spl,
+        ert_toon,
+        rp1_gachette,
+        mcr_papyx,
+        non4me_cami,
+        ecs_finesse,
+        ducpascharlie,
+        alexgt500,
+        chr_olivz,
+        rp1_fifi,
+        sks_flyart,
+        ert_matfax,
+        ert_aurelius,
+        knacki_ball,
+        soo_skyzzz,
+        pur_marth,
+        ert_mirage,
+        ert_wartors,
+        istoozen_eko
+    ]
+
+    # classements
+    result06.resultat("q", qualif06)
+    result06.resultat("c", course06)
+
+    result06.calcPointsQ()
+    result06.calcPointsC()
+
+    # evenements ponctuels
+    result06.crash("q", non4me_cami)
+    result06.crash("q", ert_wartors)
+    result06.crash("q", istoozen_eko)
+    result06.crash("q", sks_flyart)
+    result06.crash("q", chr_olivz)
+    result06.crash("q", ducpascharlie)
+
+    result06.crash("q", istoozen_eko)
+    result06.crash("q", ert_wartors)
+    result06.crash("q", ert_mirage)
+    result06.crash("q", pur_marth)
+    result06.crash("q", soo_skyzzz)
+    result06.crash("q", knacki_ball)
+    result06.crash("q", ert_aurelius)
+    result06.crash("q", ert_matfax)
+
+    result06.meilleurTour(pur_nygraal)
+
+    # final
+    pt06 = result06.getPoints()
+
+    """
+    print(sortedDict(result06.getPoints()))
+
+    for i in result06.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result06.resetHist()
+
+
+    ###################################################################################################
     
     final = sumDict(pt01, pt02)
     final = sumDict(final, pt03)
     final = sumDict(final, pt04)
     final = sumDict(final, pt05)
+    final = sumDict(final, pt06)
     
     # print(final)
 

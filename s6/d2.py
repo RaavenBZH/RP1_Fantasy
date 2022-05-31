@@ -464,12 +464,96 @@ def getPointsD2() -> dict:
 
     result05.resetHist()
 
+    ###################################################################################################
+    # Course 6
+
+    result06 = GrandPrix("Hongrie")
+
+    qualif06 = [
+        mvt_thomas,
+        mcr_skriniar, # remplacé par iF1 Meister
+        xrt_baka,
+        raavenbzh,
+        pur_ilton,
+        rp1_virlix, # remplacé par ERT Toon
+        rp1_woody,
+        aft_lowky,
+        benbdby, # remplacé par AlexGT500 GAME
+        xrt_darkfly,
+        xrt_nico2a, # remplacé par Eroziah SPL
+        tx3_matt,
+        o2_oxygen,
+        pur_vincent, # remplacé par RP1 Vara
+        ert_batxone,
+        vrt_tribion, # remplacé par cedric dauby
+        fct_deadpool,
+        legion_tomoe,
+        fct_coco,
+        pur_racing
+    ]
+
+    course06 = [
+        ert_batxone,
+        aft_lowky,
+        xrt_darkfly,
+        mvt_thomas,
+        o2_oxygen,
+        raavenbzh,
+        mcr_skriniar,
+        legion_tomoe,
+        xrt_nico2a,
+        fct_coco,
+        rp1_woody,
+        benbdby,
+        pur_ilton,
+        pur_vincent,
+        rp1_virlix,
+        fct_deadpool,
+        xrt_baka,
+        vrt_tribion,
+        pur_racing,
+        tx3_matt
+    ]
+
+    # classements
+    result06.resultat("q", qualif06)
+    result06.resultat("c", course06)
+
+    result06.calcPointsQ()
+    result06.calcPointsC()
+
+    # evenements ponctuels
+    result06.crash("q", ert_batxone)
+
+    result06.crash("c", tx3_matt)
+    result06.crash("c", pur_racing)
+    result06.crash("c", vrt_tribion)
+    result06.crash("c", xrt_baka)
+    result06.crash("c", fct_deadpool)
+
+    result06.meilleurTour(pur_ilton)
+
+    # final
+    pt06 = result06.getPoints()
+
+    """
+    print(sortedDict(result06.getPoints()))
+
+    for i in result06.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result06.resetHist()
+
     ###############################################################################################
     
     final = sumDict(pt01, pt02)
     final = sumDict(final, pt03)
     final = sumDict(final, pt04)
     final = sumDict(final, pt05)
+    final = sumDict(final, pt06)
     
     # print(final)
 

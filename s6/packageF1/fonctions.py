@@ -150,7 +150,7 @@ def generateRound(roundNum : int, track : str = "") -> None:
         w(f"result{num}.calcPointsQ()\n")
         w(f"result{num}.calcPointsC()\n")
         w("\n")
-        w("# évènements ponctuels\n")
+        w("# evenements ponctuels\n")
         w("\n")
         w(f"result{num}.meilleurTour()\n")
         w("\n")

@@ -34,7 +34,7 @@ def getPointsD4() -> dict:
     rp1_lito = Pilote("RP1 Lito", "AlphaTauri")
 
     non4me_sanzz = Pilote("Non4me Sanzz", "Alpine")
-    playnum11 = Pilote("Playnum11", "Alpine")
+    xrt_alpha = Pilote("XRT Alpha", "Alpine")
 
     rp1_durtom = Pilote("RP1 Durtom", "AstonMartin")
     jancker21 = Pilote("Jancker21", "AstonMartin")
@@ -65,7 +65,7 @@ def getPointsD4() -> dict:
         ert_tiiste,
         non4me_livai,
         non4me_jordy,
-        playnum11,
+        xrt_alpha,
         jancker21,
         rp1_lito,
         rp1_owain,
@@ -89,7 +89,7 @@ def getPointsD4() -> dict:
         non4me_sanzz,
         ert_iquazz, # remplacé par NxS xTiga
         rp1_fifou,
-        playnum11,
+        xrt_alpha,
         jancker21,
         ert_redevils,
         is_honoka,
@@ -140,7 +140,7 @@ def getPointsD4() -> dict:
         rp1_owain,
         non4me_livai,
         yozana,
-        playnum11,
+        xrt_alpha,
         rp1_ice,
         ert_redevils,
         non4me_jordy,
@@ -163,7 +163,7 @@ def getPointsD4() -> dict:
         rp1_owain,
         yozana,
         pur_ultraaa,
-        playnum11,
+        xrt_alpha,
         ltr_coach,
         ert_tiiste,
         non4me_jordy,
@@ -220,7 +220,7 @@ def getPointsD4() -> dict:
         ltr_coach,
         non4me_pagaa,
         rp1_ice,
-        playnum11, # remplacé par X7PK KaranoX
+        xrt_alpha, # remplacé par X7PK KaranoX
         ert_iquazz,
         ert_ricky,
         non4me_livai,
@@ -252,7 +252,7 @@ def getPointsD4() -> dict:
         rp1_fifou,
         non4me_sanzz,
         ert_iquazz,
-        playnum11,
+        xrt_alpha,
         jancker21,
         rp1_lito,
         tx3_soap,
@@ -300,7 +300,7 @@ def getPointsD4() -> dict:
         rp1_owain,
         pur_ultraaa,
         non4me_livai,
-        playnum11, # remplacé par XRT Alpha
+        xrt_alpha, # remplacé par XRT Alpha
         rp1_durtom,
         ert_tiiste,
         ert_ricky,
@@ -336,7 +336,7 @@ def getPointsD4() -> dict:
         yozana,
         ert_ricky,
         rp1_fifou,
-        playnum11,
+        xrt_alpha,
         rp1_lito,
         ert_iquazz
     ]
@@ -354,9 +354,9 @@ def getPointsD4() -> dict:
     
     result04.crash("c", ert_iquazz)
     result04.crash("c", rp1_lito)
-    result04.crash("c", playnum11)
+    result04.crash("c", xrt_alpha)
 
-    result04.meilleurTour(playnum11)
+    result04.meilleurTour(xrt_alpha)
 
     # final
     pt04 = result04.getPoints()
@@ -378,7 +378,7 @@ def getPointsD4() -> dict:
     result05 = GrandPrix("Jeddah")
 
     qualif05 = [
-        playnum11, # remplacé par XRT Alpha
+        xrt_alpha, # remplacé par XRT Alpha
         rp1_ice,
         ert_iquazz,
         ltr_coach,
@@ -401,7 +401,7 @@ def getPointsD4() -> dict:
     ]
 
     course05 = [
-        playnum11,
+        xrt_alpha,
         non4me_livai,
         rp1_ice,
         ert_iquazz,
@@ -452,12 +452,98 @@ def getPointsD4() -> dict:
 
     result05.resetHist()
 
+    ###################################################################################################
+    # Course 6
+
+    result06 = GrandPrix("Hongrie")
+
+    qualif06 = [
+        pur_ultraaa,
+        rp1_owain,
+        rp1_ice,
+        ert_ricky,
+        tx3_soap,
+        non4me_livai,
+        ert_redevils,
+        non4me_pagaa,
+        non4me_sanzz, # remplacé par X7PK KaranoX
+        is_honoka,
+        non4me_jordy,
+        yozana,
+        rp1_fifou,
+        ert_tiiste,
+        rp1_durtom,
+        ert_iquazz, # remplacé par NxS xTiGa
+        xrt_alpha , # remplacé par NathanHrx
+        rp1_lito, # remplacé par YoanN0 SKLL
+        ltr_coach,
+        jancker21
+    ]
+
+    course06 = [
+        non4me_sanzz,
+        ert_ricky,
+        rp1_durtom,
+        non4me_livai,
+        rp1_owain,
+        ltr_coach,
+        ert_iquazz,
+        rp1_fifou,
+        non4me_pagaa,
+        rp1_lito,
+        ert_redevils,
+        ert_tiiste,
+        xrt_alpha,
+        rp1_ice,
+        tx3_soap,
+        non4me_jordy,
+        pur_ultraaa,
+        jancker21,
+        is_honoka,
+        yozana
+    ]
+
+    # classements
+    result06.resultat("q", qualif06)
+    result06.resultat("c", course06)
+
+    result06.calcPointsQ()
+    result06.calcPointsC()
+
+    # evenements ponctuels
+    result06.crash("q", ert_redevils)
+
+    result06.crash("c", yozana)
+    result06.crash("c", is_honoka)
+    result06.crash("c", jancker21)
+    result06.crash("c", pur_ultraaa)
+    result06.crash("c", non4me_jordy)
+    result06.crash("c", tx3_soap)
+    result06.crash("c", rp1_ice)
+
+    result06.meilleurTour(xrt_alpha)
+
+    # final
+    pt06 = result06.getPoints()
+
+    """
+    print(sortedDict(result06.getPoints()))
+
+    for i in result06.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result06.resetHist()
+
     ###############################################################################################
 
     final = sumDict(pt01, pt02)
     final = sumDict(final, pt03)
     final = sumDict(final, pt04)
     final = sumDict(final, pt05)
+    final = sumDict(final, pt06)
     
     # print(final)
 
