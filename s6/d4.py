@@ -537,6 +537,89 @@ def getPointsD4() -> dict:
 
     result06.resetHist()
 
+    ###################################################################################################
+    # Course 7
+
+    result07 = GrandPrix("Bresil")
+
+    qualif07 = [
+        non4me_livai,
+        rp1_ice,
+        ert_redevils,
+        ltr_coach,
+        ert_iquazz,
+        ert_tiiste,
+        xrt_alpha,
+        jancker21,
+        non4me_jordy,
+        yozana,
+        rp1_durtom,
+        rp1_lito,
+        tx3_soap,
+        rp1_fifou,
+        pur_ultraaa,
+        ert_ricky,
+        non4me_pagaa,
+        non4me_sanzz,
+        is_honoka
+    ]
+
+    course07 = [
+        rp1_durtom,
+        non4me_livai,
+        ert_iquazz,
+        yozana,
+        rp1_fifou,
+        ert_tiiste,
+        rp1_ice,
+        rp1_lito,
+        non4me_pagaa,
+        is_honoka,
+        non4me_jordy,
+        tx3_soap,
+        jancker21,
+        ert_redevils,
+        ert_ricky,
+        pur_ultraaa,
+        ltr_coach,
+        non4me_sanzz,# remplacé par ECS Antoo,
+        xrt_alpha, # remplacé par VMLF Zer
+        # RP1 Owain non remplacé
+    ]
+
+    # classements
+    result07.resultat("q", qualif07)
+    result07.resultat("c", course07)
+
+    result07.calcPointsQ()
+    result07.calcPointsC()
+
+    # evenements ponctuels
+    result07.crash("q", tx3_soap)
+
+    result07.crash("c", xrt_alpha)
+    result07.crash("c", non4me_sanzz)
+    result07.crash("c", ltr_coach)
+    result07.crash("c", pur_ultraaa)
+    result07.crash("c", ert_ricky)
+    result07.crash("c", ert_redevils)
+
+    result07.meilleurTour(ert_tiiste)
+
+    # final
+    pt07 = result07.getPoints()
+
+    """
+    print(sortedDict(result07.getPoints()))
+
+    for i in result07.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result07.resetHist()
+
     ###############################################################################################
 
     final = sumDict(pt01, pt02)
@@ -544,6 +627,7 @@ def getPointsD4() -> dict:
     final = sumDict(final, pt04)
     final = sumDict(final, pt05)
     final = sumDict(final, pt06)
+    final = sumDict(final, pt07)
     
     # print(final)
 

@@ -198,9 +198,9 @@ class GrandPrix:
             
             # debug
             try:
-                difference *= 2
+                difference *= 2 # None si pilote introuvable
             except:
-                print("GrandPrix.calcPointsQ.Erreur : un pilote est introuvable.")
+                print("GrandPrix.calcPointsC.Erreur : un pilote est introuvable.")
                 break
             
             while abs(difference) > 10:
@@ -246,7 +246,10 @@ class GrandPrix:
             try:
                 self.__dico[gamertag] -= value
             except:
-                print("GrandPrix.crash.Erreur : pilote (" + gamertag + ") non trouvé.")
+                if pilote in self.__course:
+                    self.__dico[gamertag] = -value
+                else:
+                    print("GrandPrix.crash.Erreur : pilote (" + gamertag + ") non trouvé.")
         else:
             print("GrandPrix.crash.Erreur : mode {'q','c'} invalide.")
 

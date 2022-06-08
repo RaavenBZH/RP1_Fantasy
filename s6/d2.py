@@ -1,3 +1,4 @@
+from unittest import SkipTest
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 from packageF1.Joueur import *
@@ -73,7 +74,7 @@ def getPointsD2() -> dict:
         xrt_nico2a,
         rp1_virlix, # remplacé par MCR FeFe13
         fct_deadpool
-        #benbdby
+        # BenBdBy
     ]
 
     course01 = [
@@ -96,7 +97,7 @@ def getPointsD2() -> dict:
         xrt_nico2a,
         rp1_virlix,
         rp1_woody
-        #benbdby
+        # BenBdBy
     ]
 
     # classements
@@ -547,6 +548,91 @@ def getPointsD2() -> dict:
 
     result06.resetHist()
 
+    ###################################################################################################
+    # Course 7
+
+    result07 = GrandPrix("Bresil")
+
+    qualif07 = [
+        pur_racing,
+        mvt_thomas,
+        o2_oxygen,
+        fct_deadpool, # remplacé par SHZ Ewan,
+        tx3_matt, # remplacé par AlexGT500 GAME
+        vrt_tribion,
+        ert_batxone,
+        raavenbzh,
+        benbdby, # remplacé par Eroziah SPL
+        pur_vincent,
+        aft_lowky,
+        rp1_virlix, # remplacé par SKS Flyart
+        pur_ilton,
+        mcr_skriniar,
+        xrt_baka, # remplacé par RP1 Fifi93,
+        fct_coco,
+        legion_tomoe,
+        xrt_nico2a,
+        xrt_darkfly,
+        rp1_woody
+    ]
+
+    course07 = [
+        pur_racing,
+        mvt_thomas,
+        ert_batxone,
+        vrt_tribion,
+        raavenbzh,
+        o2_oxygen,
+        aft_lowky,
+        fct_deadpool,
+        tx3_matt,
+        xrt_nico2a,
+        xrt_darkfly,
+        fct_coco,
+        mcr_skriniar,
+        pur_ilton,
+        xrt_baka,
+        pur_vincent,
+        legion_tomoe,
+        rp1_woody,
+        rp1_virlix,
+        benbdby
+    ]
+
+    # classements
+    result07.resultat("q", qualif07)
+    result07.resultat("c", course07)
+
+    result07.calcPointsQ()
+    result07.calcPointsC()
+
+    # evenements ponctuels
+    result07.crash("q", rp1_woody)
+
+    result07.crash("c", benbdby)
+    result07.crash("c", rp1_virlix)
+    result07.crash("c", rp1_woody)
+    result07.crash("c", legion_tomoe)
+    result07.crash("c", pur_vincent)
+    result07.crash("c", xrt_baka)
+    result07.crash("c", pur_ilton)
+
+    result07.meilleurTour(mcr_skriniar)
+
+    # final
+    pt07 = result07.getPoints()
+
+    """
+    print(sortedDict(result07.getPoints()))
+
+    for i in result07.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result07.resetHist()
+
     ###############################################################################################
     
     final = sumDict(pt01, pt02)
@@ -554,6 +640,7 @@ def getPointsD2() -> dict:
     final = sumDict(final, pt04)
     final = sumDict(final, pt05)
     final = sumDict(final, pt06)
+    final = sumDict(final, pt07)
     
     # print(final)
 

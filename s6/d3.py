@@ -19,7 +19,7 @@ def getPointsD3() -> dict:
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
     ecs_finesse = Pilote("ECS Finesse", "Mercedes")
-    ert_wartors = Pilote("ERT Wartors", "Mercedes")
+    non4me_geckozz = Pilote("Non4me Geckozz", "Mercedes")
 
     non4me_cami = Pilote("Non4me Cami", "RedBull")
     soo_skyzzz = Pilote("Soo Skyzzz", "RedBull")
@@ -37,7 +37,7 @@ def getPointsD3() -> dict:
     ducpascharlie = Pilote("DucPasCharlie", "Alpine")
 
     rp1_gachette = Pilote("RP1 Gachette", "AstonMartin")
-    istoozen_eko = Pilote("Istoozen eKo", "AstonMartin")
+    if1_supr3me = Pilote("iF1 Supr3me", "AstonMartin")
 
     sks_flyart = Pilote("SKS Flyart", "AlfaRomeo")
     mcr_papyx = Pilote("MCR Papyx", "AlfaRomeo")
@@ -56,7 +56,7 @@ def getPointsD3() -> dict:
     qualif01 = [
         knacki_ball,
         ducpascharlie,
-        istoozen_eko,
+        if1_supr3me,
         non4me_cami,
         ecs_finesse,
         soo_skyzzz,
@@ -69,7 +69,7 @@ def getPointsD3() -> dict:
         ert_toon, # remplacé par QRL Blanco
         ert_mirage, # remplacé par Pur Ultraaa
         sks_flyart,
-        ert_wartors,
+        non4me_geckozz,
         mcr_papyx,
         rp1_fifi,
         eroziah_spl,
@@ -79,7 +79,7 @@ def getPointsD3() -> dict:
     course01 = [
         knacki_ball,
         eroziah_spl,
-        ert_wartors, 
+        non4me_geckozz, 
         mcr_papyx,
         pur_marth,
         ert_mirage,
@@ -94,7 +94,7 @@ def getPointsD3() -> dict:
         non4me_cami,  
         ert_toon,
         ert_matfax,
-        istoozen_eko,
+        if1_supr3me,
         pur_nygraal,
         sks_flyart
     ]
@@ -114,7 +114,7 @@ def getPointsD3() -> dict:
 
     result01.crash("c", sks_flyart)
     result01.crash("c", pur_nygraal)
-    result01.crash("c", istoozen_eko)
+    result01.crash("c", if1_supr3me)
     result01.crash("c", ert_matfax)
 
     result01.meilleurTour(rp1_gachette)
@@ -142,7 +142,7 @@ def getPointsD3() -> dict:
         ert_aurelius,
         pur_nygraal,
         soo_skyzzz,
-        ert_wartors, # remplacé par RP1 Ice
+        non4me_geckozz, # remplacé par RP1 Ice
         rp1_fifi, # remplacé par XRT Alpha
         ducpascharlie,
         knacki_ball,
@@ -152,7 +152,7 @@ def getPointsD3() -> dict:
         sks_flyart,
         ecs_finesse,
         eroziah_spl,
-        istoozen_eko, # remplacé par RP1 Durtom
+        if1_supr3me, # remplacé par RP1 Durtom
         rp1_gachette,
         ert_toon, # remplacé par QRL Blanco
         non4me_cami,
@@ -172,7 +172,7 @@ def getPointsD3() -> dict:
         mcr_papyx,
         rp1_gachette,
         non4me_cami,
-        ert_wartors,
+        non4me_geckozz,
         ert_toon,
         ert_mirage,
         ert_matfax,
@@ -181,7 +181,7 @@ def getPointsD3() -> dict:
         soo_skyzzz,
         alexgt500,
         knacki_ball,
-        istoozen_eko
+        if1_supr3me
     ]
 
     # classements
@@ -194,7 +194,7 @@ def getPointsD3() -> dict:
     # évènements ponctuels
     result02.crash("q", rp1_gachette)
 
-    result02.crash("c", istoozen_eko)
+    result02.crash("c", if1_supr3me)
     result02.crash("c", knacki_ball)
     result02.crash("c", alexgt500)
     result02.crash("c", soo_skyzzz)
@@ -229,7 +229,7 @@ def getPointsD3() -> dict:
         alexgt500,
         ert_aurelius,
         ert_toon,
-        istoozen_eko,
+        if1_supr3me,
         ecs_finesse,
         chr_olivz,
         pur_marth, # remplacé par LTR Coach
@@ -240,7 +240,7 @@ def getPointsD3() -> dict:
         sks_flyart,
         eroziah_spl,
         ducpascharlie,
-        ert_wartors,
+        non4me_geckozz,
         ert_mirage,
         rp1_gachette,
         mcr_papyx,
@@ -256,8 +256,8 @@ def getPointsD3() -> dict:
         non4me_cami,
         ert_mirage,
         chr_olivz,
-        ert_wartors,
-        istoozen_eko,
+        non4me_geckozz,
+        if1_supr3me,
         rp1_gachette,
         soo_skyzzz,
         ducpascharlie,
@@ -310,7 +310,7 @@ def getPointsD3() -> dict:
         alexgt500,
         rp1_gachette,
         ert_aurelius,
-        ert_wartors, # rempalcé par Non4meGeckoz
+        non4me_geckozz, # rempalcé par Non4meGeckoz
         chr_olivz,
         ert_matfax,
         non4me_cami,
@@ -319,7 +319,7 @@ def getPointsD3() -> dict:
         eroziah_spl,
         ducpascharlie,
         ert_mirage,
-        istoozen_eko, # remplacé par Jancker 21
+        if1_supr3me, # remplacé par Jancker 21
         mcr_papyx,
         sks_flyart,
         pur_marth,
@@ -335,11 +335,11 @@ def getPointsD3() -> dict:
         ert_matfax,
         rp1_gachette,
         non4me_cami,
-        ert_wartors,
+        non4me_geckozz,
         ducpascharlie,
         sks_flyart,
         mcr_papyx,
-        istoozen_eko,
+        if1_supr3me,
         ecs_finesse,
         rp1_fifi,
         soo_skyzzz,
@@ -393,12 +393,12 @@ def getPointsD3() -> dict:
 
     qualif05 = [
         pur_nygraal,
-        ert_wartors, # remplacé par Non4meGeckoz
+        non4me_geckozz, # remplacé par Non4meGeckoz
         ert_aurelius,
         ert_matfax,
         soo_skyzzz,
         non4me_cami,
-        istoozen_eko,
+        if1_supr3me,
         sks_flyart, # remplacé par LDL ZePro
         alexgt500,
         ducpascharlie,
@@ -424,8 +424,8 @@ def getPointsD3() -> dict:
         ecs_finesse,
         ert_mirage,
         pur_nygraal,
-        istoozen_eko,
-        ert_wartors,
+        if1_supr3me,
+        non4me_geckozz,
         rp1_fifi,
         mcr_papyx,
         ducpascharlie,
@@ -492,8 +492,8 @@ def getPointsD3() -> dict:
         pur_marth,
         ert_mirage,
         knacki_ball, # remplacé par LTR Coach
-        istoozen_eko,
-        ert_wartors,
+        if1_supr3me,
+        non4me_geckozz,
         ert_toon,
         rp1_gachette,
         mcr_papyx,
@@ -520,8 +520,8 @@ def getPointsD3() -> dict:
         soo_skyzzz,
         pur_marth,
         ert_mirage,
-        ert_wartors,
-        istoozen_eko
+        non4me_geckozz,
+        if1_supr3me
     ]
 
     # classements
@@ -533,14 +533,14 @@ def getPointsD3() -> dict:
 
     # evenements ponctuels
     result06.crash("q", non4me_cami)
-    result06.crash("q", ert_wartors)
-    result06.crash("q", istoozen_eko)
+    result06.crash("q", non4me_geckozz)
+    result06.crash("q", if1_supr3me)
     result06.crash("q", sks_flyart)
     result06.crash("q", chr_olivz)
     result06.crash("q", ducpascharlie)
 
-    result06.crash("q", istoozen_eko)
-    result06.crash("q", ert_wartors)
+    result06.crash("q", if1_supr3me)
+    result06.crash("q", non4me_geckozz)
     result06.crash("q", ert_mirage)
     result06.crash("q", pur_marth)
     result06.crash("q", soo_skyzzz)
@@ -564,6 +564,99 @@ def getPointsD3() -> dict:
 
     result06.resetHist()
 
+    ###################################################################################################
+    # Course 7
+
+    result07 = GrandPrix("Bresil")
+
+    qualif07 = [
+        soo_skyzzz,
+        pur_nygraal,
+        alexgt500,
+        ert_aurelius,
+        ecs_finesse,
+        if1_supr3me,
+        knacki_ball,
+        ert_matfax,
+        chr_olivz,
+        non4me_geckozz,
+        ert_mirage,
+        non4me_cami,
+        pur_marth,
+        mcr_papyx,
+        rp1_gachette,
+        rp1_fifi,
+        eroziah_spl,
+        sks_flyart,
+        ert_toon,
+        ducpascharlie
+    ]
+
+    course07 = [
+        pur_nygraal,
+        ert_aurelius,
+        soo_skyzzz,
+        sks_flyart,
+        ecs_finesse,
+        if1_supr3me,
+        non4me_cami,
+        chr_olivz,
+        mcr_papyx,
+        ert_matfax,
+        non4me_geckozz,
+        rp1_gachette,
+        eroziah_spl,
+        rp1_fifi,
+        knacki_ball,
+        alexgt500,
+        ert_mirage,
+        ert_toon, # remplacé par LDL Shermy
+        pur_marth,
+        ducpascharlie,
+    ]
+
+
+    # classements
+    result07.resultat("q", qualif07)
+    result07.resultat("c", course07)
+
+    result07.calcPointsQ()
+    result07.calcPointsC()
+
+    # evenements ponctuels
+    result07.crash("q", sks_flyart)
+    result07.crash("q", non4me_cami)
+    result07.crash("q", pur_marth)
+    result07.crash("q", non4me_geckozz)
+    result07.crash("q", knacki_ball)
+
+    result07.crash("c", ducpascharlie)
+    result07.crash("c", pur_marth)
+    result07.crash("c", ert_toon)
+    result07.crash("c", ert_mirage)
+    result07.crash("c", alexgt500)
+    result07.crash("c", knacki_ball)
+    result07.crash("c", rp1_fifi)
+    result07.crash("c", eroziah_spl)
+    result07.crash("c", rp1_gachette)
+    result07.crash("c", non4me_geckozz)
+
+    result07.meilleurTour(ert_matfax)
+
+    # final
+    pt07 = result07.getPoints()
+
+    """
+    print(sortedDict(result07.getPoints()))
+
+    for i in result07.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    
+    """
+
+    # Ideal :
+
+    result07.resetHist()
 
     ###################################################################################################
     
@@ -572,6 +665,7 @@ def getPointsD3() -> dict:
     final = sumDict(final, pt04)
     final = sumDict(final, pt05)
     final = sumDict(final, pt06)
+    final = sumDict(final, pt07)
     
     # print(final)
 
