@@ -25,7 +25,7 @@ def getPointsD1() -> dict:
     fct_adam = Pilote("FcT Adam", "RedBull")
     rp1_winterr = Pilote("RP1 Winterr", "RedBull")
 
-    rp1_luca = Pilote("RP1 Luca", "McLaren")
+    rp1_montoya = Pilote("RP1 Montoya", "McLaren")
     pur_varane = Pilote("PuR Varane", "McLaren")
 
     rp1_okwaru = Pilote("RP1 Okwaru", "Ferrari")
@@ -41,7 +41,7 @@ def getPointsD1() -> dict:
     rp1_chadoo = Pilote("RP1 Chadoo", "AstonMartin")
 
     mcr_jayrko = Pilote("MCR Jayrko", "AlfaRomeo")
-    pur_stitoxxe = Pilote("PuR Stitoxxe", "AlfaRomeo")
+    pur_rosberg = Pilote("PuR Rosberg", "AlfaRomeo")
 
     mcr_path = Pilote("MCR Path", "Williams")
     xrt_arthur = Pilote("XRT Arthur", "Williams")
@@ -59,7 +59,7 @@ def getPointsD1() -> dict:
         fct_adam,
         ert_niloboo,
         rp1_winterr,
-        rp1_luca,
+        rp1_montoya,
         pur_voltha,
         ldl_oli,
         ldl_saumon,
@@ -68,7 +68,7 @@ def getPointsD1() -> dict:
         vinboy,
         shz_noctis,
         ripply_spl,
-        pur_stitoxxe, # remplacé par PuR Vicent
+        pur_rosberg, # remplacé par PuR Vicent
         pur_varane,
         mcr_path,
         xrt_arthur, # remplacé par MCR Skriniar
@@ -79,7 +79,7 @@ def getPointsD1() -> dict:
 
     course01 = [
         fct_theo,
-        rp1_luca,
+        rp1_montoya,
         ldl_oli,
         pur_varane,
         fct_adam,
@@ -87,7 +87,7 @@ def getPointsD1() -> dict:
         rp1_winterr,
         ert_niloboo,
         vinboy,
-        pur_stitoxxe,
+        pur_rosberg,
         ldl_saumon,
         mcr_jayrko,
         shz_noctis,
@@ -127,7 +127,7 @@ def getPointsD1() -> dict:
         print(i.getGamertag(), i.getHistorique())
     """
 
-    # Ideal : FcT Theo, LDL Oli, PuR Stitoxxe
+    # Ideal : FcT Theo, LDL Oli, PuR Rosberg
 
     result01.resetHist()
 
@@ -143,12 +143,12 @@ def getPointsD1() -> dict:
         rp1_winterr,
         rp1_okwaru,
         pur_varane, # remplacé par SHZ Ewan
-        rp1_luca,
+        rp1_montoya,
         pur_voltha,
         ldl_oli,
         vinboy,
         rp1_chadoo,
-        pur_stitoxxe,
+        pur_rosberg,
         shz_noctis,
         ldl_saumon,
         ripply_spl,
@@ -171,7 +171,7 @@ def getPointsD1() -> dict:
         vinboy,
         ldl_saumon,
         mcr_jayrko,
-        pur_stitoxxe,
+        pur_rosberg,
         tx3_enzo,
         mcr_path,
         rp1_chadoo,
@@ -179,7 +179,7 @@ def getPointsD1() -> dict:
         xrt_arthur,
         modz_scboy,
         ripply_spl,
-        rp1_luca
+        rp1_montoya
     ]
 
     # classements
@@ -192,7 +192,7 @@ def getPointsD1() -> dict:
     # évènements ponctuels
     result02.crash("q", ripply_spl)
 
-    result02.crash("c", rp1_luca)
+    result02.crash("c", rp1_montoya)
     result02.crash("c", ripply_spl)
     result02.crash("c", modz_scboy)
     result02.crash("c", xrt_arthur)
@@ -224,14 +224,14 @@ def getPointsD1() -> dict:
         rp1_winterr,
         rp1_okwaru,
         pur_varane,
-        rp1_luca,
+        rp1_montoya,
         ldl_oli,
         shz_noctis,
         pur_voltha,
         vinboy,
         ldl_saumon,
         rp1_chadoo,
-        pur_stitoxxe,
+        pur_rosberg,
         xrt_arthur,
         fct_theo,
         ert_niloboo,
@@ -243,7 +243,7 @@ def getPointsD1() -> dict:
     ]
 
     course03 = [
-        rp1_luca,
+        rp1_montoya,
         fct_adam,
         fct_theo,
         ert_niloboo,
@@ -262,7 +262,7 @@ def getPointsD1() -> dict:
         pur_varane,
         rp1_okwaru,
         rp1_chadoo,
-        pur_stitoxxe
+        pur_rosberg
     ]
 
     # classements
@@ -276,7 +276,7 @@ def getPointsD1() -> dict:
     result03.crash("q", ert_niloboo)
     result03.crash("q", mcr_path)
 
-    result03.crash("c", pur_stitoxxe)
+    result03.crash("c", pur_rosberg)
     result03.crash("c", rp1_chadoo)
     result03.crash("c", rp1_okwaru)
 
@@ -308,7 +308,7 @@ def getPointsD1() -> dict:
         ert_niloboo,
         pur_voltha,
         rp1_okwaru,
-        rp1_luca,
+        rp1_montoya,
         pur_varane,
         ldl_oli,
         shz_noctis,
@@ -316,7 +316,7 @@ def getPointsD1() -> dict:
         ripply_spl,
         vinboy,
         rp1_chadoo,
-        pur_stitoxxe, # remplacé par PuR Vincent
+        pur_rosberg, # remplacé par PuR Vincent
         xrt_arthur,
         mcr_path,
         tx3_enzo, # remplacé par ERT BatXOne
@@ -331,9 +331,9 @@ def getPointsD1() -> dict:
         rp1_okwaru,
         rp1_winterr,
         pur_voltha,
-        rp1_luca,
+        rp1_montoya,
         ldl_saumon,
-        pur_stitoxxe,
+        pur_rosberg,
         mcr_jayrko,
         modz_scboy,
         vinboy,
@@ -397,8 +397,8 @@ def getPointsD1() -> dict:
         pur_voltha,
         ripply_spl,
         rp1_chadoo,
-        pur_stitoxxe,
-        rp1_luca,
+        pur_rosberg,
+        rp1_montoya,
         mcr_jayrko,
         mcr_path,
         tx3_enzo, # remplacé par BatXOne
@@ -412,9 +412,9 @@ def getPointsD1() -> dict:
         ert_niloboo,
         ldl_oli,
         shz_noctis,
-        rp1_luca,
+        rp1_montoya,
         rp1_okwaru,
-        pur_stitoxxe,
+        pur_rosberg,
         mcr_jayrko,
         xrt_arthur,
         pur_varane,
@@ -437,7 +437,7 @@ def getPointsD1() -> dict:
     result05.calcPointsC()
 
     # évènements ponctuels
-    result05.crash("q", rp1_luca)
+    result05.crash("q", rp1_montoya)
 
     result05.crash("c", vinboy)
     result05.crash("c", pur_voltha)
@@ -472,11 +472,11 @@ def getPointsD1() -> dict:
         rp1_okwaru,
         pur_voltha,
         ldl_oli,
-        rp1_luca, # remplacé par PuR Vincent
+        rp1_montoya, # remplacé par PuR Vincent
         ldl_saumon,
         rp1_chadoo,
         pur_varane,
-        pur_stitoxxe,
+        pur_rosberg,
         ripply_spl,
         vinboy,
         shz_noctis,
@@ -498,9 +498,9 @@ def getPointsD1() -> dict:
         vinboy,
         xrt_arthur,
         shz_noctis,
-        pur_stitoxxe,
+        pur_rosberg,
         ldl_saumon,
-        rp1_luca,
+        rp1_montoya,
         mcr_path,
         mcr_jayrko,
         modz_scboy,
@@ -551,7 +551,7 @@ def getPointsD1() -> dict:
         fct_adam, # remplacé par BatXOne
         ert_niloboo,
         rp1_okwaru,
-        rp1_luca,
+        rp1_montoya,
         pur_voltha,
         vinboy,
         ldl_oli, # remplacé par PuR Vincent
@@ -559,7 +559,7 @@ def getPointsD1() -> dict:
         shz_noctis, # remplacé par RaavenBZH
         rp1_chadoo,
         ripply_spl,
-        pur_stitoxxe,
+        pur_rosberg,
         pur_varane,
         xrt_arthur, # remplacé par RP1 Maldini
         mcr_jayrko,
@@ -579,12 +579,12 @@ def getPointsD1() -> dict:
         rp1_chadoo,
         ldl_oli,
         mcr_jayrko,
-        pur_stitoxxe,
+        pur_rosberg,
         xrt_arthur,
         ripply_spl,
         ldl_saumon,
         mcr_path,
-        rp1_luca
+        rp1_montoya
     ]
 
     # classements
@@ -598,7 +598,7 @@ def getPointsD1() -> dict:
     result07.crash("q", pur_varane)
     result07.crash("q", rp1_chadoo)
 
-    result07.crash("c", rp1_luca)
+    result07.crash("c", rp1_montoya)
     result07.crash("c", mcr_path)
     result07.crash("c", ldl_saumon)
     result07.crash("c", ripply_spl)
