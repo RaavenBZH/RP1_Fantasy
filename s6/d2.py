@@ -28,7 +28,7 @@ def getPointsD2() -> dict:
     vrt_tribion = Pilote("VRT Tribion", "McLaren")
     fct_deadpool = Pilote("FcT Deadpool", "McLaren")
 
-    tx3_matt = Pilote("TX3 Matt", "Ferrari")
+    alexgt500 = Pilote("AlexGT500", "Ferrari")
     aft_lowky = Pilote("AfT Lowky", "Ferrari")
 
     o2_oxygen = Pilote("O2 Oxygen", "AlphaTauri")
@@ -64,7 +64,7 @@ def getPointsD2() -> dict:
         pur_ilton,
         rp1_woody,
         pur_racing, # remplacé par SHZ Ewan
-        tx3_matt,
+        alexgt500,
         o2_oxygen,
         xrt_baka, # remplacé par DucPasCharlie
         fct_coco,
@@ -87,7 +87,7 @@ def getPointsD2() -> dict:
         fct_coco,
         aft_lowky,
         o2_oxygen,
-        tx3_matt,
+        alexgt500,
         legion_tomoe,
         mcr_skriniar,
         fct_deadpool,
@@ -108,7 +108,7 @@ def getPointsD2() -> dict:
     result01.calcPointsC()
 
     # évènements ponctuels
-    result01.crash("q", tx3_matt)
+    result01.crash("q", alexgt500)
     result01.crash("q", pur_racing)
     result01.crash("q", mvt_thomas)
 
@@ -119,7 +119,7 @@ def getPointsD2() -> dict:
     result01.crash("q", xrt_baka)
     result01.crash("q", pur_racing)
 
-    result01.meilleurTour(tx3_matt)
+    result01.meilleurTour(alexgt500)
 
     # final
     pt01 = result01.getPoints()
@@ -148,7 +148,7 @@ def getPointsD2() -> dict:
         pur_racing,
         mvt_thomas,
         xrt_darkfly,
-        tx3_matt, # remplacé par PuR Nygraal
+        alexgt500, # remplacé par PuR Nygraal
         aft_lowky,
         mcr_skriniar, #remplacé par RP1 Gachette
         pur_ilton,
@@ -183,7 +183,7 @@ def getPointsD2() -> dict:
         benbdby,
         mcr_skriniar,
         rp1_woody,
-        tx3_matt
+        alexgt500
     ]
 
     # classements
@@ -194,7 +194,7 @@ def getPointsD2() -> dict:
     result02.calcPointsC()
 
     # évènements ponctuels
-    result02.crash("c", tx3_matt)
+    result02.crash("c", alexgt500)
     result02.crash("c", rp1_woody)
     result02.crash("c", mcr_skriniar)
     result02.crash("c", benbdby)
@@ -235,7 +235,7 @@ def getPointsD2() -> dict:
         benbdby,
         pur_ilton, # remplacé par SkS Flyart
         rp1_virlix, # remplacé par iF1 Supreme
-        tx3_matt,
+        alexgt500,
         fct_coco,
         fct_deadpool,
         xrt_baka,
@@ -260,7 +260,7 @@ def getPointsD2() -> dict:
         vrt_tribion,
         xrt_baka,
         ert_batxone,
-        tx3_matt,
+        alexgt500,
         rp1_woody,
         xrt_nico2a,
         pur_vincent
@@ -279,7 +279,7 @@ def getPointsD2() -> dict:
     result03.crash("c", pur_vincent)
     result03.crash("c", xrt_nico2a)
     result03.crash("c", rp1_woody)
-    result03.crash("c", tx3_matt)
+    result03.crash("c", alexgt500)
     result03.crash("c", ert_batxone)
     result03.crash("c", xrt_baka)
     result03.crash("c", vrt_tribion)
@@ -326,7 +326,7 @@ def getPointsD2() -> dict:
         xrt_nico2a,
         fct_coco,
         xrt_baka, # remplacé par RP1 Fifi93
-        tx3_matt 
+        alexgt500 
         
     ]
 
@@ -350,7 +350,7 @@ def getPointsD2() -> dict:
         xrt_nico2a,
         aft_lowky,
         rp1_virlix,
-        tx3_matt
+        alexgt500
     ]
 
     # classements
@@ -361,7 +361,7 @@ def getPointsD2() -> dict:
     result04.calcPointsC()
 
     # évènements ponctuels
-    result04.crash("c",tx3_matt)
+    result04.crash("c",alexgt500)
     result04.crash("c",rp1_virlix)
     result04.crash("c",aft_lowky)
 
@@ -390,7 +390,7 @@ def getPointsD2() -> dict:
         ert_batxone,
         vrt_tribion,
         mvt_thomas,
-        tx3_matt, # remplacé par PuR NyGraal
+        alexgt500, # remplacé par PuR NyGraal
         xrt_baka,
         aft_lowky,
         pur_vincent, # remplacé par Soo Skyzzz
@@ -411,7 +411,7 @@ def getPointsD2() -> dict:
 
     course05 = [
         mvt_thomas,
-        tx3_matt,
+        alexgt500,
         raavenbzh,
         aft_lowky,
         legion_tomoe,
@@ -482,7 +482,7 @@ def getPointsD2() -> dict:
         benbdby, # remplacé par AlexGT500 GAME
         xrt_darkfly,
         xrt_nico2a, # remplacé par Eroziah SPL
-        tx3_matt,
+        alexgt500,
         o2_oxygen,
         pur_vincent, # remplacé par RP1 Vara
         ert_batxone,
@@ -513,7 +513,7 @@ def getPointsD2() -> dict:
         xrt_baka,
         vrt_tribion,
         pur_racing,
-        tx3_matt
+        alexgt500
     ]
 
     # classements
@@ -526,7 +526,7 @@ def getPointsD2() -> dict:
     # evenements ponctuels
     result06.crash("q", ert_batxone)
 
-    result06.crash("c", tx3_matt)
+    result06.crash("c", alexgt500)
     result06.crash("c", pur_racing)
     result06.crash("c", vrt_tribion)
     result06.crash("c", xrt_baka)
@@ -558,7 +558,7 @@ def getPointsD2() -> dict:
         mvt_thomas,
         o2_oxygen,
         fct_deadpool, # remplacé par SHZ Ewan,
-        tx3_matt, # remplacé par AlexGT500 GAME
+        alexgt500, # remplacé par AlexGT500 GAME
         vrt_tribion,
         ert_batxone,
         raavenbzh,
@@ -585,7 +585,7 @@ def getPointsD2() -> dict:
         o2_oxygen,
         aft_lowky,
         fct_deadpool,
-        tx3_matt,
+        alexgt500,
         xrt_nico2a,
         xrt_darkfly,
         fct_coco,

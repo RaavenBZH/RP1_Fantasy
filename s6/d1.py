@@ -548,7 +548,7 @@ def getPointsD1() -> dict:
     qualif07 = [
         fct_theo,
         rp1_winterr,
-        fct_adam, # remplacé par BatXOne
+        fct_adam, # remplacé par ERT BatXOne
         ert_niloboo,
         rp1_okwaru,
         rp1_montoya,

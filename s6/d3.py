@@ -45,7 +45,7 @@ def getPointsD3() -> dict:
     ert_aurelius = Pilote("ERT Aurelius", "Williams")
     ert_matfax = Pilote("ERT Matfax", "Williams")
 
-    alexgt500 = Pilote("AlexGT500", "Haas")
+    haas_d3_01 = Pilote("Haas D3 01", "Haas")
     ert_toon = Pilote("ERT Toon", "Haas") 
 
     ###################################################################################################
@@ -64,7 +64,7 @@ def getPointsD3() -> dict:
         pur_marth, # remplacé par LTR Coach
         pur_nygraal,
         ert_aurelius,
-        alexgt500,
+        haas_d3_01,
         chr_olivz, # remplacé par Yozana
         ert_toon, # remplacé par QRL Blanco
         ert_mirage, # remplacé par Pur Ultraaa
@@ -85,7 +85,7 @@ def getPointsD3() -> dict:
         ert_mirage,
         soo_skyzzz,
         chr_olivz,
-        alexgt500,
+        haas_d3_01,
         ert_aurelius,
         ecs_finesse,
         rp1_gachette,
@@ -147,7 +147,7 @@ def getPointsD3() -> dict:
         ducpascharlie,
         knacki_ball,
         chr_olivz, # remplacé par Yozana
-        alexgt500,
+        haas_d3_01,
         ert_matfax,
         sks_flyart,
         ecs_finesse,
@@ -179,7 +179,7 @@ def getPointsD3() -> dict:
         eroziah_spl,
         ducpascharlie,
         soo_skyzzz,
-        alexgt500,
+        haas_d3_01,
         knacki_ball,
         if1_supr3me
     ]
@@ -196,7 +196,7 @@ def getPointsD3() -> dict:
 
     result02.crash("c", if1_supr3me)
     result02.crash("c", knacki_ball)
-    result02.crash("c", alexgt500)
+    result02.crash("c", haas_d3_01)
     result02.crash("c", soo_skyzzz)
     result02.crash("c", ducpascharlie)
     result02.crash("c", eroziah_spl,)
@@ -226,7 +226,7 @@ def getPointsD3() -> dict:
 
     qualif03 = [
         pur_nygraal,
-        alexgt500,
+        haas_d3_01,
         ert_aurelius,
         ert_toon,
         if1_supr3me,
@@ -251,7 +251,7 @@ def getPointsD3() -> dict:
         ert_aurelius,
         ert_toon,
         pur_nygraal,
-        alexgt500,
+        haas_d3_01,
         ecs_finesse,
         non4me_cami,
         ert_mirage,
@@ -307,7 +307,7 @@ def getPointsD3() -> dict:
     result04 = GrandPrix("EtatsUnis")
 
     qualif04 = [
-        alexgt500,
+        haas_d3_01,
         rp1_gachette,
         ert_aurelius,
         non4me_geckozz, # rempalcé par Non4meGeckoz
@@ -330,7 +330,7 @@ def getPointsD3() -> dict:
     ]
 
     course04 = [
-        alexgt500,
+        haas_d3_01,
         ert_aurelius,
         ert_matfax,
         rp1_gachette,
@@ -400,7 +400,7 @@ def getPointsD3() -> dict:
         non4me_cami,
         if1_supr3me,
         sks_flyart, # remplacé par LDL ZePro
-        alexgt500,
+        haas_d3_01,
         ducpascharlie,
         ecs_finesse,
         ert_mirage, # remplacé par PuR Ultraaa
@@ -417,7 +417,7 @@ def getPointsD3() -> dict:
     course05 = [
         knacki_ball,
         soo_skyzzz,
-        alexgt500,
+        haas_d3_01,
         ert_matfax,
         ert_aurelius,
         chr_olivz,
@@ -482,7 +482,7 @@ def getPointsD3() -> dict:
         pur_nygraal,
         soo_skyzzz,
         ert_matfax,
-        alexgt500,
+        haas_d3_01,
         ert_aurelius,
         eroziah_spl,
         ecs_finesse,
@@ -510,7 +510,7 @@ def getPointsD3() -> dict:
         non4me_cami,
         ecs_finesse,
         ducpascharlie,
-        alexgt500,
+        haas_d3_01,
         chr_olivz,
         rp1_fifi,
         sks_flyart,
@@ -572,7 +572,7 @@ def getPointsD3() -> dict:
     qualif07 = [
         soo_skyzzz,
         pur_nygraal,
-        alexgt500,
+        haas_d3_01,
         ert_aurelius,
         ecs_finesse,
         if1_supr3me,
@@ -608,7 +608,7 @@ def getPointsD3() -> dict:
         eroziah_spl,
         rp1_fifi,
         knacki_ball,
-        alexgt500,
+        haas_d3_01,
         ert_mirage,
         ert_toon, # remplacé par LDL Shermy
         pur_marth,
@@ -634,7 +634,7 @@ def getPointsD3() -> dict:
     result07.crash("c", pur_marth)
     result07.crash("c", ert_toon)
     result07.crash("c", ert_mirage)
-    result07.crash("c", alexgt500)
+    result07.crash("c", haas_d3_01)
     result07.crash("c", knacki_ball)
     result07.crash("c", rp1_fifi)
     result07.crash("c", eroziah_spl)
