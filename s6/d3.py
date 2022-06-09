@@ -646,14 +646,16 @@ def getPointsD3() -> dict:
     # final
     pt07 = result07.getPoints()
 
-    """
+    
     print(sortedDict(result07.getPoints()))
 
     for i in result07.getCourse():
         print(i.getGamertag(), i.getHistorique())
     
     """
+    """
 
+    print(pt07)
     # Ideal :
 
     result07.resetHist()
