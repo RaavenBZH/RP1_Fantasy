@@ -1,4 +1,3 @@
-from unittest import expectedFailure
 from packageF1.Pilote import *
 
 class GrandPrix:

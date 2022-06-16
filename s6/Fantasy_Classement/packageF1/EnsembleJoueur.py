@@ -5,7 +5,7 @@ class EnsembleJoueur():
     Cette classe regroupe tous les participants au jeu.
 
     Attributs :
-        - __listeJoueurs (list<Joueur>) -> None : liste des participants.
+        - __listeJoueurs (list<Joueur>) : liste des participants.
 
     Méthodes :
         - __init__(str) -> None : construit les objets <EnsembleJoueur>.
