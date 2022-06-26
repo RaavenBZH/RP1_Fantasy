@@ -745,6 +745,88 @@ def getPointsD3() -> dict:
     result08.resetHist()
 
     ###################################################################################################
+    # Course 9
+
+    result09 = GrandPrix("Barhein")
+
+    qualif09 = [
+        pur_nygraal,
+        non4me_geckozz,
+        soo_skyzzz,
+        rp1_gachette,
+        non4me_sanzz,
+        ldl_shermy,
+        ecs_finesse,
+        ert_aurelius,
+        ert_mirage,
+        chr_olivz,
+        ert_matfax,
+        vmlf_zer,
+        sks_flyart,
+        non4me_cami,
+        knacki_ball,
+        if1_supr3me,
+        rp1_fifi,
+        eroziah_spl,
+        pur_marth,
+        mcr_papyx
+    ]
+
+    course09 = [
+        pur_nygraal,
+        non4me_geckozz,
+        soo_skyzzz,
+        ert_matfax,
+        vmlf_zer,
+        if1_supr3me,
+        rp1_gachette,
+        ecs_finesse,
+        pur_marth, # remplacé par LTR Coach
+        ert_aurelius,
+        rp1_fifi,
+        mcr_papyx,
+        ldl_shermy, # remplacé par Non4me Stuno
+        non4me_cami,
+        ert_mirage,
+        eroziah_spl,
+        chr_olivz,
+        non4me_sanzz, # remplacé par XRT Alpha
+        knacki_ball,
+        sks_flyart
+    ]
+
+    # classements
+    result09.resultat("q", qualif09)
+    result09.resultat("c", course09)
+
+    result09.calcPointsQ()
+    result09.calcPointsC()
+
+    # evenements ponctuels
+    result09.crash("c", mcr_papyx)
+
+    result09.crash("c", sks_flyart)
+    result09.crash("c", knacki_ball)
+    result09.crash("c", non4me_sanzz)
+    result09.crash("c", chr_olivz)
+
+    result09.meilleurTour(non4me_sanzz)
+
+    # final
+    pt09 = result09.getPoints()
+
+    """
+    print(sortedDict(result09.getPoints()))
+    
+    for i in result09.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result09.resetHist()
+
+    ###################################################################################################
     
     final = sumDict(pt01, pt02)
     final = sumDict(final, pt03)
@@ -753,7 +835,8 @@ def getPointsD3() -> dict:
     final = sumDict(final, pt06)
     final = sumDict(final, pt07)
     final = sumDict(final, pt08)
+    final = sumDict(final, pt09)
     
-    # print(final)
+    # print(sortedDict(final))
 
     return final

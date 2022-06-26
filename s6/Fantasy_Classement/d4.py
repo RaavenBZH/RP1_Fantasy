@@ -705,6 +705,84 @@ def getPointsD4() -> dict:
 
     result08.resetHist()
 
+    ###################################################################################################
+    # Course 9
+
+    result09 = GrandPrix("Barhein")
+
+    qualif09 = [
+        x7pk_karanox,
+        ert_ricky,
+        rp1_ice, # remplacé par iF1 Bikette
+        non4me_pagaa,
+        yozana,
+        ltr_coach,
+        non4me_jordy,
+        ert_redevils,
+        rp1_durtom,
+        rp1_lito,
+        ert_tiiste,
+        ert_iquazz,
+        rp1_owain,
+        non4me_livai,
+        xrt_alpha,
+        pur_ultraaa,
+        jancker21,
+        tx3_soap,
+        is_honoka,
+        rp1_fifou
+    ]
+
+    course09 = [
+        x7pk_karanox,
+        ert_iquazz,
+        non4me_livai,
+        yozana,
+        rp1_owain,
+        non4me_pagaa,
+        ert_ricky,
+        ert_redevils,
+        xrt_alpha,
+        rp1_durtom,
+        ert_tiiste,
+        rp1_ice,
+        is_honoka,
+        tx3_soap,
+        non4me_jordy,
+        rp1_fifou,
+        ltr_coach,
+        pur_ultraaa,
+        jancker21,
+        rp1_lito
+    ]
+
+    # classements
+    result09.resultat("q", qualif09)
+    result09.resultat("c", course09)
+
+    result09.calcPointsQ()
+    result09.calcPointsC()
+
+    # evenements ponctuels
+    result09.crash("c", jancker21)
+    result09.crash("c", rp1_lito)
+
+    result09.meilleurTour(ltr_coach)
+
+    # final
+    pt09 = result09.getPoints()
+
+    """
+    print(sortedDict(result09.getPoints()))
+
+    for i in result09.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result09.resetHist()
+
     ###############################################################################################
 
     final = sumDict(pt01, pt02)
@@ -714,7 +792,8 @@ def getPointsD4() -> dict:
     final = sumDict(final, pt06)
     final = sumDict(final, pt07)
     final = sumDict(final, pt08)
+    final = sumDict(final, pt09)
     
-    # print(final)
+    # print(sortedDict(final))
 
     return final

@@ -539,7 +539,7 @@ def getPointsD1() -> dict:
 
     result06.resetHist()
 
-    ###################################################################################################
+    ################################################################################################## #
     # Course 7
 
     result07 = GrandPrix("Bresil")
@@ -702,6 +702,91 @@ def getPointsD1() -> dict:
 
     result08.resetHist()
 
+    ###################################################################################################
+    # Course 9
+
+    result09 = GrandPrix("Barhein")
+
+    qualif09 = [
+        fct_theo,
+        ert_niloboo,
+        rp1_winterr,
+        mclaren_d1_02,
+        rp1_okwaru,
+        pur_voltha,
+        pur_varane,
+        ldl_oli,
+        vinboy,
+        ripply_spl,
+        shz_noctis, # remplacé par O2 Oxygen
+        rp1_chadoo, # remplacé par Lowky
+        ldl_saumon,
+        pur_rosberg,
+        xrt_arthur,
+        mcr_jayrko,
+        mcr_path,
+        haas_d1_01, # remplacé par Pur Vincent
+        haas_d1_02, # remplacé par XRT Darkfly
+        fct_adam
+    ]
+
+    course09 = [
+        ert_niloboo,
+        fct_theo,
+        rp1_winterr,
+        rp1_okwaru,
+        ldl_oli,
+        vinboy,
+        pur_rosberg,
+        rp1_chadoo,
+        xrt_arthur,
+        mcr_jayrko,
+        haas_d1_01,
+        shz_noctis,
+        ldl_saumon,
+        fct_adam,
+        mclaren_d1_02,
+        pur_varane,
+        ripply_spl,
+        pur_voltha,
+        haas_d1_02,
+        mcr_path
+    ]
+
+    # classements
+    result09.resultat("q", qualif09)
+    result09.resultat("c", course09)
+
+    result09.calcPointsQ()
+    result09.calcPointsC()
+
+    # evenements ponctuels
+    result09.crash("q", mcr_path)
+    result09.crash("q", ripply_spl)
+
+    result09.crash("c", mclaren_d1_02)
+    result09.crash("c", pur_varane)
+    result09.crash("c", ripply_spl)
+    result09.crash("c", pur_voltha)
+    result09.crash("c", haas_d1_02)
+    result09.crash("c", mcr_path)
+
+    result09.meilleurTour(fct_adam)
+
+    # final
+    pt09 = result09.getPoints()
+
+    """
+    print(sortedDict(result09.getPoints()))
+
+    for i in result09.getCourse():
+        print(i.getGamertag(), i.getHistorique())
+    """
+
+    # Ideal :
+
+    result09.resetHist()
+
     ###############################################################################################
     
     final = sumDict(pt01, pt02)
@@ -711,6 +796,7 @@ def getPointsD1() -> dict:
     final = sumDict(final, pt06)
     final = sumDict(final, pt07)
     final = sumDict(final, pt08)
+    final = sumDict(final, pt09)
     
     # print(final)
 
