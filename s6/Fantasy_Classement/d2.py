@@ -757,13 +757,13 @@ def getPointsD2() -> dict:
         legion_tomoe,
         haas_d2_02,
         xrt_nico2a,
-        ert_batxone,
         pur_racing,
         mcr_skriniar,
         vrt_tribion,
         rp1_virlix,
         fct_coco,
-        benbdby
+        benbdby,
+        ert_batxone
     ]
 
     # classements
@@ -774,6 +774,7 @@ def getPointsD2() -> dict:
     result09.calcPointsC()
 
     # evenements ponctuels
+    result09.crash("c", ert_batxone)
     result09.crash("c", benbdby)
     result09.crash("c", fct_coco)
     result09.crash("c", rp1_virlix)
