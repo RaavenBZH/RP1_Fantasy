@@ -3,8 +3,6 @@ from d2 import *
 from d3 import *
 from d4 import *
 
-generateRound(9, "Barhein")
-
 ### Récupération des points des 4 divisons ########################################################
 
 d1, d2, d3, d4 = {}, {}, {}, {}
