@@ -739,10 +739,10 @@ def getPointsD1() -> dict:
         vinboy,
         pur_rosberg,
         rp1_chadoo,
-        xrt_arthur,
-        mcr_jayrko,
-        haas_d1_01,
         shz_noctis,
+        xrt_arthur,
+        haas_d1_01,
+        mcr_jayrko,
         ldl_saumon,
         fct_adam,
         mclaren_d1_02,
@@ -798,6 +798,6 @@ def getPointsD1() -> dict:
     final = sumDict(final, pt08)
     final = sumDict(final, pt09)
     
-    # print(final)
+    print(sortedDict(final))
 
     return final
