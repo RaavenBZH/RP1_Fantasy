@@ -121,12 +121,12 @@ def getPointsD1() -> dict:
     
     """
     print(sortedDict(result01.getPoints()))
-
+    """
+    
+    print(result01.getCircuit())
     for i in result01.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
-
-    # Ideal : FcT Theo, LDL Oli, PuR Rosberg
+    
 
     result01.resetHist()
 
@@ -204,12 +204,11 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result02.getPoints()))
-    
+    """    
+    print(result02.getCircuit())
     for i in result02.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
 
-    # Ideal : RP1 Winterr, SHZ Noctis, TX3 Enzo
 
     result02.resetHist()
 
@@ -286,12 +285,11 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result03.getPoints()))
-    
+    """    
+    print(result03.getCircuit())
     for i in result03.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
-    
-    # Ideal : 
+
 
     result03.resetHist()
 
@@ -368,12 +366,11 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result04.getPoints()))
-
+    """
+    print(result04.getCircuit())
     for i in result04.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
 
-    # Ideal :
 
     result04.resetHist()
 
@@ -449,12 +446,12 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result05.getPoints()))
-
+    """
+    
+    print(result05.getCircuit())
     for i in result05.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
 
-    # Ideal :
 
     result05.resetHist()
 
@@ -530,12 +527,12 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result06.getPoints()))
-
+    """
+    
+    print(result06.getCircuit())
     for i in result06.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
 
-    # Ideal :
 
     result06.resetHist()
 
@@ -609,12 +606,11 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result07.getPoints()))
-
+    """
+    print(result07.getCircuit())
     for i in result07.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
 
-    # Ideal :
 
     result07.resetHist()
 
@@ -693,12 +689,11 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result08.getPoints()))
-
+    """
+    print(result08.getCircuit())
     for i in result08.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
 
-    # Ideal :
 
     result08.resetHist()
 
@@ -778,12 +773,11 @@ def getPointsD1() -> dict:
 
     """
     print(sortedDict(result09.getPoints()))
-
+    """
+    print(result09.getCircuit())
     for i in result09.getCourse():
         print(i.getGamertag(), i.getHistorique())
-    """
 
-    # Ideal :
 
     result09.resetHist()
 
