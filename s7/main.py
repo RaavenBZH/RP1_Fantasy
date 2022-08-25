@@ -27,28 +27,39 @@ for i in range(len(joueurs)):
 
 # Programme principal #############################################################################
 
-A = Pilote("A", "Mercedes")
-B = Pilote("B", "RedBull")
-C = Pilote("C", "Ferrari")
-D = Pilote("D", "McLaren")
-E = Pilote("E", "Alpine")
-F = Pilote("F", "AlphaTauri")
-G = Pilote("G", "AstonMartin")
-H = Pilote("H", "Williams")
-I = Pilote("I", "AlfaRomeo")
-J = Pilote("J", "Haas")
-K = Pilote("K", "Mercedes")
-L = Pilote("L", "RedBull")
-M = Pilote("M", "Ferrari")
-N = Pilote("N", "McLaren")
-O = Pilote("O", "Alpine")
-P = Pilote("P", "AlphaTauri")
-Q = Pilote("Q", "AstonMartin")
-R = Pilote("R", "Williams")
-S = Pilote("S", "AlfaRomeo")
-T = Pilote("T", "Haas")
+Mercedes = Ecurie("Mercedes")
+RedBull = Ecurie("RedBull")
+Ferrari = Ecurie("Ferrari")
+McLaren = Ecurie("McLaren")
+Alpine = Ecurie("Alpine")
+AlphaTauri = Ecurie("AlphaTauri")
+AstonMartin = Ecurie("AstonMartin")
+Williams = Ecurie("Williams")
+AlfaRomeo = Ecurie("AlfaRomeo")
+Haas = Ecurie("Haas")
 
-c01 = GrandPrix("Australie")
+A = Pilote("A", Mercedes)
+B = Pilote("B", RedBull)
+C = Pilote("C", Ferrari)
+D = Pilote("D", McLaren)
+E = Pilote("E", Alpine)
+F = Pilote("F", AlphaTauri)
+G = Pilote("G", AstonMartin)
+H = Pilote("H", Williams)
+I = Pilote("I", AlfaRomeo)
+J = Pilote("J", Haas)
+K = Pilote("K", Mercedes)
+L = Pilote("L", RedBull)
+M = Pilote("M", Ferrari)
+N = Pilote("N", McLaren)
+O = Pilote("O", Alpine)
+P = Pilote("P", AlphaTauri)
+Q = Pilote("Q", AstonMartin)
+R = Pilote("R", Williams)
+S = Pilote("S", AlfaRomeo)
+T = Pilote("T", Haas)
+
+c01 = GrandPrix("Australie", sprint = True)
 
 q = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T]
 s = [E, N, P, S, F, L, B, H, G, J, D, Q, M, A, T, I, K, O, R, C]
@@ -60,10 +71,10 @@ c01.setQualification(q)
 c01.setSprint(s)
 c01.setCourse(c)
 
+c01.calcul()
 print(c01.getPoints())
 
-c01.calcul()
-
-resultat = c01.getPoints()
-print(sortedDict(resultat))
-c01.historique()
+"""
+for i in q:
+    print(i.getGamertag(), i.getHistorique(), sum([x[1] for x in i.getHistorique()]))
+"""

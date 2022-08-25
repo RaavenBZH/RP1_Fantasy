@@ -1,4 +1,5 @@
-from packageF1.Stats import *
+from packageF1.StatsPilote import *
+from packageF1.Ecurie import *
 
 class Pilote:
     '''
@@ -6,14 +7,14 @@ class Pilote:
 
     Attributs :
         - __gamertag (str) : le gamertag du pilote.
-        - __ecurie (str) : l'écurie du pilote.
-        - __donnees (Stats) : les statistiques du pilote.
+        - __ecurie (Ecurie) : l'écurie du pilote.
+        - __donnees (StatsPilote) : les statistiques du pilote.
         - __historique (list) : l'historique des résultats du pilote.
 
     Méthodes :
         - getGamertag() -> str : récupère le gamertag.
-        - getEcurie() -> str : récupère l'écurie.
-        - getDonnees() -> Stats : récupère les statistiques.
+        - getEcurie() -> Ecurie : récupère l'écurie.
+        - getDonnees() -> StatsPilote : récupère les statistiques.
         - getHistorique() -> list : récupère l'historique des résultats.        
         - setGamertag(gamertag : str) -> None : modifie le gamertag.
         - setEcurie(ecurie : str) -> None : modifie l'écurie.
@@ -25,29 +26,22 @@ class Pilote:
 
     # INITIALISATION
 
-    def __init__(self, gamertag : str, ecurie : str) -> None:
+    def __init__(self, gamertag : str, ecurie : Ecurie) -> None:
 
-        self.__gamertag = None
-        self.__ecurie = None
-        self.__donnees = Stats()
+        self.__gamertag = gamertag
+        self.__ecurie = ecurie
+        self.__donnees = StatsPilote()
         self.__historique = []
-        
-        listeEcuries = ["Mercedes", "RedBull", "Ferrari", "McLaren", "Alpine", "AlphaTauri", "AstonMartin", "Williams", "AlfaRomeo", "Haas", None]
-        if ecurie in listeEcuries:
-            self.__gamertag = gamertag
-            self.__ecurie = ecurie
-        else:
-            print("Pilote.Erreur : écurie invalide.")
 
     # GETTERS & SETTERS
 
     def getGamertag(self) -> str:
         return self.__gamertag
 
-    def getEcurie(self) -> str: 
+    def getEcurie(self) -> Ecurie: 
         return self.__ecurie
 
-    def getDonnees(self) -> Stats:
+    def getDonnees(self) -> StatsPilote:
         return self.__donnees
 
     def getHistorique(self) -> list:
@@ -56,12 +50,8 @@ class Pilote:
     def setGamertag(self, gamertag : str) -> None:
         self.__gamertag = gamertag
 
-    def setEcurie(self, ecurie : str) -> None:
-        listeEcuries = ["Mercedes", "RedBull", "Ferrari", "McLaren", "Alpine", "AlphaTauri", "AstonMartin", "Williams", "AlfaRomeo", "Haas", None]
-        if ecurie in listeEcuries:
-            self.__ecurie = ecurie
-        else:
-            print("Pilote.setEcurie.Erreur : paramètre invalide.")
+    def setEcurie(self, ecurie : Ecurie) -> None:
+        self.__ecurie = ecurie
 
     def setHistorique(self, historique : list) -> None:
         self.__historique = historique
@@ -69,7 +59,7 @@ class Pilote:
     # METHODES
 
     def __str__(self) -> str:
-        return self.__gamertag + " (" + self.__ecurie + ")"
+        return self.__gamertag + " (" + self.__ecurie.getNom() + ") :\n" + str(self.__donnees.stats())
 
     def ajoutHistorique(self, desc : tuple) -> None:
         self.__historique.append(desc)
