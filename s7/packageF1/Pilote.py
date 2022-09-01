@@ -17,11 +17,12 @@ class Pilote:
         - getDonnees() -> StatsPilote : récupère les statistiques.
         - getHistorique() -> list : récupère l'historique des résultats.        
         - setGamertag(gamertag : str) -> None : modifie le gamertag.
-        - setEcurie(ecurie : str) -> None : modifie l'écurie.
+        - setEcurie(ecurie : Ecurie) -> None : modifie l'écurie.
         - setHistorique(historique : list) -> None : modifie l'historique des résultats.
-        - __str__() -> str : renvoie le gamertag et l'écurie.
+        - __str__() -> str : renvoie le gamertag, l'écurie et les statistiques du pilote.
         - ajoutHistorique(desc : tuple) -> None : ajoute un résultat à l'historique.
         - retireHistorique(desc : tuple) -> None : retire un résultat de l'historique.
+        - resetHistorique() -> None : réinitialise l'historique.
     ''' 
 
     # INITIALISATION
@@ -69,3 +70,6 @@ class Pilote:
             if i == desc:
                 self.__historique.remove(i)
                 break
+
+    def resetHistorique(self) -> None:
+        self.__historique = []

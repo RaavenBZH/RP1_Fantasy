@@ -33,7 +33,8 @@ class GrandPrix:
         - __checkCorrelation() -> bool : vérifie que les sessions sont bien liées.
         - calcul(absentsQualif : int, absentsSprint : int, abandonsSprint : int, abandonsCourse : int) -> None : calcule les points.
         - historique() -> None : affiche l'historique des points.
-        - resetHistorique() -> None : réinitialise l'historique des pilotes.
+        - __resetHistorique() -> None : réinitialise l'historique des pilotes.
+        - __statsPilotes(absentsQualif : int, absentsSprint : int, abandonsSprint : int, abandonsCourse : int) -> None : enregistre les statistiques du grand prix.
     ''' 
 
     # INITIALISATION
@@ -151,20 +152,47 @@ class GrandPrix:
     
     def __checkCorrelation(self) -> bool:
 
+        check = True
+
         if self.__estSprint:
             if self.__qualif == None or self.__sprint == None or self.__course == None:
-                return False
+                check = False
             else:
-                return len(self.__qualif) == len(self.__sprint) == len(self.__course) == 20
+                check = (len(self.__qualif) == len(self.__sprint) == len(self.__course) == 20)
 
         else:
             if self.__qualif == None or self.__course == None:
-                return False
+                check = False
             else:
-                return len(self.__qualif) == len(self.__course) == 20
+                check = (len(self.__qualif) == len(self.__course) == 20)
+
+        if check == False:
+            return check
+
+        tab = []
+        for i in self.__qualif:
+            tab.append(i.getEcurie())
+        if 2*len(set(tab)) == len(tab):
+            check = True
+
+        tab = []
+        for i in self.__sprint:
+            tab.append(i.getEcurie())
+        if 2*len(set(tab)) == len(tab):
+            check = True
+
+        tab = []
+        for i in self.__course:
+            tab.append(i.getEcurie())
+        if 2*len(set(tab)) == len(tab):
+            check = True
+
+        return check      
 
     def calcul(self, absentsQualif = 0, absentsSprint = 0, abandonsSprint = 0, absentsCourse = 0, abandonsCourse = 0) -> None:
         if self.__checkCorrelation():
+
+            self.__resetHistorique()
 
             # Calcul des points pour la qualification
 
@@ -237,7 +265,7 @@ class GrandPrix:
                             bonus = 1
                             desc = ("Course terminee (S)", bonus)
 
-                        if i >= len(self.__qualif)-absentsSprint-abandonsSprint:
+                        if i >= len(self.__sprint)-absentsSprint-abandonsSprint:
                             bonus = 0
                             desc = ("DNF (S)", 0)
 
@@ -342,7 +370,8 @@ class GrandPrix:
             ##############################################################
 
             # Statistiques
-            # self.__stats(absentsQualif, absentsSprint)
+            self.__statsPilotes(absentsQualif, absentsSprint, abandonsSprint, absentsCourse, abandonsCourse)
+            self.__statsEcuries()
 
         else:
             print("GrandPrix.calcul.Erreur : les sessions ne sont pas correctes.")
@@ -351,26 +380,114 @@ class GrandPrix:
         for i in self.__qualif:
             print(i.getGamertag() + " : " + str(i.getHistorique()))
 
-    def resetHistorique(self) -> None:
+    def __resetHistorique(self) -> None:
         for i in self.__dico:
             i.resetHistorique()
 
-    def __stats(self, absentsQualif, absentsSprint):
-        for i in range(len(self.__qualif)):
-            if i > (len(self.__qualif) - absentsQualif):
-                self.__qualif[i].getDonnees().addQualif(tuple(None, i+1))
-            else:
-                self.__qualif[i].getDonnees().addQualif(i+1)
+    def __statsPilotes(self, absentsQualif, absentsSprint, abandonsSprint, absentsCourse, abandonsCourse) -> None:
 
+        # Qualifications
+        for i in range(len(self.__qualif)):
+            pilote = self.__qualif[i]
+            position = i + 1
+            if i < len(self.__qualif)-absentsQualif:
+                resultat = (position, position)
+            else:
+                resultat = (False, position)
+            pilote.getDonnees().addQualif(resultat)
+
+        # Sprint
         if self.__estSprint:
             for i in range(len(self.__sprint)):
-                if i > (len(self.__sprint) - absentsSprint):
-                    self.__sprint[i].getDonnees().addSprint(tuple(None, i+1))
+                pilote = self.__sprint[i]
+                position = i + 1
+                if i < len(self.__sprint)-absentsSprint:
+                    # Abandon
+                    if i >= len(self.__sprint)-absentsSprint-abandonsSprint:
+                        resultat = (True, position)
+                    # Pas abandon
+                    else:
+                        resultat = (position, position)
+                # Absent
                 else:
-                    self.__sprint[i].getDonnees().addSprint(i+1)
+                    resultat = (False, position)
+                pilote.getDonnees().addSprint(resultat)    
         else:
-            for i in range(len(self.__course)):
-                self.__course[i].getDonnees().addSprint(None)
+            for i in range(len(self.__sprint)):
+                pilote = self.__sprint[i]
+                pilote.getDonnees().addSprint(resultat)
 
+        # Course
         for i in range(len(self.__course)):
-            self.__course[i].getDonnees().addCourse(i+1)
+            pilote = self.__course[i]
+            position = i + 1
+            if i < len(self.__course)-absentsCourse:
+                # Abandon
+                if i >= len(self.__course)-absentsCourse-abandonsCourse:
+                    resultat = (True, position)
+                # Pas abandon
+                else:
+                    resultat = (position, position)
+            # Absent
+            else:
+                resultat = (False, position)
+            pilote.getDonnees().addCourse(resultat)
+
+    def __statsEcuries(self) -> None:
+
+        # Qualifications
+        for pilote in self.__qualif:
+            ecurie = pilote.getEcurie()
+            resultat = ecurie.getResultat()
+
+            if len(resultat) < 1:
+                resultat.append(pilote.getDonnees().getQualif()[-1])
+                pilote.getDonnees().vsCoequipier(True, "q")
+                ecurie.setResultat(resultat)
+            
+            elif len(resultat) < 2:
+                resultat.append(pilote.getDonnees().getQualif()[-1])
+                pilote.getDonnees().vsCoequipier(False, "q")
+                ecurie.getDonnees().addQualif(resultat)
+                ecurie.setResultat([])
+
+            else:
+                print("Erreur")
+
+        # Sprint
+        for pilote in self.__sprint:
+            ecurie = pilote.getEcurie()
+            resultat = ecurie.getResultat()
+
+            if len(resultat) < 1:
+                resultat.append(pilote.getDonnees().getSprint()[-1])
+                pilote.getDonnees().vsCoequipier(True, "s")
+                ecurie.setResultat(resultat)
+            
+            elif len(resultat) < 2:
+                resultat.append(pilote.getDonnees().getSprint()[-1])
+                pilote.getDonnees().vsCoequipier(False, "s")
+                ecurie.getDonnees().addSprint(resultat)
+                ecurie.setResultat([])
+
+            else:
+                print("Erreur")
+
+        # Course
+        for pilote in self.__course:
+            ecurie = pilote.getEcurie()
+            resultat = ecurie.getResultat()
+
+            if len(resultat) < 1:
+                resultat.append(pilote.getDonnees().getCourse()[-1])
+                pilote.getDonnees().vsCoequipier(True, "c")
+                ecurie.setResultat(resultat)
+            
+            elif len(resultat) < 2:
+                resultat.append(pilote.getDonnees().getCourse()[-1])
+                pilote.getDonnees().vsCoequipier(False, "c")
+                ecurie.getDonnees().addCourse(resultat)
+                ecurie.setResultat([])
+
+            else:
+                print("Erreur")

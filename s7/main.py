@@ -71,10 +71,4 @@ c01.setQualification(q)
 c01.setSprint(s)
 c01.setCourse(c)
 
-c01.calcul()
-print(c01.getPoints())
-
-"""
-for i in q:
-    print(i.getGamertag(), i.getHistorique(), sum([x[1] for x in i.getHistorique()]))
-"""
+c01.calcul(absentsQualif=3, absentsSprint=3, abandonsSprint=2, absentsCourse=3, abandonsCourse=1)

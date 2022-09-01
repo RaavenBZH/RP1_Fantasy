@@ -12,6 +12,7 @@ class Ecurie:
         else:
             self.__nom = nom
             self.__donnees = StatsEcurie()
+            self.__resultat = []
 
     # GETTERS & SETTERS
 
@@ -20,3 +21,12 @@ class Ecurie:
 
     def getDonnees(self) -> StatsEcurie:
         return self.__donnees
+
+    def getResultat(self) -> list:
+        return self.__resultat
+
+    def setNom(self, nom) -> None:
+        self.__nom = nom
+
+    def setResultat(self, resultat) -> None:
+        self.__resultat = resultat
