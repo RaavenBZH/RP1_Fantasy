@@ -72,3 +72,20 @@ c01.setSprint(s)
 c01.setCourse(c)
 
 c01.calcul(absentsQualif=3, absentsSprint=3, abandonsSprint=2, absentsCourse=3, abandonsCourse=1)
+
+"""
+print(T.getDonnees())
+print(K.getDonnees())
+print(O.getDonnees())
+"""
+
+print(Mercedes.getDonnees().stats())
+print(RedBull.getDonnees().stats())
+print(Ferrari.getDonnees().stats())
+print(McLaren.getDonnees().stats())
+print(Alpine.getDonnees().stats())
+print(AlphaTauri.getDonnees().stats())
+print(AstonMartin.getDonnees().stats())
+print(Williams.getDonnees().stats())
+print(AlfaRomeo.getDonnees().stats())
+print(Haas.getDonnees().stats())

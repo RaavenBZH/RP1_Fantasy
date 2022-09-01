@@ -415,7 +415,7 @@ class GrandPrix:
         else:
             for i in range(len(self.__sprint)):
                 pilote = self.__sprint[i]
-                pilote.getDonnees().addSprint(resultat)
+                pilote.getDonnees().addSprint((False, False))
 
         # Course
         for i in range(len(self.__course)):

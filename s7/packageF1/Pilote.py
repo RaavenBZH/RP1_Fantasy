@@ -31,7 +31,7 @@ class Pilote:
 
         self.__gamertag = gamertag
         self.__ecurie = ecurie
-        self.__donnees = StatsPilote()
+        self.__donnees = StatsPilote(gamertag)
         self.__historique = []
 
     # GETTERS & SETTERS

@@ -19,8 +19,9 @@ class StatsPilote:
 
     # INITIALISATION
 
-    def __init__(self) -> None:
+    def __init__(self, nom) -> None:
 
+        self.__nom = nom
         self.__qualif = []
         self.__coeqBattuQ = 0
         self.__sprint = []
@@ -51,7 +52,7 @@ class StatsPilote:
     # METHODES
 
     def __str__(self) -> str:
-        return str(self.__qualif) + "\n" + str(self.__sprint) + "\n" + str(self.__course) + "\n" + str(self.__coeqBattuQ) + "\n" + str(self.__coeqBattuS) + "\n" + str(self.__coeqBattuC)
+        return str(self.__qualif) + "\n" + str(self.__sprint) + "\n" + str(self.__course)
 
     def vsCoequipier(self, battu, session) -> None:
         bonus = 1

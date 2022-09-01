@@ -11,7 +11,7 @@ class Ecurie:
             print("Ecurie.Erreur : écurie invalide.")
         else:
             self.__nom = nom
-            self.__donnees = StatsEcurie()
+            self.__donnees = StatsEcurie(nom)
             self.__resultat = []
 
     # GETTERS & SETTERS
