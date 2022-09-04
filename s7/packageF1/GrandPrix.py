@@ -442,12 +442,11 @@ class GrandPrix:
 
             if len(resultat) < 1:
                 resultat.append(pilote.getDonnees().getQualif()[-1])
-                pilote.getDonnees().vsCoequipier(True, "q")
+                pilote.getDonnees().vsCoequipier("q")
                 ecurie.setResultat(resultat)
             
             elif len(resultat) < 2:
                 resultat.append(pilote.getDonnees().getQualif()[-1])
-                pilote.getDonnees().vsCoequipier(False, "q")
                 ecurie.getDonnees().addQualif(resultat)
                 ecurie.setResultat([])
 
@@ -461,12 +460,11 @@ class GrandPrix:
 
             if len(resultat) < 1:
                 resultat.append(pilote.getDonnees().getSprint()[-1])
-                pilote.getDonnees().vsCoequipier(True, "s")
+                pilote.getDonnees().vsCoequipier("s")
                 ecurie.setResultat(resultat)
             
             elif len(resultat) < 2:
                 resultat.append(pilote.getDonnees().getSprint()[-1])
-                pilote.getDonnees().vsCoequipier(False, "s")
                 ecurie.getDonnees().addSprint(resultat)
                 ecurie.setResultat([])
 
@@ -480,12 +478,11 @@ class GrandPrix:
 
             if len(resultat) < 1:
                 resultat.append(pilote.getDonnees().getCourse()[-1])
-                pilote.getDonnees().vsCoequipier(True, "c")
+                pilote.getDonnees().vsCoequipier("c")
                 ecurie.setResultat(resultat)
             
             elif len(resultat) < 2:
                 resultat.append(pilote.getDonnees().getCourse()[-1])
-                pilote.getDonnees().vsCoequipier(False, "c")
                 ecurie.getDonnees().addCourse(resultat)
                 ecurie.setResultat([])
 

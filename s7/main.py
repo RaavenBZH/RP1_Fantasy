@@ -23,7 +23,7 @@ for i in range(len(joueurs)):
                 joueurs[i][j] = (joueurs[i][j])[:k-1]
                 break
 
-""" print(joueurs) """
+print(joueurs)
 
 # Programme principal #############################################################################
 
@@ -70,23 +70,5 @@ c = [R, N, L, O, P, A, I, J, Q, D, H, E, S, T, K, C, F, B, G, M]
 c01.setQualification(q)
 c01.setSprint(s)
 c01.setCourse(c)
-
 c01.calcul(absentsQualif=3, absentsSprint=3, abandonsSprint=2, absentsCourse=3, abandonsCourse=1)
-
-"""
-print(T.getDonnees())
-print(K.getDonnees())
-print(O.getDonnees())
-
-print(Mercedes.getDonnees().stats())
-print(RedBull.getDonnees().stats())
-print(Ferrari.getDonnees().stats())
-print(McLaren.getDonnees().stats())
-print(Alpine.getDonnees().stats())
-print(AlphaTauri.getDonnees().stats())
-print(AstonMartin.getDonnees().stats())
-print(Williams.getDonnees().stats())
-print(AlfaRomeo.getDonnees().stats())
-print(Haas.getDonnees().stats())
-"""
 

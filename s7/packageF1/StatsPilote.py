@@ -52,24 +52,84 @@ class StatsPilote:
     # METHODES
 
     def __str__(self) -> str:
-        return str(self.__qualif) + "\n" + str(self.__sprint) + "\n" + str(self.__course)
+        return "Qualif : " + str(self.__qualif)
 
-    def vsCoequipier(self, battu, session) -> None:
-        bonus = 1
-        if not battu:
-            bonus = -1
+    def vsCoequipier(self, session) -> None:
 
-        if session == "q":
-            self.__coeqBattuQ += bonus
+        if session.lower() == "q":
+            self.__coeqBattuQ += 1
 
-        elif session == "s":
-            self.__coeqBattuS += bonus
+        elif session.lower() == "s":
+            self.__coeqBattuS += 1
 
-        elif session == "c":
-            self.__coeqBattuC += bonus
+        elif session.lower() == "c":
+            self.__coeqBattuC += 1
 
         else:
             print("StatsPilote.vsCoequipier.Erreur : session inconnue.")
 
     def stats(self) -> str:
-        pass
+        return "\nStatistiques de " + self.__nom  + " :\n\n" + str(self.__statsQ()) + "\n" + str(self.__statsS()) + "\n" + str(self.__statsC())
+
+    def __statsQ(self) -> str:
+
+        resultat = ""
+
+        # enregistrement des résultats des qualifications
+        tab = []
+        for manche in self.__qualif:
+            if manche[0] != False:
+                tab.append(manche[1])
+
+        # calcul des statistiques
+        resultat += "Participations en qualification : " + str(len(tab)) + "\n"
+        if len(tab) > 0:
+            resultat += "Passages en Q2 : " + str(len([x for x in tab if x < 16])) + "\n"
+            resultat += "Passages en Q3 : " + str(len([x for x in tab if x < 11])) + "\n"
+            resultat += "Meilleur resultat : P" + str(min(tab)) + "\n"
+            resultat += "Poles : " + str(len([x for x in tab if x < 2])) + "\n"
+            resultat += "Moyenne en qualification : " + str(sum(tab)/len(tab)) + "\n"
+            resultat += "Coequipier battu en qualification : " + str(self.__coeqBattuQ) + "\n"
+        return resultat
+
+    def __statsS(self) -> str:
+
+        resultat = ""
+
+        # enregistrement des résultats des sprints
+        tab = []
+        for manche in self.__sprint:
+            if manche[0] != False:
+                tab.append(manche[1])
+
+        # calcul des statistiques
+        resultat += "Participations en sprint : " + str(len(tab)) + "\n"
+        if len(tab) > 0:
+            resultat += "Top 8 : " + str(len([x for x in tab if x < 9])) + "\n"
+            resultat += "Podiums : " + str(len([x for x in tab if x < 4])) + "\n"
+            resultat += "Victoires : " + str(len([x for x in tab if x < 2])) + "\n"
+            resultat += "Meilleur resultat : P" + str(min(tab)) + "\n"
+            resultat += "Moyenne en sprint : " + str(sum(tab)/len(tab)) + "\n"
+            resultat += "Coequipier battu en sprint : " + str(self.__coeqBattuS) + "\n"
+        return resultat
+
+    def __statsC(self) -> str:
+            
+        resultat = ""
+
+        # enregistrement des résultats des courses
+        tab = []
+        for manche in self.__course:
+            if manche[0] != False:
+                tab.append(manche[1])
+
+        # calcul des statistiques
+        resultat += "Participations en course : " + str(len(tab)) + "\n"
+        if len(tab) > 0:
+            resultat += "Entrees dans les points : " + str(len([x for x in tab if x < 9])) + "\n"
+            resultat += "Podiums : " + str(len([x for x in tab if x < 4])) + "\n"
+            resultat += "Victoires : " + str(len([x for x in tab if x < 2])) + "\n"
+            resultat += "Meilleur resultat : P" + str(min(tab)) + "\n"
+            resultat += "Moyenne en course : " + str(sum(tab)/len(tab)) + "\n"
+            resultat += "Coequipier battu en course : " + str(self.__coeqBattuC) + "\n"
+        return resultat
