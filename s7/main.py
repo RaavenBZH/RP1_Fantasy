@@ -8,25 +8,32 @@ from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 from packageF1.Fonctions import *
 
+from d1 import *
+from d2 import *
+from d3 import *
+from d4 import *
+
 # Importation des équipes des joueurs #############################################################
 
-out = pd.read_excel(r'C:\Users\emali\OneDrive\Documents\Work\Perso\Projets\RP1\RP1_Fantasy\s6\entrees_rp1.xlsx').drop(columns="Horodateur")
-
-# Traitement des équipes des joueurs ##############################################################
-
+out = pd.read_excel(r'./s7/entrees.xlsx') # .drop(columns="Horodateur")
 joueurs = out.values.tolist()
-
-for i in range(len(joueurs)):
-    for j in range(len(joueurs[i])):
-        for k in range(len(joueurs[i][j])):
-            if joueurs[i][j][k] == "(":
-                joueurs[i][j] = (joueurs[i][j])[:k-1]
-                break
 
 print(joueurs)
 
-# Programme principal #############################################################################
+### Récupération des points des 4 divisons ########################################################
 
+d1, d2, d3, d4 = {}, {}, {}, {}
+
+d1 = getPointsD1()
+d2 = getPointsD2()
+d3 = getPointsD3()
+d4 = getPointsD4()
+
+print(">>>")
+totalPoints = mergeDict(mergeDict(mergeDict(d1, d2), d3), d4) # fusion de toutes les div
+
+# Programme principal #############################################################################
+"""
 Mercedes = Ecurie("Mercedes")
 RedBull = Ecurie("RedBull")
 Ferrari = Ecurie("Ferrari")
@@ -71,4 +78,6 @@ c01.setQualification(q)
 c01.setSprint(s)
 c01.setCourse(c)
 c01.calcul(absentsQualif=3, absentsSprint=3, abandonsSprint=2, absentsCourse=3, abandonsCourse=1)
+
+"""
 
