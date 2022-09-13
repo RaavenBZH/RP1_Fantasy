@@ -1,11 +1,13 @@
 import copy
 
 """
-    Ce fichier fourni des méthodes utiles à l'application.
+    Ce fichier fournit des méthodes utiles à l'application.
 
     Méthodes :
 
         - sortedDict(entree : dict) -> dict : permet de trier un dictionnaire selon ses valeurs.
+        - mergeDict(d1 : dict, d2 : dict) -> dict : permet de fusionner deux dictionnaires.
+        - printd(dico : dict) : permet d'afficher un dictionnaire.
 """
 
 def sortedDict(entree) -> dict:
@@ -30,11 +32,31 @@ def mergeDict(d1, d2) -> dict:
     """
     Permet de fusionner deux dictionnaires.
     """
-    print(d1)
-    print(d2)
-    newDico = copy.deepcopy(d1)
-    for i in d2:
-        newDico[i] = d2[i]
 
-    print(newDico)
+    newDico = None
+    if (d1 != None and d2 != None):
+        newDico = copy.deepcopy(d1)
+        for i in d2:
+            newDico[i] = d2[i]
+
+    if (d1 == None and d2 != None):
+        newDico = copy.deepcopy(d2)
+    
+    if (d1 != None and d2 == None):
+        newDico = copy.deepcopy(d1)
+
     return newDico
+
+def printd(dico):
+    """
+    Permet d'afficher un dictionnaire.
+    """
+    print("{")
+    count = 0
+    loops = len(dico)
+    for i in dico:
+        print("\t" + str(i) + " : " + str(dico[i]), end="")
+        count += 1
+        if (loops != count):
+            print(",")
+    print("\n}")

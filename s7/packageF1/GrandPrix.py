@@ -15,7 +15,6 @@ class GrandPrix:
 
     Méthodes :
         - __init__(circuit : str, sprint : bool) -> None : construit les objets <GrandPrix>.
-        - __str__() -> str : affiche les résultats d'un grand prix.
         - getCircuit() -> str : recupère le circuit.
         - getQualification() -> list : récupère le classement de la qualification.
         - getSprint() -> list : récupère le classement de la sprint.
@@ -175,11 +174,12 @@ class GrandPrix:
         if 2*len(set(tab)) == len(tab):
             check = True
 
-        tab = []
-        for i in self.__sprint:
-            tab.append(i.getEcurie())
-        if 2*len(set(tab)) == len(tab):
-            check = True
+        if self.__estSprint:
+            tab = []
+            for i in self.__sprint:
+                tab.append(i.getEcurie())
+            if 2*len(set(tab)) == len(tab):
+                check = True
 
         tab = []
         for i in self.__course:
@@ -362,7 +362,7 @@ class GrandPrix:
                     if gain < -3 : gain = -3
 
                     self.__dico[gamertag] += gain
-                    self.__sprint[i].ajoutHistorique(("Gain pos. (C)", gain))
+                    reference[posDepart].ajoutHistorique(("Gain pos. (C)", gain))
 
                 else:
                     self.__course[i].ajoutHistorique(("Absent (C)", 0))
@@ -413,8 +413,8 @@ class GrandPrix:
                     resultat = (False, position)
                 pilote.getDonnees().addSprint(resultat)    
         else:
-            for i in range(len(self.__sprint)):
-                pilote = self.__sprint[i]
+            for i in range(len(self.__qualif)):
+                pilote = self.__qualif[i]
                 pilote.getDonnees().addSprint((False, False))
 
         # Course
@@ -454,22 +454,23 @@ class GrandPrix:
                 print("Erreur")
 
         # Sprint
-        for pilote in self.__sprint:
-            ecurie = pilote.getEcurie()
-            resultat = ecurie.getResultat()
+        if self.__estSprint:
+            for pilote in self.__sprint:
+                ecurie = pilote.getEcurie()
+                resultat = ecurie.getResultat()
 
-            if len(resultat) < 1:
-                resultat.append(pilote.getDonnees().getSprint()[-1])
-                pilote.getDonnees().vsCoequipier("s")
-                ecurie.setResultat(resultat)
-            
-            elif len(resultat) < 2:
-                resultat.append(pilote.getDonnees().getSprint()[-1])
-                ecurie.getDonnees().addSprint(resultat)
-                ecurie.setResultat([])
+                if len(resultat) < 1:
+                    resultat.append(pilote.getDonnees().getSprint()[-1])
+                    pilote.getDonnees().vsCoequipier("s")
+                    ecurie.setResultat(resultat)
+                
+                elif len(resultat) < 2:
+                    resultat.append(pilote.getDonnees().getSprint()[-1])
+                    ecurie.getDonnees().addSprint(resultat)
+                    ecurie.setResultat([])
 
-            else:
-                print("Erreur")
+                else:
+                    print("Erreur")
 
         # Course
         for pilote in self.__course:

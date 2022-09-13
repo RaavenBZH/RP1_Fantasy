@@ -47,3 +47,66 @@ def getPointsD2() -> dict:
     pura_tomoe = Pilote("PuRa Tomoe", Haas)
 
     ###############################################################################################
+
+    # Course 1
+    gp01 = GrandPrix("RoyaumeUni", sprint = False)
+
+    # Remplaçants
+    # Aucun
+
+    # Pénalites en qualification
+    ert_niloboo_01 = Pilote("ERT Flyart", RedBull)
+    istoozen_eko_01 = Pilote("LDL Zepro", AlphaTauri)
+
+    q01 = [
+        mvt_thomas,
+        pur_nygraal,
+        pur_ripply,
+        pur_racing,
+        ert_niloboo_01,
+        rp1_tribion,
+        ert_aurelius,
+        fct_lasouche,
+        yozana,
+        fct_deadpool,
+        pura_tomoe,
+        rp1_gachette,
+        mcr_spacex,
+        pur_vincent,
+        if1_supreme,
+        xrt_darkfly,
+        rp1_owain,
+        heroziah,
+        ecs_finesse,
+        istoozen_eko_01
+    ]
+    c01 = [
+        mvt_thomas,
+        pur_nygraal,
+        pur_ripply,
+        ert_aurelius,
+        ert_niloboo_01,
+        mcr_spacex,
+        yozana,
+        xrt_darkfly,
+        pura_tomoe,
+        pur_vincent,
+        rp1_tribion,
+        if1_supreme,
+        fct_lasouche,
+        fct_deadpool,
+        istoozen_eko_01,
+        rp1_gachette,
+        rp1_owain,
+        ecs_finesse,
+        heroziah,
+        pur_racing
+    ]
+
+    gp01.setQualification(q01)
+    gp01.setCourse(c01)
+    gp01.calcul(abandonsCourse=3)
+
+    final = gp01.getPoints()
+
+    return final

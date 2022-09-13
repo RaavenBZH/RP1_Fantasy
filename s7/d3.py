@@ -47,3 +47,70 @@ def getPointsD3() -> dict:
     non4me_cramer = Pilote("Non4me Cramer", Haas)
 
     ###############################################################################################
+
+    # Course 1
+    gp01 = GrandPrix("RoyaumeUni", sprint = False)
+
+    # Remplaçants
+    istoozen_eko_01 = Pilote("PuR Ilton", Mercedes)
+    mcr_papyx_01 = Pilote("F1M AlexGT500", Ferrari)
+    shadd_01 = Pilote("XRT Marth", AlphaTauri)
+
+    # Pénalites en qualification
+    # Aucune
+
+    q01 = [
+        non4me_cramer,
+        fct_tweekaz,
+        non4me_jordy,
+        rp1_skyzzz,
+        ert_matfax,
+        non4me_geckoz,
+        rp1_ice,
+        non4me_cami,
+        pura_jager,
+        non4me_livai,
+        pur_ultraaa,
+        fct_coco,
+        rp1_durtom,
+        str_pagaa,
+        ert_karanox,
+        istoozen_eko_01,
+        fct_spektre,
+        xrt_nico2a,
+        mcr_papyx_01,
+        shadd_01
+    ]
+    c01 = [
+        rp1_skyzzz,
+        ert_matfax,
+        fct_tweekaz,
+        rp1_ice,
+        str_pagaa,
+        non4me_jordy,
+        fct_spektre,
+        pura_jager,
+        rp1_durtom,
+        non4me_cami,
+        xrt_nico2a,
+        shadd_01,
+        ert_karanox,
+        mcr_papyx_01,
+        non4me_cramer,
+        non4me_geckoz,
+        fct_coco,
+        pur_ultraaa,
+        istoozen_eko_01,
+        non4me_livai
+    ]
+
+    gp01.setQualification(q01)
+    gp01.setCourse(c01)
+    gp01.calcul(abandonsCourse = 3)
+
+    for i in gp01.getCourse():
+        print(i.getDonnees().stats())
+
+    final = gp01.getPoints()
+
+    return final

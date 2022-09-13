@@ -47,3 +47,65 @@ def getPointsD4() -> dict:
     ks_virtuozz = Pilote("KS Virtuozz", Haas)
 
     ###############################################################################################
+
+    # Course 1
+    gp01 = GrandPrix("RoyaumeUni", sprint = False)
+
+    # Remplaçants
+    # Aucun
+
+    # Pénalites en qualification
+    # Aucune
+
+    q01 = [
+        crl_bikette,
+        tnor_chime,
+        ecs_flower,
+        arac_zer,
+        jnpjd,
+        non4me_lucas,
+        mvt_kaio,
+        leptit03,
+        mvt_fly,
+        emeric,
+        rp1_fifou,
+        shadd,
+        knf_fradj,
+        rs_al3xx,
+        f1xr_noich,
+        non4me_bappe, 
+        arac_pafael,
+        ks_virtuozz,
+        leonh4rte,
+        ldl_shermy
+    ]
+    c01 = [
+        crl_bikette,
+        jnpjd,
+        knf_fradj,
+        emeric,
+        arac_zer,
+        mvt_fly,
+        rp1_fifou,
+        mvt_kaio,
+        arac_pafael,
+        ks_virtuozz,
+        ldl_shermy,
+        shadd,
+        f1xr_noich,
+        non4me_bappe,
+        tnor_chime,
+        leptit03,
+        ecs_flower,
+        non4me_lucas,
+        rs_al3xx,
+        leonh4rte
+    ]
+
+    gp01.setQualification(q01)
+    gp01.setCourse(c01)
+    gp01.calcul(abandonsCourse = 3)
+
+    final = gp01.getPoints()
+
+    return final
