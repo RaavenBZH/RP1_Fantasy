@@ -26,8 +26,8 @@ def getPointsD1() -> dict:
     # Création des pilotes
 
     fra_raaven = Pilote("FRA Raaven", Mercedes)
-    pur_stitoxxe = Pilote("PuR Stitoxxe", Mercedes)
-    rp1_noctis = Pilote("RP1 Noctis", RedBull)
+    pur_rosberg = Pilote("PuR Rosberg", Mercedes)
+    rp1_noctis = Pilote("WOR Noctis", RedBull)
     ert_batxone = Pilote("ERT BatXone", RedBull)
     rp1_okwaru = Pilote("RP1 Okwaru", Ferrari)
     rp1_theo = Pilote("RP1 Theo", Ferrari)
@@ -45,5 +45,69 @@ def getPointsD1() -> dict:
     xrt_arthur = Pilote("XRT Arthur", AlfaRomeo)
     pur_lowky = Pilote("PuR Lowky", Haas)
     fct_daigoro = Pilote("FcT Daigoro", Haas)
+
+    ###############################################################################################
+
+    # Course 1
+    gp01 = GrandPrix("RoyaumeUni", sprint = False)
+
+    # Remplaçants
+    ert_niloboo_01 = Pilote("LDL Oli", Alpine)
+
+    # Pénalites en qualification
+    # Aucune
+
+    q01 = [
+        rp1_noctis,
+        rp1_theo,
+        rp1_okwaru,
+        pur_rosberg,
+        ert_batxone,
+        fra_raaven,
+        ert_niloboo_01,
+        rp1_montoya,
+        rp1_winterr,
+        ldl_saumon,
+        rp1_adam,
+        pur_lowky,
+        rp1_varane,
+        rp1_chadoo,
+        xrt_arthur,
+        xrt_oxygen,
+        mcr_path,
+        fct_daigoro,
+        mcr_jayrko,
+        pur_snika
+    ]
+    c01 = [
+        rp1_theo,
+        pur_rosberg,
+        ldl_saumon,
+        fra_raaven,
+        ert_batxone,
+        fct_daigoro,
+        xrt_oxygen,
+        pur_lowky,
+        rp1_montoya,
+        rp1_okwaru,
+        pur_snika,
+        mcr_jayrko,
+        mcr_path,
+        rp1_winterr,
+        rp1_chadoo,
+        ert_niloboo_01,
+        rp1_adam,
+        xrt_arthur,
+        rp1_varane,
+        rp1_noctis
+    ]
+
+    gp01.setQualification(q01)
+    gp01.setCourse(c01)
+    gp01.calcul(abandonsCourse=3)
+
+    final = gp01.getPoints()
+
+    return final
 
     ###############################################################################################

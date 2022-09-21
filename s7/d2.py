@@ -35,7 +35,7 @@ def getPointsD2() -> dict:
     heroziah = Pilote("Heroziah", McLaren)
     xrt_darkfly = Pilote("XRT Darkfly", Alpine)
     rp1_gachette = Pilote("RP1 Gachette", Alpine)
-    if1_supreme = Pilote("IF1 Supreme", AlphaTauri)
+    if1_supreme = Pilote("iF1 Supr3me", AlphaTauri)
     ldl_zepro = Pilote("LDL Zepro", AlphaTauri)
     mcr_spacex = Pilote("MCR SpaceX", AstonMartin)
     fct_deadpool = Pilote("FcT Deadpool", AstonMartin)
@@ -52,11 +52,11 @@ def getPointsD2() -> dict:
     gp01 = GrandPrix("RoyaumeUni", sprint = False)
 
     # Remplaçants
-    # Aucun
-
-    # Pénalites en qualification
     ert_niloboo_01 = Pilote("ERT Flyart", RedBull)
     istoozen_eko_01 = Pilote("LDL Zepro", AlphaTauri)
+
+    # Pénalites en qualification
+    # Aucune
 
     q01 = [
         mvt_thomas,

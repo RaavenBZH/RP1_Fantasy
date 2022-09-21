@@ -25,11 +25,11 @@ def getPointsD4() -> dict:
 
     # Création des pilotes
 
-    arac_zer = Pilote("ARAC Zer", Mercedes)
+    arac_zer = Pilote("aRAC Zer", Mercedes)
     ldl_shermy = Pilote("LDL Shermy", Mercedes)
-    non4me_bappe = Pilote("Non4me Bappe", RedBull)
+    non4me_bappe = Pilote("NoN4me Bappe", RedBull)
     leptit03 = Pilote("LePtit03", RedBull)
-    non4me_lucas = Pilote("Non4me Lucas", Ferrari)
+    non4me_lucas = Pilote("NoN4me Lucas", Ferrari)
     tnor_chime = Pilote("TNOR Chime", Ferrari)
     jnpjd = Pilote("JNPJD", McLaren)
     emeric = Pilote("Emeric", McLaren)
@@ -107,5 +107,7 @@ def getPointsD4() -> dict:
     gp01.calcul(abandonsCourse = 3)
 
     final = gp01.getPoints()
+
+    print(non4me_lucas.getHistorique())
 
     return final

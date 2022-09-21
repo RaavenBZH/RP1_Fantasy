@@ -28,8 +28,8 @@ def getPointsD3() -> dict:
     pur_ilton = Pilote("PuR Ilton", Mercedes)
     fct_coco = Pilote("FcT Coco", Mercedes)
     rp1_skyzzz = Pilote("RP1 Skyzzz", RedBull)
-    non4me_cami = Pilote("Non4me Cami", RedBull)
-    non4me_livai = Pilote("Non4me Livai", Ferrari)
+    non4me_cami = Pilote("NoN4me Cami", RedBull)
+    non4me_livai = Pilote("NoN4me Livai", Ferrari)
     f1m_alexgt500 = Pilote("F1M AlexGT500", Ferrari)
     pura_jager = Pilote("PuRa Jager", McLaren)
     pur_ultraaa = Pilote("PuR Ultraaa", McLaren)
@@ -37,14 +37,14 @@ def getPointsD3() -> dict:
     ert_karanox = Pilote("ERT Karanox", Alpine)
     xrt_marth = Pilote("XRT Marth", AlphaTauri)
     str_pagaa = Pilote("STR Pagaa", AlphaTauri)
-    non4me_jordy = Pilote("Non4me Jordy", AstonMartin)
-    fct_spektre = Pilote("FcT Spektre", AstonMartin)
+    non4me_jordy = Pilote("NoN4me Jordy", AstonMartin)
+    fct_specktre = Pilote("FcT Specktre", AstonMartin)
     rp1_ice = Pilote("RP1 Ice", Williams)
     rp1_durtom = Pilote("RP1 Durtom", Williams)
     ert_matfax = Pilote("ERT Matfax", AlfaRomeo)
-    non4me_geckoz = Pilote("Non4me Geckoz", AlfaRomeo)
+    non4me_geckoz = Pilote("NoN4me Geckoz", AlfaRomeo)
     fct_tweekaz = Pilote("FcT Tweekaz", Haas)
-    non4me_cramer = Pilote("Non4me Cramer", Haas)
+    non4me_cramer = Pilote("NoN4me Cramer", Haas)
 
     ###############################################################################################
 
@@ -76,7 +76,7 @@ def getPointsD3() -> dict:
         str_pagaa,
         ert_karanox,
         istoozen_eko_01,
-        fct_spektre,
+        fct_specktre,
         xrt_nico2a,
         mcr_papyx_01,
         shadd_01
@@ -88,7 +88,7 @@ def getPointsD3() -> dict:
         rp1_ice,
         str_pagaa,
         non4me_jordy,
-        fct_spektre,
+        fct_specktre,
         pura_jager,
         rp1_durtom,
         non4me_cami,
@@ -108,8 +108,10 @@ def getPointsD3() -> dict:
     gp01.setCourse(c01)
     gp01.calcul(abandonsCourse = 3)
 
-    for i in gp01.getCourse():
-        print(i.getDonnees().stats())
+    
+    # for i in gp01.getCourse():
+    #     print(i.getDonnees().stats())
+
 
     final = gp01.getPoints()
 
