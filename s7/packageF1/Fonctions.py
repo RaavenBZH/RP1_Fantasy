@@ -47,6 +47,21 @@ def mergeDict(d1, d2) -> dict:
 
     return newDico
 
+def sumDict(d1, d2) -> dict:
+    """
+    Permet de sommer les valeurs de deux dictionnaires de forme {str : int}.
+    """
+    
+    newDico = copy.deepcopy(d1)
+    for i in d2:
+        if i in newDico:
+            newDico[i] += d2[i]
+        else:
+            newDico[i] = d2[i]
+
+    return newDico
+
+
 def printd(dico):
     """
     Permet d'afficher un dictionnaire.

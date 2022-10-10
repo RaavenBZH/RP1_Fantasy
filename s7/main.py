@@ -51,7 +51,7 @@ for i in rp1_fantasy.getListeJoueurs():
 classement = sortedDict(classement)
 # printd(classement)
 
-# Ecriture du fichier de sortie####################################################################
+# Ecriture du fichier de sortie ###################################################################
 
 f = open('.\s7\sorties.csv', 'w', newline="")
 writer = csv.writer(f)
@@ -73,5 +73,7 @@ for i in classement:
         line += i + ";" + str(equipe[i]) + ";"
 
     writer.writerow([line[:-1]])
+
+f.close()
 
 ###################################################################################################

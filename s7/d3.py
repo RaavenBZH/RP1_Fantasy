@@ -108,11 +108,214 @@ def getPointsD3() -> dict:
     gp01.setCourse(c01)
     gp01.calcul(abandonsCourse = 3)
 
-    
-    # for i in gp01.getCourse():
-    #     print(i.getDonnees().stats())
+    ###############################################################################################
 
+    # Course 2
+    gp02 = GrandPrix("Belgique", sprint = True)
+
+    # Remplaçants
+    non4me_stuno_02 = Pilote("NoN4me Cramer", Haas)
+
+    # Pénalites en qualification
+    # Aucune
+
+    q02 = [
+        f1m_alexgt500,
+        non4me_stuno_02,
+        non4me_geckoz,
+        rp1_skyzzz,
+        pur_ilton,
+        non4me_cami,
+        rp1_ice,
+        fct_tweekaz,
+        ert_matfax,
+        str_pagaa,
+        non4me_jordy,
+        non4me_livai,
+        pura_jager,
+        xrt_marth,
+        pur_ultraaa,
+        fct_coco,
+        fct_specktre,
+        rp1_durtom,
+        xrt_nico2a,
+        ert_karanox
+    ]
+    s02 = [
+        f1m_alexgt500,
+        non4me_geckoz,
+        non4me_cami,
+        pur_ilton,
+        ert_matfax,
+        rp1_ice,
+        pura_jager,
+        rp1_skyzzz,
+        pur_ultraaa,
+        non4me_livai,
+        rp1_durtom,
+        xrt_marth,
+        ert_karanox,
+        fct_specktre,
+        non4me_jordy,
+        fct_coco,
+        xrt_nico2a,
+        fct_tweekaz,
+        non4me_stuno_02,
+        str_pagaa
+    ]
+    c02 = [
+        f1m_alexgt500,
+        pur_ilton,
+        ert_matfax,
+        non4me_geckoz,
+        pur_ultraaa,
+        non4me_livai,
+        rp1_ice,
+        fct_coco,
+        pura_jager,
+        non4me_jordy,
+        fct_specktre,
+        rp1_skyzzz,
+        rp1_durtom,
+        xrt_nico2a,
+        non4me_cami,
+        non4me_stuno_02,
+        ert_karanox,
+        str_pagaa,
+        fct_tweekaz,
+        xrt_marth
+    ]
+
+    gp02.setQualification(q02)
+    gp02.setSprint(s02)
+    gp02.setCourse(c02)
+    gp02.calcul(abandonsSprint = 2, abandonsCourse=5)
+
+    ###############################################################################################
+
+    # Course 3
+    gp03 = GrandPrix("Espagne", sprint = False)
+
+    # Remplaçants
+    # Aucun
+    
+    # Pénalités
+    # Aucune
+
+    q03 = [
+        non4me_cramer,
+        ert_matfax,
+        non4me_geckoz,
+        rp1_skyzzz,
+        rp1_ice,
+        f1m_alexgt500,
+        non4me_cami,
+        non4me_livai,
+        fct_coco,
+        str_pagaa,
+        fct_tweekaz,
+        xrt_nico2a,
+        pur_ultraaa,
+        fct_specktre,
+        ert_karanox,
+        xrt_marth,
+        rp1_durtom,
+        non4me_jordy,
+        pur_ilton,
+        pura_jager
+    ]
+    c03 = [
+        ert_matfax,
+        non4me_cramer,
+        rp1_skyzzz,
+        non4me_geckoz,
+        f1m_alexgt500,
+        fct_coco,
+        rp1_ice,
+        non4me_livai,
+        str_pagaa,
+        fct_tweekaz,
+        fct_specktre,
+        rp1_durtom,
+        non4me_cami,
+        ert_karanox,
+        xrt_nico2a,
+        non4me_jordy,
+        pur_ilton,
+        pura_jager,
+        xrt_marth,
+        pur_ultraaa
+    ]
+
+    gp03.setQualification(q03)
+    gp03.setCourse(c03)
+    gp03.calcul(abandonsCourse = 4)
+
+    ###############################################################################################
+
+    # Course 4 
+    gp04 = GrandPrix("Miami", sprint = False)
+
+    # Remplaçants
+    wanbmt63_04 = Pilote("F1M AlexGT500", Ferrari)
+    
+    # Pénalités
+    # Aucune
+
+    q04 = [
+        non4me_geckoz,
+        pur_ilton,
+        non4me_cramer,
+        ert_matfax,
+        ert_karanox,
+        pur_ultraaa,
+        f1m_alexgt500,
+        rp1_skyzzz,
+        non4me_jordy,
+        rp1_ice,
+        pura_jager,
+        str_pagaa,
+        non4me_cami,
+        fct_tweekaz,
+        xrt_marth,
+        fct_coco,
+        xrt_nico2a,
+        fct_specktre,
+        wanbmt63_04,
+        rp1_durtom
+    ]
+    c04 = [
+        non4me_geckoz,
+        non4me_cramer,
+        f1m_alexgt500,
+        non4me_cami,
+        str_pagaa,
+        ert_matfax,
+        non4me_jordy,
+        pur_ilton,
+        xrt_nico2a,
+        fct_coco,
+        rp1_ice,
+        rp1_durtom,
+        ert_karanox,
+        pura_jager,
+        fct_specktre,
+        fct_tweekaz,
+        wanbmt63_04,
+        pur_ultraaa,
+        rp1_skyzzz,
+        xrt_marth
+    ]
+
+    gp04.setQualification(q04)
+    gp04.setCourse(c04)
+    gp04.calcul(abandonsCourse = 3)
+
+    ###############################################################################################
 
     final = gp01.getPoints()
+    final = sumDict(final, gp02.getPoints())
+    final = sumDict(final, gp03.getPoints())
+    final = sumDict(final, gp04.getPoints())
 
     return final

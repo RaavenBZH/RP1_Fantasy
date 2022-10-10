@@ -15,10 +15,12 @@ class Pilote:
         - getGamertag() -> str : récupère le gamertag.
         - getEcurie() -> Ecurie : récupère l'écurie.
         - getDonnees() -> StatsPilote : récupère les statistiques.
-        - getHistorique() -> list : récupère l'historique des résultats.        
+        - getHistorique() -> list : récupère l'historique des résultats.    
+        - getGamertagRempalcant() -> str : récupère le gamertag du remplacant.    
         - setGamertag(gamertag : str) -> None : modifie le gamertag.
         - setEcurie(ecurie : Ecurie) -> None : modifie l'écurie.
         - setHistorique(historique : list) -> None : modifie l'historique des résultats.
+        - setGamertagRemplacant(gamertag : str) -> None : modifie le gamertag du remplacant.
         - __str__() -> str : renvoie le gamertag, l'écurie et les statistiques du pilote.
         - ajoutHistorique(desc : tuple) -> None : ajoute un résultat à l'historique.
         - retireHistorique(desc : tuple) -> None : retire un résultat de l'historique.
@@ -33,6 +35,7 @@ class Pilote:
         self.__ecurie = ecurie
         self.__donnees = StatsPilote(gamertag)
         self.__historique = []
+        self.__gamertagRemplacant = gamertag
 
     # GETTERS & SETTERS
 
@@ -48,6 +51,9 @@ class Pilote:
     def getHistorique(self) -> list:
         return self.__historique
 
+    def getGamertagRemplacant(self) -> str:
+        return self.__gamertagRemplacant
+
     def setGamertag(self, gamertag : str) -> None:
         self.__gamertag = gamertag
 
@@ -56,6 +62,9 @@ class Pilote:
 
     def setHistorique(self, historique : list) -> None:
         self.__historique = historique
+
+    def setGamertagRemplacant(self, gamertag : str) -> None:
+        self.__gamertagRemplacant = gamertag
 
     # METHODES
 
