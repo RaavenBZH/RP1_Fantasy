@@ -57,6 +57,9 @@ class Pilote:
     def setGamertag(self, gamertag : str) -> None:
         self.__gamertag = gamertag
 
+    def setDonnees(self, donnees : StatsPilote) -> StatsPilote:
+        self.__donnees =donnees
+
     def setEcurie(self, ecurie : Ecurie) -> None:
         self.__ecurie = ecurie
 
@@ -69,7 +72,7 @@ class Pilote:
     # METHODES
 
     def __str__(self) -> str:
-        return self.__gamertag + " (" + self.__ecurie.getNom() + ") :\n" + str(self.__donnees.stats())
+        return self.__gamertag
 
     def ajoutHistorique(self, desc : tuple) -> None:
         self.__historique.append(desc)

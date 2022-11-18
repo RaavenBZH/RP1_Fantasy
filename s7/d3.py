@@ -2,13 +2,15 @@ from packageF1.Ecurie import *
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 
+import csv
+
 #
 # Saison 7
 #
 # Calcul des points pour les pilotes de division 2
 #
 
-def getPointsD3() -> dict:
+def getPointsD3(stats = False) -> dict:
 
     # Création des équipes
 
@@ -35,16 +37,21 @@ def getPointsD3() -> dict:
     pur_ultraaa = Pilote("PuR Ultraaa", McLaren)
     xrt_nico2a = Pilote("XRT Nico2a", Alpine)
     ert_karanox = Pilote("ERT Karanox", Alpine)
-    xrt_marth = Pilote("XRT Marth", AlphaTauri)
+    xrt_marth = Pilote("Tonati2514", AlphaTauri) # remplaçé ... Tonati2514
     str_pagaa = Pilote("STR Pagaa", AlphaTauri)
     non4me_jordy = Pilote("NoN4me Jordy", AstonMartin)
     fct_specktre = Pilote("FcT Specktre", AstonMartin)
     rp1_ice = Pilote("RP1 Ice", Williams)
-    rp1_durtom = Pilote("RP1 Durtom", Williams)
+    rp1_durtom = Pilote("Istoozen Eko", Williams) # remplaçé ... Istoozen Eko
     ert_matfax = Pilote("ERT Matfax", AlfaRomeo)
     non4me_geckoz = Pilote("NoN4me Geckoz", AlfaRomeo)
     fct_tweekaz = Pilote("FcT Tweekaz", Haas)
     non4me_cramer = Pilote("NoN4me Cramer", Haas)
+
+    ###############################################################################################
+
+    xrt_marth.setGamertagRemplacant("XRT Marth")
+    rp1_durtom.setGamertagRemplacant("RP1 Durtom")
 
     ###############################################################################################
 
@@ -54,9 +61,13 @@ def getPointsD3() -> dict:
     # Remplaçants
     istoozen_eko_01 = Pilote("PuR Ilton", Mercedes)
     mcr_papyx_01 = Pilote("F1M AlexGT500", Ferrari)
-    shadd_01 = Pilote("XRT Marth", AlphaTauri)
+    shadd_01 = Pilote("Tonati2514", AlphaTauri)
 
-    # Pénalites en qualification
+    istoozen_eko_01.setGamertagRemplacant("Istoozen Eko")
+    mcr_papyx_01.setGamertagRemplacant("MCR Papyx")
+    shadd_01.setGamertagRemplacant("Shadd")
+
+    # Pénalités en qualification
     # Aucune
 
     q01 = [
@@ -116,7 +127,9 @@ def getPointsD3() -> dict:
     # Remplaçants
     non4me_stuno_02 = Pilote("NoN4me Cramer", Haas)
 
-    # Pénalites en qualification
+    non4me_stuno_02.setGamertagRemplacant("NoN4me Stuno")
+
+    # Pénalités en qualification
     # Aucune
 
     q02 = [
@@ -199,7 +212,7 @@ def getPointsD3() -> dict:
     # Remplaçants
     # Aucun
     
-    # Pénalités
+    # Pénalités en qualification
     # Aucune
 
     q03 = [
@@ -258,8 +271,10 @@ def getPointsD3() -> dict:
 
     # Remplaçants
     wanbmt63_04 = Pilote("F1M AlexGT500", Ferrari)
+
+    wanbmt63_04.setGamertagRemplacant("WanBMT63")
     
-    # Pénalités
+    # Pénalités en qualification
     # Aucune
 
     q04 = [
@@ -313,9 +328,291 @@ def getPointsD3() -> dict:
 
     ###############################################################################################
 
+    # Course 5
+    gp05 = GrandPrix("Canada", sprint = False)
+
+    # Remplaçants
+    istoozen_eko_05 = Pilote("STR Pagaa", AlphaTauri)
+    mirage9150_05 = Pilote("Tonati2514", AlphaTauri)
+
+    istoozen_eko_05.setDonnees(istoozen_eko_01.getDonnees())
+
+    istoozen_eko_05.setGamertagRemplacant("Istoozen Eko")
+
+    # Pénalités en qualification
+    # rp1_ice : : 5 places de pénalité
+
+    q05 = [
+        f1m_alexgt500,
+        pur_ilton,
+        rp1_skyzzz,
+        non4me_cramer,
+        non4me_geckoz,
+        non4me_livai,
+        istoozen_eko_05,
+        fct_tweekaz,
+        ert_matfax,
+        pura_jager,
+        rp1_ice,
+        non4me_cami,
+        non4me_jordy,
+        fct_coco,
+        ert_karanox,
+        pur_ultraaa,
+        xrt_nico2a,
+        fct_specktre,
+        mirage9150_05,
+        rp1_durtom
+    ]
+    c05 = [
+        f1m_alexgt500,
+        non4me_geckoz,
+        pur_ilton,
+        rp1_skyzzz,
+        rp1_ice,
+        ert_karanox,
+        non4me_cramer,
+        non4me_cami,
+        non4me_jordy,
+        fct_specktre,
+        non4me_livai,
+        fct_tweekaz,
+        fct_coco,
+        ert_matfax,
+        rp1_durtom,
+        mirage9150_05,
+        pura_jager,
+        istoozen_eko_05,
+        pur_ultraaa,
+        xrt_nico2a
+    ]
+
+    gp05.setQualification(q05)
+    gp05.setCourse(c05)
+    gp05.calcul(abandonsCourse = 7)
+
+    ###############################################################################################
+
+    # Course 6
+    gp06 = GrandPrix("Mexique", sprint = False)
+
+    # Remplaçants
+    non4me_stuno_06 = Pilote("FcT Tweekaz", Haas)
+    istoozen_eko_06 = Pilote("Istoozen Eko", Williams)
+    ldl_zepro_06 = Pilote("Tonati2514", AlphaTauri)
+    f1xl_fanfan_06 = Pilote("PuRa Jager", McLaren)
+
+    non4me_stuno_06.setDonnees(non4me_stuno_02.getDonnees())
+    istoozen_eko_06.setDonnees(istoozen_eko_05.getDonnees())
+
+    non4me_stuno_06.setGamertagRemplacant("NoN4me Stuno")
+    istoozen_eko_06.setGamertagRemplacant("Istoozen Eko")
+    ldl_zepro_06.setGamertagRemplacant("LDL Zepro")
+    f1xl_fanfan_06.setGamertagRemplacant("F1XL Fanfan")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q06 = [
+        non4me_geckoz,
+        ert_matfax,
+        rp1_ice,
+        f1m_alexgt500,
+        non4me_cramer,
+        fct_coco,
+        non4me_stuno_06,
+        istoozen_eko_06,
+        non4me_cami,
+        ert_karanox,
+        pur_ilton,
+        rp1_skyzzz,
+        fct_specktre,
+        non4me_livai,
+        pur_ultraaa,
+        ldl_zepro_06,
+        str_pagaa,
+        f1xl_fanfan_06,
+        xrt_nico2a,
+        non4me_jordy
+    ]
+    c06 = [
+        rp1_skyzzz,
+        non4me_geckoz,
+        ert_matfax,
+        non4me_cramer,
+        non4me_cami,
+        non4me_livai,
+        istoozen_eko_06,
+        fct_specktre,
+        non4me_jordy,
+        xrt_nico2a,
+        f1xl_fanfan_06,
+        rp1_ice,
+        fct_coco,
+        ldl_zepro_06,
+        pur_ultraaa,
+        f1m_alexgt500,
+        ert_karanox,
+        pur_ilton,
+        non4me_stuno_06,
+        str_pagaa
+    ]
+
+    gp06.setQualification(q06)
+    gp06.setCourse(c06)
+    gp06.calcul(abandonsCourse = 7)
+
+    ###############################################################################################
+
+    # Course 7
+    gp07 = GrandPrix("Japon", sprint = False)
+
+    # Remplaçants
+    ldl_zepro_07 =  Pilote("STR Pagaa", AlphaTauri)
+    xrt_alpha_07 = Pilote("XRT Nico2a", Alpine)
+    f1xl_fanfan_07 = Pilote("RP1 Skyzzz", RedBull)
+    ert_tiiste_07 = Pilote("Istoozen Eko", Williams)
+    nathanhrx_07 = Pilote("NoN4me Livai", Ferrari)
+    tonati2514 = Pilote("Tonati2514", AlphaTauri)
+
+    ldl_zepro_07.setDonnees(ldl_zepro_06.getDonnees())
+    f1xl_fanfan_07.setDonnees(f1xl_fanfan_06.getDonnees())
+
+    ldl_zepro_07.setGamertagRemplacant("LDL Zepro")
+    xrt_alpha_07.setGamertagRemplacant("XRT Alpha")
+    f1xl_fanfan_07.setGamertagRemplacant("F1XL Fanfan")
+    ert_tiiste_07.setGamertagRemplacant("ERT Tiiste")
+    nathanhrx_07.setGamertagRemplacant("NathanHrx")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q07 = [
+        non4me_cramer,
+        non4me_geckoz,
+        ert_matfax,
+        f1m_alexgt500,
+        ert_karanox,
+        tonati2514,
+        pur_ilton,
+        non4me_cami,
+        non4me_jordy,
+        rp1_ice,
+        fct_tweekaz,
+        fct_specktre,
+        ldl_zepro_07,
+        pura_jager,
+        pur_ultraaa,
+        fct_coco,
+        xrt_alpha_07,
+        f1xl_fanfan_07,
+        ert_tiiste_07,
+        nathanhrx_07
+    ]
+    c07 = [
+        non4me_cramer,
+        non4me_geckoz,
+        f1m_alexgt500,
+        ert_matfax,
+        ert_karanox,
+        pur_ilton,
+        rp1_ice,
+        non4me_cami,
+        fct_tweekaz,
+        fct_coco,
+        tonati2514,
+        fct_specktre,
+        pura_jager,
+        non4me_jordy,
+        nathanhrx_07,
+        ert_tiiste_07,
+        f1xl_fanfan_07,
+        xrt_alpha_07,
+        pur_ultraaa,
+        ldl_zepro_07
+    ]
+
+    gp07.setQualification(q07)
+    gp07.setCourse(c07)
+    gp07.calcul(abandonsCourse = 2)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
     final = sumDict(final, gp04.getPoints())
+    final = sumDict(final, gp05.getPoints())
+    final = sumDict(final, gp06.getPoints())
+    final = sumDict(final, gp07.getPoints())
+
+    # Statistiques ################################################################################
+
+    if (stats):
+
+        """
+        Pénalités en qualification :
+        > Canada
+            - rp1_ice : 5 places de pénalité
+        """
+        
+        pilotes = {}
+        courses = [gp01, gp02, gp03, gp04, gp05]
+        for course in courses:
+            participants = course.getQualification()
+            for pilote in participants:
+                gt = pilote.getGamertagRemplacant()
+                pilotes[gt] = pilote                  
+
+        # print(len(pilotes))
+
+        f = open('.\s7\stats.csv', 'a', newline="")
+        writer = csv.writer(f)
+
+        writer.writerow(["pilote;nb_q;nb_q2;nb_q3;nb_poles_q;best_q;moy_q;vsCoeq_q;nb_s;nb_top8_s;nb_podium_s;nb_win_s;best_s;moy_s;vsCoeq_s;nb_c;nb_top10_c;nb_podium_c;nb_win_c;best_c;moy_c;vsCoeq_c"])
+
+        for gt in pilotes:
+
+            p = pilotes[gt]
+            donnees = p.getDonnees()
+            tabQ = donnees.tabQ()
+            tabS = donnees.tabS()
+            tabC = donnees.tabC()
+
+            line = p.getGamertagRemplacant() + ";"
+
+            line += "{};{};{};{};{};{};{};".format(
+                donnees.nbQ(tabQ),
+                donnees.nbQ2(tabQ),
+                donnees.nbQ3(tabQ),
+                donnees.nbPoles(tabQ),
+                donnees.bestQ(tabQ),
+                donnees.avgQ(tabQ),
+                donnees.getCoeqBattuQ()
+            )
+            line += "{};{};{};{};{};{};{};".format(
+                donnees.nbS(tabS),
+                donnees.nbT8S(tabS),
+                donnees.nbT3S(tabS),
+                donnees.nbVicS(tabS),
+                donnees.bestS(tabS),
+                donnees.avgS(tabS),
+                donnees.getCoeqBattuS()
+            )
+            line += "{};{};{};{};{};{};{}".format(
+                donnees.nbC(tabC),
+                donnees.nbT10C(tabC),
+                donnees.nbT3C(tabC),
+                donnees.nbVicC(tabC),
+                donnees.bestC(tabC),
+                donnees.avgC(tabC),
+                donnees.getCoeqBattuC()
+            )
+
+            writer.writerow([line])
+
+        f.close()
+
+    ###############################################################################################
 
     return final

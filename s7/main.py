@@ -33,10 +33,12 @@ for i in entrees:
 
 d1, d2, d3, d4 = {}, {}, {}, {}
 
-d1 = getPointsD1()
-d2 = getPointsD2()
-d3 = getPointsD3()
-d4 = getPointsD4()
+stats = True
+
+d1 = getPointsD1(stats)
+d2 = getPointsD2(stats)
+d3 = getPointsD3(stats)
+d4 = getPointsD4(stats)
 
 total = sortedDict(mergeDict(mergeDict(mergeDict(d1, d2), d3), d4)) # fusion de toutes les div
 
