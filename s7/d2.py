@@ -672,7 +672,7 @@ def getPointsD2(stats = False) -> dict:
     gp08.setQualification(q08)
     gp08.setSprint(s08)
     gp08.setCourse(c08)
-    gp08.calcul(abandonsCourse=7)
+    gp08.calcul(abandonsCourse=7, abandonsSprint=3)
 
     ###############################################################################################
 
