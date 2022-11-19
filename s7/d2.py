@@ -573,6 +573,109 @@ def getPointsD2(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 8
+    gp08 = GrandPrix("France", sprint = True)
+
+    # Remplaçants
+    ert_niloboo_08 = Pilote("FcT LaSouche", AlfaRomeo)
+    rp1_papash_08 = Pilote("PuRa Tomoe", Haas)
+    rp1_skyzzz_08 = Pilote("MCR SpaceX", AstonMartin)
+    mirage9150_08 = Pilote("FcT Deadpool", AstonMartin)
+    if1_meister_08 = Pilote("XRT Darkfly", Alpine)
+    fct_specktre_08 = Pilote("RP1 Tribion", McLaren)
+    fct_coco_08 = Pilote("LOC WarF1", AlphaTauri)
+    ert_flouf_08 = Pilote("ERT Flyart", RedBull)
+
+    ert_niloboo_08.setDonnees(ert_niloboo_07.getDonnees())
+    rp1_skyzzz_08.setDonnees(rp1_skyzzz_07.getDonnees())
+    mirage9150_08.setDonnees(mirage9150_04.getDonnees())
+    fct_coco_08.setDonnees(fct_coco_07.getDonnees())
+
+    ert_niloboo_08.setGamertagRemplacant("ERT Niloboo")
+    rp1_papash_08.setGamertagRemplacant("RP1 Papash")
+    rp1_skyzzz_08.setGamertagRemplacant("RP1 Skyzzz")
+    mirage9150_08.setGamertagRemplacant("Mirage9150")
+    if1_meister_08.setGamertagRemplacant("IF1 Meister")
+    fct_specktre_08.setGamertagRemplacant("FcT Specktre")
+    fct_coco_08.setGamertagRemplacant("FcT Coco")
+    ert_flouf_08.setGamertagRemplacant("ERT Flouf")
+
+    # Pénalités en qualification
+
+    q08 = [
+        pur_racing,
+        rp1_papash_08,
+        pur_thomas,
+        pur_voltha,
+        ert_aurelius,
+        ert_niloboo_08,
+        pur_ripply,
+        rp1_skyzzz_08,
+        if1_meister_08,
+        pur_vincent,
+        mirage9150_08,
+        fct_specktre_08,
+        ase_luisnts1,
+        yozana,
+        if1_supreme,
+        fct_coco_08,
+        ecs_finesse,
+        heroziah,
+        ert_flouf_08,
+        rp1_gachette
+    ]
+    s08 = [
+        pur_racing,
+        rp1_papash_08,
+        pur_voltha,
+        ert_niloboo_08,
+        pur_vincent,
+        if1_meister_08,
+        pur_thomas,
+        if1_supreme,
+        rp1_skyzzz_08,
+        fct_coco_08,
+        pur_ripply,
+        ert_aurelius,
+        ecs_finesse,
+        yozana,
+        fct_specktre_08,
+        ase_luisnts1,
+        rp1_gachette,
+        ert_flouf_08,
+        mirage9150_08,
+        heroziah
+    ]
+    c08 = [
+        pur_racing,
+        if1_meister_08,
+        pur_vincent,
+        if1_supreme,
+        ert_niloboo_08,
+        yozana,
+        fct_coco_08,
+        pur_ripply,
+        ecs_finesse,
+        rp1_papash_08,
+        ase_luisnts1,
+        mirage9150_08,
+        rp1_skyzzz_08,
+        ert_aurelius,
+        pur_thomas,
+        pur_voltha,
+        heroziah,
+        rp1_gachette,
+        ert_flouf_08,
+        fct_specktre_08
+    ]
+
+    gp08.setQualification(q08)
+    gp08.setSprint(s08)
+    gp08.setCourse(c08)
+    gp08.calcul(abandonsCourse=7)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -580,6 +683,7 @@ def getPointsD2(stats = False) -> dict:
     final = sumDict(final, gp05.getPoints())
     final = sumDict(final, gp06.getPoints())
     final = sumDict(final, gp07.getPoints())
+    final = sumDict(final, gp08.getPoints())
 
     # Statistiques ################################################################################
 
