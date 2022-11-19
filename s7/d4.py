@@ -557,6 +557,97 @@ def getPointsD4(stats = False) -> dict:
     gp07.setCourse(c07)
     gp07.calcul(abandonsCourse = 5)
 
+    ###############################################################################################
+
+    # Course 8
+    gp08 = GrandPrix("France", sprint = True)
+
+    # Remplacants
+    nfr_shadow_08 = Pilote("CRL Bikette", AlfaRomeo)
+    f1xr_elamous_08 = Pilote("RP1 Fifou", AlphaTauri)
+    vieux_raleur_08 = Pilote("aRAC Pafael", Alpine)
+
+    nfr_shadow_08.setDonnees(nfr_shadow_07.getDonnees())
+
+    nfr_shadow_08.setGamertagRemplacant("NFR Shadow")
+    f1xr_elamous_08.setGamertagRemplacant("F1XR Elamous")
+    vieux_raleur_08.setGamertagRemplacant("Vieux Raleur")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q08 = [
+        nfr_shadow_08,
+        wissam,
+        mvt_fly,
+        knf_fradj,
+        arac_zer,
+        pura_chime,
+        mvt_kaio,
+        non4me_bappe,
+        djedjam,
+        jnpjd,
+        leptit03,
+        ecs_flower,
+        f1xr_elamous_08,
+        emeric,
+        rocha1307,
+        shadd,
+        vieux_raleur_08,
+        pura_matex,
+        non4me_lucas,
+        ldl_shermy
+    ]
+    s08 = [
+        nfr_shadow_08,
+        wissam,
+        knf_fradj,
+        djedjam,
+        pura_matex,
+        pura_chime,
+        mvt_fly,
+        non4me_bappe,
+        f1xr_elamous_08,
+        mvt_kaio,
+        emeric,
+        ldl_shermy,
+        leptit03,
+        non4me_lucas,
+        vieux_raleur_08,
+        shadd,
+        arac_zer,
+        rocha1307,
+        ecs_flower,
+        jnpjd
+    ]
+    c08 = [
+        pura_chime,
+        arac_zer,
+        non4me_bappe,
+        djedjam,
+        jnpjd,
+        pura_matex,
+        mvt_kaio,
+        emeric,
+        ldl_shermy,
+        wissam,
+        knf_fradj,
+        ecs_flower,
+        non4me_lucas,
+        mvt_fly,
+        rocha1307,
+        f1xr_elamous_08,
+        vieux_raleur_08,
+        shadd,
+        nfr_shadow_08,
+        leptit03
+    ]
+
+    gp08.setQualification(q08)
+    gp08.setSprint(s08)
+    gp08.setCourse(c08)
+    gp08.calcul(abandonsCourse = 5)
+
     # Classement final ############################################################################
 
     final = gp01.getPoints()
@@ -566,6 +657,7 @@ def getPointsD4(stats = False) -> dict:
     final = sumDict(final, gp05.getPoints())
     final = sumDict(final, gp06.getPoints())
     final = sumDict(final, gp07.getPoints())
+    final = sumDict(final, gp08.getPoints())
 
     # Statistiques ################################################################################
 
