@@ -538,6 +538,95 @@ def getPointsD3(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 8
+    gp08 = GrandPrix("France", sprint = True)
+
+    # Remplaçants
+    qsr_lajoya_08 = Pilote("Istoozen Eko", Williams)
+    djedjam_08 = Pilote("FcT Tweekaz", Haas)
+    fct_deadpool_08 = Pilote("NoN4me Cami", RedBull)
+
+    qsr_lajoya_08.setGamertagRemplacant("QSR LaJoya")
+    djedjam_08.setGamertagRemplacant("Djedjam")
+    fct_deadpool_08.setGamertagRemplacant("FcT Deadpool")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q08 = [
+        pur_ilton,
+        non4me_cramer,
+        non4me_geckoz,
+        rp1_skyzzz,
+        f1m_alexgt500,
+        qsr_lajoya_08,
+        djedjam_08,
+        pur_ultraaa,
+        non4me_livai,
+        pura_jager,
+        ert_matfax,
+        non4me_jordy,
+        fct_specktre,
+        str_pagaa,
+        rp1_ice,
+        ert_karanox,
+        fct_coco,
+        xrt_nico2a,
+        fct_deadpool_08,
+        tonati2514
+    ]
+    s08 = [
+        pur_ilton,
+        non4me_cramer,
+        f1m_alexgt500,
+        non4me_geckoz,
+        qsr_lajoya_08,
+        djedjam_08,
+        ert_karanox,
+        str_pagaa,
+        tonati2514,
+        fct_coco,
+        non4me_livai,
+        pur_ultraaa,
+        rp1_ice,
+        fct_specktre,
+        rp1_skyzzz,
+        non4me_jordy,
+        fct_deadpool_08,
+        xrt_nico2a,
+        pura_jager,
+        ert_matfax
+    ]
+    c08 = [
+        qsr_lajoya_08,
+        non4me_geckoz,
+        pur_ilton,
+        non4me_cramer,
+        djedjam_08,
+        ert_karanox,
+        ert_matfax,
+        f1m_alexgt500,
+        str_pagaa,
+        rp1_ice,
+        fct_coco,
+        rp1_skyzzz,
+        fct_specktre,
+        non4me_jordy,
+        xrt_nico2a,
+        non4me_livai,
+        pur_ultraaa,
+        fct_deadpool_08,
+        pura_jager,
+        tonati2514
+    ]
+
+    gp08.setQualification(q08)
+    gp08.setSprint(s08)
+    gp08.setCourse(c08)
+    gp08.calcul(abandonsCourse = 6)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -545,6 +634,7 @@ def getPointsD3(stats = False) -> dict:
     final = sumDict(final, gp05.getPoints())
     final = sumDict(final, gp06.getPoints())
     final = sumDict(final, gp07.getPoints())
+    final = sumDict(final, gp08.getPoints())
 
     # Statistiques ################################################################################
 
