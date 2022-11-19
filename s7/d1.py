@@ -430,7 +430,6 @@ def getPointsD1(stats = False) -> dict:
     rp1_varane.setGamertag("RP1 Varane")
     rp1_varane.setGamertagRemplacant("RP1 Varane")
 
-
     ###############################################################################################
 
     # Course 7
@@ -499,12 +498,102 @@ def getPointsD1(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 8
+    gp08 = GrandPrix("France", sprint = True)
+
+    # Remplaçants
+    pur_thomas_08 = Pilote("FRA Raaven", Mercedes)
+    pur_ilton_08 = Pilote("RP1 Chadoo", AlphaTauri)
+
+    pur_thomas_08.setDonnees(pur_thomas_05.getDonnees())
+    pur_ilton_08.setDonnees(pur_ilton_07.getDonnees())
+
+    pur_thomas_08.setGamertagRemplacant("PuR Thomas")
+    pur_ilton_08.setGamertagRemplacant("PuR Ilton")
+
+    # Pénalités en qualification
+
+    q08 = [
+        pur_nygraal,
+        rp1_noctis,
+        rp1_theo,
+        ert_batxone,
+        pur_lowky,
+        pur_thomas_08,
+        pur_rosberg,
+        rp1_montoya,
+        ldl_saumon,
+        ldl_oli,
+        pur_ilton_08,
+        rp1_winterr,
+        rp1_adam,
+        xrt_arthur,
+        mcr_path,
+        tx3_enzo,
+        rp1_varane,
+        mcr_jayrko,
+        shz_piccolo,
+        xrt_oxygen
+    ]
+    s08 = [
+        pur_nygraal,
+        rp1_noctis,
+        ert_batxone,
+        rp1_theo,
+        pur_lowky,
+        pur_thomas_08,
+        pur_rosberg,
+        ldl_saumon,
+        ldl_oli,
+        pur_ilton_08,
+        rp1_adam,
+        xrt_arthur,
+        rp1_winterr,
+        mcr_path,
+        rp1_varane,
+        mcr_jayrko,
+        tx3_enzo,
+        xrt_oxygen, 
+        shz_piccolo,
+        rp1_montoya
+    ]
+    c08 = [
+        pur_nygraal,
+        ert_batxone,
+        ldl_oli,
+        rp1_theo,
+        pur_rosberg,
+        ldl_saumon,
+        pur_thomas_08,
+        rp1_noctis,
+        pur_ilton_08,
+        rp1_adam,
+        xrt_oxygen,
+        mcr_jayrko,
+        tx3_enzo,
+        rp1_varane,
+        xrt_arthur,
+        mcr_path,
+        rp1_winterr,
+        rp1_montoya,
+        pur_lowky,
+        shz_piccolo
+    ]
+
+    gp08.setQualification(q08)
+    gp08.setSprint(s08)
+    gp08.setCourse(c08)
+    gp08.calcul(abandonsCourse=5)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
     final = sumDict(final, gp04.getPoints())
     final = sumDict(final, gp05.getPoints())
     final = sumDict(final, gp07.getPoints())
+    final = sumDict(final, gp08.getPoints())
 
     # Statistiques ################################################################################
 
