@@ -127,6 +127,7 @@ def getPointsD4(stats = False) -> dict:
 
     djedjam_02.setGamertagRemplacant("Djedjam")
     legion_rambow_02.setGamertagRemplacant("Legion Rambow")
+    pura_matex.setGamertagRemplacant("PuRa Matex")
 
     # Pénalités en qualification
     # Aucune
@@ -345,7 +346,7 @@ def getPointsD4(stats = False) -> dict:
     # Remplaçants
     tonati2514_05 = Pilote("Emeric", McLaren)
     djedjam_05 = Pilote("CRL Bikette", AlfaRomeo)
-    rocha1307_05 = arac_pafael = Pilote("aRAC Pafael", Alpine)
+    rocha1307_05 = Pilote("aRAC Pafael", Alpine)
     nxs_tiga_05 = Pilote("NoN4me Lucas", Ferrari)
     wissam_05 = Pilote("Shadd", AlphaTauri)
 
@@ -504,6 +505,9 @@ def getPointsD4(stats = False) -> dict:
     rp1_eria_07.setGamertagRemplacant("RP1 Eria")
     nfr_shadow_07.setGamertagRemplacant("NFR Shadow")
     str_la_atge_07.setGamertagRemplacant("STR La Atge")
+    wissam.setGamertagRemplacant("Wissam")
+    rocha1307.setGamertagRemplacant("Rocha1307")
+    djedjam.setGamertagRemplacant("Djedjam")
 
     # Pénalités en qualification
     # Aucune
@@ -722,6 +726,75 @@ def getPointsD4(stats = False) -> dict:
     gp09.setCourse(c09)
     gp09.calcul(abandonsCourse = 7)
 
+    ###############################################################################################
+
+    # Course 10
+    gp10 = GrandPrix("Singapour", sprint = False)
+
+    # Remplacants
+    str_la_atge_10 = Pilote("ECS Flower", AstonMartin)
+    ripeur_delite_10 = Pilote("aRAC Pafael", Alpine)
+    vieux_raleur_10 = Pilote("MVT Kaio", Williams)
+
+    str_la_atge_10.setDonnees(str_la_atge_07.getDonnees())
+    vieux_raleur_10.setDonnees(vieux_raleur_09.getDonnees())
+
+    str_la_atge_10.setGamertagRemplacant("STR La Atge")
+    ripeur_delite_10.setGamertagRemplacant("Ripeur Delite")
+    vieux_raleur_10.setGamertagRemplacant("Vieux Raleur")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q10 = [
+        pura_chime,
+        crl_bikette,
+        djedjam,
+        jnpjd,
+        arac_zer,
+        rocha1307,
+        ripeur_delite_10,
+        non4me_lucas,
+        emeric,
+        rp1_fifou,
+        mvt_fly,
+        shadd,
+        leptit03,
+        wissam,
+        ldl_shermy,
+        vieux_raleur_10,
+        pura_matex,
+        knf_fradj,
+        non4me_bappe,
+        str_la_atge_10
+    ]
+    c10 = [
+        crl_bikette,
+        djedjam,
+        emeric,
+        knf_fradj,
+        non4me_bappe,
+        jnpjd,
+        shadd,
+        arac_zer,
+        pura_matex,
+        wissam,
+        pura_chime,
+        rp1_fifou,
+        vieux_raleur_10,
+        non4me_lucas,
+        ripeur_delite_10,
+        str_la_atge_10,
+        mvt_fly,
+        rocha1307,
+        leptit03,
+        ldl_shermy
+    ]
+
+    gp10.setQualification(q10)
+    gp10.setCourse(c10)
+    gp10.calcul(abandonsCourse = 5)
+
     # Classement final ############################################################################
 
     final = gp01.getPoints()
@@ -733,6 +806,7 @@ def getPointsD4(stats = False) -> dict:
     final = sumDict(final, gp07.getPoints())
     final = sumDict(final, gp08.getPoints())
     final = sumDict(final, gp09.getPoints())
+    final = sumDict(final, gp10.getPoints())
 
     # Statistiques ################################################################################
 
