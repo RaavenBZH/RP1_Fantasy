@@ -655,14 +655,86 @@ def getPointsD1(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 10
+    gp10 = GrandPrix("Singapour", sprint = False)
+
+    # Remplaçants
+    pur_vincent_10 = Pilote("RP1 Winterr", AlphaTauri)
+    pur_ripply_10 = Pilote("RP1 Noctis", RedBull)
+    pur_thomas_10 = Pilote("PuR Rosberg", Mercedes)
+    pur_ilton_10 = Pilote("FRA Raaven", Mercedes)
+
+    pur_ripply_10.setDonnees(pur_ripply_05.getDonnees())
+    pur_thomas_10.setDonnees(pur_thomas_09.getDonnees())
+    pur_ilton_10.setDonnees(pur_ilton_08.getDonnees())
+
+    pur_vincent_10.setGamertagRemplacant("PuR Vincent")
+    pur_ripply_10.setGamertagRemplacant("PuR Ripply")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q10 = [
+        pur_nygraal,
+        pur_thomas_10,
+        pur_ilton_10,
+        ert_batxone,
+        ldl_saumon,
+        rp1_montoya,
+        rp1_theo,
+        rp1_varane,
+        pur_lowky,
+        xrt_arthur,
+        rp1_maldini,
+        rp1_adam,
+        xrt_oxygen,
+        mcr_path,
+        pur_ripply_10,
+        pur_vincent_10,
+        mcr_jayrko,
+        ldl_oli,
+        tx3_enzo,
+        rp1_chadoo
+    ]
+    c10 = [
+        pur_nygraal,
+        pur_thomas_10,
+        ldl_saumon,
+        pur_ilton_10,
+        ert_batxone,
+        xrt_oxygen,
+        pur_vincent_10,
+        rp1_adam,
+        ldl_oli,
+        rp1_montoya,
+        tx3_enzo,
+        mcr_jayrko,
+        rp1_varane,
+        xrt_arthur,
+        mcr_path,
+        rp1_maldini,
+        pur_ripply_10,
+        pur_lowky,
+        rp1_theo,
+        rp1_chadoo
+    ]
+
+    gp10.setQualification(q10)
+    gp10.setCourse(c10)
+    gp10.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=2)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
     final = sumDict(final, gp04.getPoints())
     final = sumDict(final, gp05.getPoints())
+    #
     final = sumDict(final, gp07.getPoints())
     final = sumDict(final, gp08.getPoints())
     final = sumDict(final, gp09.getPoints())
+    final = sumDict(final, gp10.getPoints())
 
     # Statistiques ################################################################################
 
