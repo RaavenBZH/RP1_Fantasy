@@ -34,7 +34,7 @@ def getPointsD1(stats = False) -> dict:
     rp1_okwaru = Pilote("PuR Nygraal", Ferrari) # remplacé ... PuR Nygraal
     rp1_theo = Pilote("RP1 Theo", Ferrari)
     rp1_montoya = Pilote("RP1 Montoya", McLaren)
-    rp1_varane = Pilote("PuR Lowky", McLaren) # remplacé ... PuR Lowky [x]
+    rp1_varane = Pilote("PuR Lowky", McLaren) # remplacé ... PuR Lowky
     ldl_oli = Pilote("LDL Oli", Alpine)
     ldl_saumon = Pilote("LDL Saumon", Alpine)
     rp1_chadoo = Pilote("RP1 Chadoo", AlphaTauri)
@@ -45,8 +45,8 @@ def getPointsD1(stats = False) -> dict:
     pur_snika = Pilote("RP1 Varane", Williams) # remplacé ... RP1 Varane
     rp1_adam = Pilote("RP1 Adam", AlfaRomeo)
     xrt_arthur = Pilote("XRT Arthur", AlfaRomeo)
-    pur_lowky = Pilote("TX3 Enzo", Haas) # remplacé ... TX3 Enzo [x]
-    fct_daigoro = Pilote("SHZ Piccolo", Haas) # remplacé ... SHZ Piccolo [x]
+    pur_lowky = Pilote("TX3 Enzo", Haas) # remplacé ... TX3 Enzo
+    fct_daigoro = Pilote("RP1 Maldini", Haas) # remplacé ... SHZ Piccolo ... RP1 Maldini
 
     ###############################################################################################
 
@@ -437,12 +437,13 @@ def getPointsD1(stats = False) -> dict:
 
     # Remplaçants
     pur_ilton_07 = Pilote("RP1 Chadoo", McLaren)
-    shz_piccolo = Pilote("SHZ Piccolo", Haas)
+    shz_piccolo = Pilote("RP1 Maldini", Haas)
     tx3_enzo = Pilote("TX3 Enzo", Haas)
 
     tx3_enzo.setDonnees(tx3_enzo_05.getDonnees())
 
     pur_ilton_07.setGamertagRemplacant("PuR Ilton")
+    shz_piccolo.setGamertagRemplacant("SHZ Piccolo")
 
     # Pénalités en qualification
     # Aucune
@@ -587,6 +588,73 @@ def getPointsD1(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 9
+    gp09 = GrandPrix("Azerbaidjan", sprint = False)
+
+    # Remplaçants
+    rp1_maldini = Pilote("RP1 Maldini", Haas)
+    pur_thomas_09 = Pilote("FRA Raaven", Mercedes)
+    if1_meister_09 = Pilote("RP1 Chadoo", AlphaTauri)
+
+    pur_thomas_09.setDonnees(pur_thomas_08.getDonnees())
+    
+    pur_thomas_09.setGamertagRemplacant("PuR Thomas")
+    if1_meister_09.setGamertagRemplacant("IF1 Meister")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q09 = [
+        pur_nygraal,
+        rp1_noctis,
+        pur_lowky,
+        pur_rosberg,
+        pur_thomas_09,
+        ldl_oli,
+        rp1_adam,
+        xrt_arthur,
+        rp1_theo,
+        ert_batxone,
+        ldl_saumon,
+        rp1_winterr,
+        rp1_montoya,
+        rp1_maldini,
+        rp1_varane,
+        mcr_path,
+        mcr_jayrko,
+        if1_meister_09,
+        tx3_enzo,
+        xrt_oxygen
+    ]
+    c09 = [
+        pur_nygraal,
+        pur_thomas_09,
+        rp1_noctis,
+        rp1_montoya,
+        rp1_varane,
+        ldl_oli,
+        rp1_theo,
+        ldl_saumon,
+        xrt_arthur,
+        tx3_enzo,
+        rp1_winterr,
+        mcr_jayrko,
+        rp1_adam,
+        ert_batxone,
+        rp1_maldini,
+        pur_lowky,
+        pur_rosberg,
+        mcr_path,
+        if1_meister_09,
+        xrt_oxygen
+    ]
+
+    gp09.setQualification(q09)
+    gp09.setCourse(c09)
+    gp09.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=4)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -594,6 +662,7 @@ def getPointsD1(stats = False) -> dict:
     final = sumDict(final, gp05.getPoints())
     final = sumDict(final, gp07.getPoints())
     final = sumDict(final, gp08.getPoints())
+    final = sumDict(final, gp09.getPoints())
 
     # Statistiques ################################################################################
 

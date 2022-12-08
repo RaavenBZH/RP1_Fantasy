@@ -33,7 +33,7 @@ def getPointsD3(stats = False) -> dict:
     non4me_cami = Pilote("NoN4me Cami", RedBull)
     non4me_livai = Pilote("NoN4me Livai", Ferrari)
     f1m_alexgt500 = Pilote("F1M AlexGT500", Ferrari)
-    pura_jager = Pilote("PuRa Jager", McLaren)
+    pura_jager = Pilote("Heroziah", McLaren) # remplacé ... Heroziah
     pur_ultraaa = Pilote("PuR Ultraaa", McLaren)
     xrt_nico2a = Pilote("XRT Nico2a", Alpine)
     ert_karanox = Pilote("ERT Karanox", Alpine)
@@ -52,6 +52,7 @@ def getPointsD3(stats = False) -> dict:
 
     xrt_marth.setGamertagRemplacant("XRT Marth")
     rp1_durtom.setGamertagRemplacant("RP1 Durtom")
+    pura_jager.setGamertagRemplacant("PuRa Jager")
 
     ###############################################################################################
 
@@ -400,7 +401,7 @@ def getPointsD3(stats = False) -> dict:
     non4me_stuno_06 = Pilote("FcT Tweekaz", Haas)
     istoozen_eko_06 = Pilote("Istoozen Eko", Williams)
     ldl_zepro_06 = Pilote("Tonati2514", AlphaTauri)
-    f1xl_fanfan_06 = Pilote("PuRa Jager", McLaren)
+    f1xl_fanfan_06 = Pilote("Heroziah", McLaren)
 
     non4me_stuno_06.setDonnees(non4me_stuno_02.getDonnees())
     istoozen_eko_06.setDonnees(istoozen_eko_05.getDonnees())
@@ -627,6 +628,81 @@ def getPointsD3(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 9
+    gp09 = GrandPrix("Azerbaidjan", sprint = False)
+
+    # Remplaçants
+    fct_deadpool_09 = Pilote("NoN4me Jordy", AstonMartin)
+    ert_tiiste_09 = Pilote("Istoozen Eko", Williams)
+    pura_matex_09 = Pilote("XRT Nico2a", Alpine)
+    pura_chime_09 = Pilote("NoN4me Livai", Ferrari)
+    djedjam_09 = Pilote("FcT Tweekaz", Haas)
+    heroziah = Pilote("Heroziah", McLaren)
+
+    fct_deadpool_09.setDonnees(fct_deadpool_08.getDonnees())
+    ert_tiiste_09.setDonnees(ert_tiiste_07.getDonnees())
+    djedjam_09.setDonnees(djedjam_08.getDonnees())
+
+    fct_deadpool_09.setGamertagRemplacant("FcT Deadpool")
+    ert_tiiste_09.setGamertagRemplacant("ERT Tiiste")
+    pura_matex_09.setGamertagRemplacant("PuRa Matex")
+    pura_chime_09.setGamertagRemplacant("PuRa Chime")
+    djedjam_09.setGamertagRemplacant("Djedjam")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q09 = [
+        djedjam_09,
+        f1m_alexgt500,
+        non4me_geckoz,
+        non4me_cramer,
+        rp1_skyzzz,
+        ert_karanox,
+        rp1_ice,
+        ert_matfax,
+        pura_chime_09,
+        pur_ilton,
+        non4me_cami,
+        pura_matex_09,
+        fct_specktre,
+        tonati2514,
+        pur_ultraaa,
+        ert_tiiste_09,
+        fct_deadpool_09,
+        fct_coco,
+        heroziah,
+        str_pagaa
+    ]
+    c09 = [
+        ert_matfax,
+        pura_matex_09,
+        rp1_ice,
+        non4me_cramer,
+        non4me_geckoz,
+        pur_ultraaa,
+        fct_coco,
+        fct_specktre,
+        djedjam_09,
+        ert_karanox,
+        pura_chime_09,
+        ert_tiiste_09,
+        fct_deadpool_09,
+        tonati2514,
+        f1m_alexgt500,
+        non4me_cami,
+        heroziah,
+        rp1_skyzzz,
+        pur_ilton,
+        str_pagaa
+    ]
+
+    gp09.setQualification(q09)
+    gp09.setCourse(c09)
+    gp09.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse = 8)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -635,6 +711,7 @@ def getPointsD3(stats = False) -> dict:
     final = sumDict(final, gp06.getPoints())
     final = sumDict(final, gp07.getPoints())
     final = sumDict(final, gp08.getPoints())
+    final = sumDict(final, gp09.getPoints())
 
     # Statistiques ################################################################################
 
