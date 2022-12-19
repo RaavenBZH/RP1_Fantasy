@@ -39,9 +39,9 @@ def getPointsD2(stats = False) -> dict:
     rp1_gachette = Pilote("RP1 Gachette", Alpine)
     if1_supreme = Pilote("iF1 Supr3me", AlphaTauri)
     loc_warf1 = Pilote("LOC WarF1", AlphaTauri)
-    mcr_spacex = Pilote("MCR SpaceX", AstonMartin)
+    mcr_spacex = Pilote("Non4me Stuno", AstonMartin) # remplacé ... Non4me Stuno
     fct_deadpool = Pilote("Mirage9150", AstonMartin) # remplacé ... Mirage9150
-    rp1_owain = Pilote("ASE Luisnts1", Williams) # remplacé ... ASE Luisnts1
+    rp1_owain = Pilote("GL Tharsi", Williams) # remplacé ... ASE Luisnts1 ... GL Tharsi
     ecs_finesse = Pilote("ECS Finesse", Williams)
     ert_aurelius = Pilote("ERT Aurelius", AlfaRomeo)
     fct_lasouche = Pilote("FcT LaSouche", AlfaRomeo)
@@ -55,6 +55,7 @@ def getPointsD2(stats = False) -> dict:
     heroziah.setGamertagRemplacant("Heroziah")
     fct_deadpool.setGamertagRemplacant("FcT Deadpool")
     pur_racing.setGamertagRemplacant("PuR Racing")
+    mcr_spacex.setGamertagRemplacant("MCR SpaceX")
 
     ###############################################################################################
 
@@ -128,7 +129,7 @@ def getPointsD2(stats = False) -> dict:
     # Remplaçants
     ert_niloboo_02 = Pilote("LOC WarF1", AlphaTauri)
     pura_jager_02 = Pilote("PuRa Jager", McLaren)
-    rp1_woody_02 = Pilote("ASE Luisnts1", Williams)
+    rp1_woody_02 = Pilote("GL Tharsi", Williams)
 
     ert_niloboo_02.setDonnees(ert_niloboo_01.getDonnees())
 
@@ -217,7 +218,7 @@ def getPointsD2(stats = False) -> dict:
     gp03 = GrandPrix("Espagne", sprint = False)
 
     # Remplaçants
-    ase_luisnts1 = Pilote("ASE Luisnts1", Williams)
+    ase_luisnts1 = Pilote("GL Tharsi", Williams)
     pur_voltha_03 = Pilote("LOC WarF1", AlphaTauri)
     pura_jager_03 = Pilote("PuRa Jager", McLaren)
     non4me_cramer_03 = Pilote("Yozana", Haas)
@@ -225,6 +226,7 @@ def getPointsD2(stats = False) -> dict:
 
     pura_jager_03.setDonnees(pura_jager_02.getDonnees())
 
+    ase_luisnts1.setGamertagRemplacant("ASE Luisnts1")
     pur_voltha_03.setGamertagRemplacant("PuR Voltha")
     pura_jager_03.setGamertagRemplacant("PuRa Jager")
     non4me_cramer_03.setGamertagRemplacant("Non4me Cramer")
@@ -291,7 +293,7 @@ def getPointsD2(stats = False) -> dict:
     pur_voltha = Pilote("PuR Voltha", Ferrari)
     ert_niloboo_04 = Pilote("LOC WarF1", AlphaTauri)
     pura_jager_04 = Pilote("RP1 Tribion", McLaren)
-    istoozen_eko_04 = Pilote("ASE Luisnts1", Williams)
+    istoozen_eko_04 = Pilote("GL Tharsi", Williams)
     mirage9150_04 = Pilote("Mirage9150", AstonMartin)
 
     pur_voltha.setDonnees(pur_voltha_03.getDonnees())
@@ -435,9 +437,9 @@ def getPointsD2(stats = False) -> dict:
     # Remplaçants
     ert_niloboo_06 = Pilote("FcT LaSouche", AlfaRomeo)
     pur_ilton_06 = Pilote("PuR Vincent", Mercedes)
-    non4me_jordy_06 = Pilote("MCR SpaceX", AstonMartin)
+    non4me_jordy_06 = Pilote("Non4me Stuno", AstonMartin)
     pur_vinboy_06 = Pilote("Mirage9150", AstonMartin)
-    istoozen_eko_06 = Pilote("ASE Luisnts1", Williams)
+    istoozen_eko_06 = Pilote("GL Tharsi", Williams)
 
     ert_niloboo_06.setDonnees(ert_niloboo_04.getDonnees())
     pur_ilton_06.setDonnees(pur_ilton_05.getDonnees())
@@ -582,7 +584,7 @@ def getPointsD2(stats = False) -> dict:
     # Remplaçants
     ert_niloboo_08 = Pilote("FcT LaSouche", AlfaRomeo)
     rp1_papash_08 = Pilote("PuRa Tomoe", Haas)
-    rp1_skyzzz_08 = Pilote("MCR SpaceX", AstonMartin)
+    rp1_skyzzz_08 = Pilote("Non4me Stuno", AstonMartin)
     mirage9150_08 = Pilote("Mirage9150", AstonMartin)
     if1_meister_08 = Pilote("XRT Darkfly", Alpine)
     fct_specktre_08 = Pilote("RP1 Tribion", McLaren)
@@ -689,8 +691,8 @@ def getPointsD2(stats = False) -> dict:
     vega_elsass_09 = Pilote("FcT LaSouche", AlfaRomeo)
     f1m_alexgt500_09 = Pilote("PuR Voltha", Ferrari)
     pur_ilton_09 = Pilote("PuR Vincent", Mercedes)
-    fct_specktre_09 = Pilote("MCR SpaceX", AstonMartin)
-    fct_coco_09 = Pilote("ASE Luisnts1", Williams)
+    fct_specktre_09 = Pilote("Non4me Stuno", AstonMartin)
+    fct_coco_09 = Pilote("GL Tharsi", Williams)
 
     pura_jager.setDonnees(pura_jager_04.getDonnees())
     if1_meister_09.setDonnees(if1_meister_08.getDonnees())
@@ -772,8 +774,8 @@ def getPointsD2(stats = False) -> dict:
     non4me_geckoz_10 = Pilote("ERT Aurelius", AlfaRomeo)
     ert_niloboo_10 = Pilote("FcT LaSouche", AlfaRomeo)
     rp1_skyzzz_10 = Pilote("F1M AlexGT500", Ferrari)
-    mcr_papyx_10 = Pilote("MCR SpaceX", AstonMartin)
-    sithar07_10 = Pilote("ASE Luisnts1", Williams)
+    mcr_papyx_10 = Pilote("Non4me Stuno", AstonMartin)
+    sithar07_10 = Pilote("GL Tharsi", Williams)
 
     pur_ilton_10.setDonnees(pur_ilton_09.getDonnees())
     non4me_cramer_10.setDonnees(non4me_cramer_03.getDonnees())
@@ -844,6 +846,91 @@ def getPointsD2(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 11
+    gp11 = GrandPrix("Barhein", sprint = False)
+
+    # Remplaçants
+    non4me_stuno = Pilote("Non4me Stuno", AstonMartin)
+    rp1_skyzzz_11 = Pilote("ECS Finesse", Williams)
+    ert_niloboo_11 = Pilote("FcT LaSouche", AlfaRomeo)
+    ert_wartors_11 = Pilote("ERT Aurelius", AlfaRomeo)
+    pur_vinboy_11 = Pilote("PuRa Tomoe", Haas)
+    ert_karanox_11 = Pilote("iF1 Supreme", AlphaTauri)
+    f1m_alexgt500 = Pilote("F1M AlexGT500", Ferrari)
+    tonati2514_11 = Pilote("LOC WarF1", AlphaTauri)
+    gl_tharsi = Pilote("GL Tharsi", Williams)
+
+    non4me_stuno.setDonnees(non4me_stuno_09.getDonnees())
+    rp1_skyzzz_11.setDonnees(rp1_skyzzz_10.getDonnees())
+    ert_niloboo_11.setDonnees(ert_niloboo_10.getDonnees())
+    pur_vinboy_11.setDonnees(pur_vinboy_06.getDonnees())
+    ert_karanox_11.setDonnees(ert_karanox_10.getDonnees())
+    f1m_alexgt500.setDonnees(f1m_alexgt500_09.getDonnees())
+    tonati2514_11.setDonnees(tonati2514_10.getDonnees())
+
+    non4me_stuno.setGamertagRemplacant("Non4me Stuno")
+    rp1_skyzzz_11.setGamertagRemplacant("RP1 Skyzzz")
+    ert_niloboo_11.setGamertagRemplacant("ERT Niloboo")
+    pur_vinboy_11.setGamertagRemplacant("PuR Vinboy")
+    ert_karanox_11.setGamertagRemplacant("ERT Karanox")
+    f1m_alexgt500.setGamertagRemplacant("F1M AlexGT500")
+    tonati2514_11.setGamertagRemplacant("Tonati2514")
+    gl_tharsi.setGamertagRemplacant("GL Tharsi")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q11 = [
+        pur_thomas,
+        non4me_stuno,
+        pur_voltha,
+        rp1_skyzzz_11,
+        pur_vincent,
+        ert_niloboo_11,
+        pur_ripply,
+        rp1_tribion,
+        ert_wartors_11,
+        xrt_darkfly,
+        pur_vinboy_11,
+        ert_karanox_11,
+        rp1_gachette,
+        f1m_alexgt500,
+        yozana,
+        pura_jager,
+        gl_tharsi,
+        tonati2514_11,
+        mirage9150,
+        ert_flyart
+    ]
+    c11 = [
+        pur_thomas,
+        non4me_stuno,
+        pur_vincent,
+        pur_vinboy_11,
+        pura_jager,
+        ert_karanox_11,
+        rp1_tribion,
+        pur_ripply,
+        rp1_skyzzz_11,
+        ert_wartors_11,
+        pur_voltha,
+        ert_niloboo_11,
+        tonati2514_11,
+        xrt_darkfly,
+        yozana,
+        rp1_gachette,
+        f1m_alexgt500,
+        mirage9150,
+        gl_tharsi,
+        ert_flyart
+    ]
+
+    gp11.setQualification(q11)
+    gp11.setCourse(c11)
+    gp11.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=8)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -854,6 +941,7 @@ def getPointsD2(stats = False) -> dict:
     final = sumDict(final, gp08.getPoints())
     final = sumDict(final, gp09.getPoints())
     final = sumDict(final, gp10.getPoints())
+    final = sumDict(final, gp11.getPoints())
 
     # Statistiques ################################################################################
 

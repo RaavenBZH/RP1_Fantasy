@@ -382,7 +382,7 @@ class GrandPrix:
             print(i.getGamertag() + " : " + str(i.getHistorique()))
 
     def __resetHistorique(self) -> None:
-        for i in self.__dico:
+        for i in self.__course:
             i.resetHistorique()
 
     def __statsPilotes(self, absentsQualif, absentsSprint, abandonsSprint, absentsCourse, abandonsCourse) -> None:

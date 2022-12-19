@@ -436,7 +436,7 @@ def getPointsD1(stats = False) -> dict:
     gp07 = GrandPrix("Japon", sprint = False)
 
     # Remplaçants
-    pur_ilton_07 = Pilote("RP1 Chadoo", McLaren)
+    pur_ilton_07 = Pilote("RP1 Chadoo", AlphaTauri)
     shz_piccolo = Pilote("RP1 Maldini", Haas)
     tx3_enzo = Pilote("TX3 Enzo", Haas)
 
@@ -725,6 +725,86 @@ def getPointsD1(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 11
+    gp11 = GrandPrix("Barhein", sprint = False)
+
+    # Remplaçants
+    ert_niloboo_11 = Pilote("RP1 Noctis", RedBull)
+    rp1_papash_11 = Pilote("RP1 Winterr", AlphaTauri)
+    pur_thomas_11 = Pilote("FRA Raaven", Mercedes)
+    pur_ilton_11 = Pilote("PuR Lowky", McLaren)
+    rp1_skyzz_11 = Pilote("TX3 Enzo", Haas)
+    pur_vincent_11 = Pilote("RP1 Chadoo", AlphaTauri)
+    pur_lowky_11 = Pilote("RP1 Theo", Ferrari)
+
+    ert_niloboo_11.setDonnees(ert_niloboo_04.getDonnees())
+    pur_thomas_11.setDonnees(pur_thomas_10.getDonnees())
+    pur_ilton_11.setDonnees(pur_ilton_10.getDonnees())
+    pur_vincent_11.setDonnees(pur_vincent_10.getDonnees())
+    pur_lowky_11.setDonnees(pur_lowky.getDonnees())
+
+    ert_niloboo_11.setGamertagRemplacant("ERT Niloboo")
+    rp1_papash_11.setGamertagRemplacant("RP1 Papash")
+    pur_thomas_11.setGamertagRemplacant("PuR Thomas")
+    pur_ilton_11.setGamertagRemplacant("PuR Ilton")
+    rp1_skyzz_11.setGamertagRemplacant("RP1 Skyzz")
+    pur_vincent_11.setGamertagRemplacant("PuR Vincent")
+    pur_lowky_11.setGamertagRemplacant("PuR Lowky")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q11 = [
+        pur_lowky_11,
+        pur_nygraal,
+        pur_rosberg,
+        ert_niloboo_11,
+        ert_batxone,
+        rp1_papash_11,
+        pur_thomas_11,
+        ldl_saumon,
+        pur_ilton_11,
+        rp1_skyzz_11,
+        ldl_oli,
+        rp1_maldini,
+        pur_vincent_11,
+        rp1_adam,
+        xrt_arthur,
+        rp1_varane,
+        mcr_path,
+        mcr_jayrko,
+        rp1_montoya,
+        xrt_oxygen
+    ]
+    c11 = [
+        pur_lowky_11,
+        pur_nygraal,
+        ert_niloboo_11,
+        ert_batxone,
+        pur_rosberg,
+        rp1_papash_11,
+        ldl_oli,
+        ldl_saumon,
+        rp1_montoya,
+        xrt_arthur,
+        rp1_varane,
+        mcr_path,
+        rp1_adam,
+        rp1_maldini,
+        mcr_jayrko,
+        rp1_skyzz_11,
+        pur_thomas_11,
+        pur_vincent_11,
+        pur_ilton_11,
+        xrt_oxygen
+    ]
+
+    gp11.setQualification(q11)
+    gp11.setCourse(c11)
+    gp11.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=3)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -735,7 +815,8 @@ def getPointsD1(stats = False) -> dict:
     final = sumDict(final, gp08.getPoints())
     final = sumDict(final, gp09.getPoints())
     final = sumDict(final, gp10.getPoints())
-
+    final = sumDict(final, gp11.getPoints())
+    
     # Statistiques ################################################################################
 
     if (stats):
@@ -753,7 +834,7 @@ def getPointsD1(stats = False) -> dict:
             participants = course.getQualification()
             for pilote in participants:
                 gt = pilote.getGamertagRemplacant()
-                pilotes[gt] = pilote                  
+                pilotes[gt] = pilote    
 
         # print(len(pilotes))
 

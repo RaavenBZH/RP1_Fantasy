@@ -777,6 +777,72 @@ def getPointsD3(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 11
+    gp11 = GrandPrix("Barhein", sprint = False)
+
+    # Remplacants
+    mcr_raikko_11 = Pilote("FcT Tweekaz", Haas)
+    arac_zer_11 = Pilote("Pur Ilton", Mercedes)
+    ert_wartors_11 = Pilote("FcT Specktre", AstonMartin)
+
+    mcr_raikko_11.setGamertagRemplacant("MCR Raikko")
+    arac_zer_11.setGamertagRemplacant("aRAC Zer")
+    ert_wartors_11.setGamertagRemplacant("ERT Wartors")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q11 = [
+        ert_karanox,
+        rp1_skyzzz,
+        non4me_cramer,
+        tonati2514,
+        non4me_geckoz,
+        ert_matfax,
+        ert_wartors_11,
+        mcr_raikko_11,
+        non4me_livai,
+        str_pagaa,
+        heroziah,
+        arac_zer_11,
+        istoozen_eko,
+        pur_ultraaa,
+        vega_elsass,
+        xrt_nico2a,
+        non4me_cami,
+        non4me_jordy,
+        fct_coco,
+        rp1_ice
+    ]
+    c11 = [
+        ert_karanox,
+        non4me_cramer,
+        non4me_geckoz,
+        tonati2514,
+        arac_zer_11,
+        str_pagaa,
+        ert_wartors_11,
+        rp1_skyzzz,
+        ert_matfax,
+        rp1_ice,
+        vega_elsass,
+        non4me_jordy,
+        fct_coco,
+        non4me_livai,
+        mcr_raikko_11,
+        xrt_nico2a,
+        istoozen_eko,
+        heroziah,
+        pur_ultraaa,
+        non4me_cami
+    ]
+
+    gp11.setQualification(q11)
+    gp11.setCourse(c11)
+    gp11.calcul(abandonsCourse=3)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -787,6 +853,7 @@ def getPointsD3(stats = False) -> dict:
     final = sumDict(final, gp08.getPoints())
     final = sumDict(final, gp09.getPoints())
     final = sumDict(final, gp10.getPoints())
+    final = sumDict(final, gp11.getPoints())
 
     # Statistiques ################################################################################
 
