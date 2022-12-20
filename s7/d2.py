@@ -931,6 +931,98 @@ def getPointsD2(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 12
+    gp12 = GrandPrix("AbuDhabi", sprint = False)
+
+    # Remplacants
+    non4me_geckoz_12 = Pilote("FcT LaSouche", AlfaRomeo)
+    pur_vinboy_12 = Pilote("PuRa Tomoe", Haas)
+    pura_chime_12 = Pilote("PuR Voltha", Ferrari)
+    pur_ilton_12 = Pilote("PuR Thomas", Mercedes)
+    non4me_jordy_12 = Pilote("RP1 Tribion", McLaren)
+    crl_bikette_12 = Pilote("ERT Aurelius", AlfaRomeo)
+    baptiste_heche_12 = Pilote("PuR Ripply", RedBull)
+    lucas_lulu_12 = Pilote("ECS Finesse", Williams)
+    pura_matex_12 = Pilote("RP1 Gachette", Alpine)
+    fct_coco_12 = Pilote("PuR Vincent", Mercedes)
+    niko77_12 = Pilote("LOC WarF1", AlphaTauri)
+    fct_specktre_12 = Pilote("Mirage9150", AstonMartin)
+
+    non4me_geckoz_12.setDonnees(non4me_geckoz_10.getDonnees())
+    pur_vinboy_12.setDonnees(pur_vinboy_11.getDonnees())
+    pur_ilton_12.setDonnees(pur_ilton_12.getDonnees())
+    non4me_jordy_12.setDonnees(non4me_jordy_06.getDonnees())
+    fct_coco_12.setDonnees(fct_coco_09.getDonnees())
+    fct_specktre_12.setDonnees(fct_specktre_09.getDonnees())
+
+    non4me_geckoz_12.setGamertagRemplacant("Non4me Geckoz")
+    pur_vinboy_12.setGamertagRemplacant("PuR Vinboy")
+    pura_chime_12.setGamertagRemplacant("PuRa Chime")
+    pur_ilton_12.setGamertagRemplacant("PuR Ilton")
+    non4me_jordy_12.setGamertagRemplacant("Non4me Jordy")
+    crl_bikette_12.setGamertagRemplacant("CRL Bikette")
+    baptiste_heche_12.setGamertagRemplacant("Baptiste Heche")
+    lucas_lulu_12.setGamertagRemplacant("Lucas Lulu")
+    pura_matex_12.setGamertagRemplacant("PuRa Matex")
+    fct_coco_12.setGamertagRemplacant("FcT Coco")
+    niko77_12.setGamertagRemplacant("Niko77")
+    fct_specktre_12.setGamertagRemplacant("FcT Specktre")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q12 = [
+        non4me_stuno,
+        non4me_geckoz_12,
+        pur_vinboy_12,
+        pura_chime_12,
+        f1m_alexgt500,
+        pur_ilton_12,
+        xrt_darkfly,
+        pura_jager,
+        non4me_jordy_12,
+        crl_bikette_12,
+        baptiste_heche_12,
+        lucas_lulu_12,
+        if1_supreme,
+        pura_matex_12,
+        fct_coco_12,
+        yozana,
+        niko77_12,
+        fct_specktre_12,
+        gl_tharsi,
+        ert_flyart
+    ]
+
+    c12 = [
+        non4me_stuno,
+        pur_ilton_12,
+        f1m_alexgt500,
+        crl_bikette_12,
+        yozana,
+        fct_coco_12,
+        lucas_lulu_12,
+        non4me_jordy_12,
+        pura_matex_12,
+        gl_tharsi,
+        pur_vinboy_12,
+        non4me_geckoz_12,
+        fct_specktre_12,
+        pura_jager,
+        niko77_12,
+        pura_chime_12,
+        baptiste_heche_12,
+        ert_flyart,
+        xrt_darkfly,
+        if1_supreme
+    ]
+
+    gp12.setQualification(q12)
+    gp12.setCourse(c12)
+    gp12.calcul(abandonsCourse=3)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -942,6 +1034,7 @@ def getPointsD2(stats = False) -> dict:
     final = sumDict(final, gp09.getPoints())
     final = sumDict(final, gp10.getPoints())
     final = sumDict(final, gp11.getPoints())
+    final = sumDict(final, gp12.getPoints())
 
     # Statistiques ################################################################################
 
@@ -957,7 +1050,7 @@ def getPointsD2(stats = False) -> dict:
         """
         
         pilotes = {}
-        courses = [gp01, gp02, gp03, gp04, gp05]
+        courses = [gp01, gp02, gp03, gp04, gp05, gp06, gp07, gp08, gp09, gp10, gp11, gp12]
         for course in courses:
             participants = course.getQualification()
             for pilote in participants:

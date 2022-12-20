@@ -868,7 +868,67 @@ def getPointsD4(stats = False) -> dict:
     gp11.setCourse(c11)
     gp11.calcul(absentsQualif=1, absentsCourse=1)
 
-    # Classement final ############################################################################
+    ###############################################################################################
+
+    # Course 12
+    gp12 = GrandPrix("AbuDhabi", sprint = False)
+
+    # Remplacants
+    # Aucun
+
+    # Pénalités en qualification
+    # Aucune
+
+    q12 = [
+        djedjam,
+        pura_matex,
+        crl_bikette,
+        pura_chime,
+        emeric,
+        leptit03,
+        non4me_lucas,
+        rocha1307,
+        mvt_kaio,
+        jnpjd,
+        knf_fradj,
+        non4me_bappe,
+        ripeur_delite,
+        wissam,
+        mvt_fly,
+        arac_zer,
+        nxs_tiga,
+        ldl_shermy,
+        rp1_fifou,
+        shadd
+    ]
+    c12 = [
+        pura_matex,
+        djedjam,
+        crl_bikette,
+        arac_zer,
+        non4me_bappe,
+        rp1_fifou,
+        wissam,
+        ripeur_delite,
+        ldl_shermy,
+        nxs_tiga,
+        knf_fradj,
+        shadd,
+        jnpjd,
+        emeric,
+        pura_chime,
+        leptit03,
+        non4me_lucas,
+        mvt_kaio,
+        mvt_fly,
+        rocha1307
+    ]
+
+    gp12.setQualification(q12)
+    gp12.setCourse(c12)
+    gp12.calcul(abandonsCourse=10)
+    
+    ###############################################################################################
 
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
@@ -881,6 +941,7 @@ def getPointsD4(stats = False) -> dict:
     final = sumDict(final, gp09.getPoints())
     final = sumDict(final, gp10.getPoints())
     final = sumDict(final, gp11.getPoints())
+    final = sumDict(final, gp12.getPoints())
 
     # Statistiques ################################################################################
 
@@ -892,7 +953,7 @@ def getPointsD4(stats = False) -> dict:
         """
         
         pilotes = {}
-        courses = [gp01, gp02, gp03, gp04, gp05]
+        courses = [gp01, gp02, gp03, gp04, gp05, gp06, gp07, gp08, gp09, gp10, gp11, gp12]
         for course in courses:
             participants = course.getQualification()
             for pilote in participants:

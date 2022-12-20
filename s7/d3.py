@@ -843,6 +843,80 @@ def getPointsD3(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 12
+    gp12 = GrandPrix("AbuDhabi", sprint = False)
+
+    # Remplacants
+    mcr_raikko_12 = Pilote("FcT Tweekaz", Haas)
+    ldl_zepro_12 = Pilote("Istoosen Eko", Williams)
+    pura_matex_12 = Pilote("XRT Nico2a", Alpine)
+    ert_wartors_12 = Pilote("ERT Matfax", AlfaRomeo)
+
+    mcr_raikko_12.setDonnees(mcr_raikko_11.getDonnees())
+    ldl_zepro_12.setDonnees(ldl_zepro_10.getDonnees())
+    pura_matex_12.setDonnees(pura_matex_09.getDonnees())
+    ert_wartors_12.setDonnees(ert_wartors_11.getDonnees())
+
+    mcr_raikko_12.setGamertagRemplacant("MCR Raikko")
+    ldl_zepro_12.setGamertagRemplacant("LDL Zepro")
+    pura_matex_12.setGamertagRemplacant("PuRa Matex")
+    ert_wartors_12.setGamertagRemplacant("ERT Wartors")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q12 = [
+        non4me_geckoz,
+        non4me_cramer,
+        tonati2514,
+        mcr_raikko_12,
+        ldl_zepro_12,
+        pura_matex_12,
+        pur_ultraaa,
+        non4me_jordy,
+        rp1_ice,
+        rp1_skyzzz,
+        pur_ilton,
+        vega_elsass,
+        non4me_livai,
+        fct_specktre, 
+        ert_wartors_12,
+        fct_coco,
+        non4me_cami,
+        ert_karanox,
+        str_pagaa,
+        heroziah
+    ]
+
+    c12 = [
+        non4me_geckoz,
+        pura_matex_12,
+        pur_ilton,
+        ert_wartors_12,
+        mcr_raikko_12,
+        ldl_zepro_12,
+        non4me_cami,
+        rp1_ice,
+        fct_coco,
+        rp1_skyzzz,
+        non4me_cramer,
+        non4me_livai,
+        fct_specktre,
+        non4me_jordy,
+        str_pagaa,
+        pur_ultraaa,
+        tonati2514,
+        heroziah,
+        ert_karanox,
+        vega_elsass
+    ]
+
+    gp12.setQualification(q12)
+    gp12.setCourse(c12)
+    gp12.calcul(abandonsCourse=5)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
@@ -854,6 +928,7 @@ def getPointsD3(stats = False) -> dict:
     final = sumDict(final, gp09.getPoints())
     final = sumDict(final, gp10.getPoints())
     final = sumDict(final, gp11.getPoints())
+    final = sumDict(final, gp12.getPoints())
 
     # Statistiques ################################################################################
 
@@ -866,7 +941,7 @@ def getPointsD3(stats = False) -> dict:
         """
         
         pilotes = {}
-        courses = [gp01, gp02, gp03, gp04, gp05]
+        courses = [gp01, gp02, gp03, gp04, gp05, gp06, gp07, gp08, gp09, gp10, gp11, gp12]
         for course in courses:
             participants = course.getQualification()
             for pilote in participants:
