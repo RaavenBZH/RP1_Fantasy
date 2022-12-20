@@ -340,6 +340,7 @@ def getPointsD3(stats = False) -> dict:
     istoozen_eko_05.setDonnees(istoozen_eko_01.getDonnees())
 
     istoozen_eko_05.setGamertagRemplacant("Istoozen Eko")
+    mirage9150_05.setGamertagRemplacant("Mirage9150")
 
     # Pénalités en qualification
     # rp1_ice : : 5 places de pénalité
@@ -485,6 +486,7 @@ def getPointsD3(stats = False) -> dict:
     f1xl_fanfan_07.setGamertagRemplacant("F1XL Fanfan")
     ert_tiiste_07.setGamertagRemplacant("ERT Tiiste")
     nathanhrx_07.setGamertagRemplacant("NathanHrx")
+    tonati2514.setGamertagRemplacant("Tonati2514")
 
     # Pénalités en qualification
     # Aucune

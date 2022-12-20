@@ -294,6 +294,7 @@ def getPointsD1(stats = False) -> dict:
     ert_niloboo_04.setGamertagRemplacant("ERT Niloboo")
     pur_ripply_04.setGamertagRemplacant("PuR Ripply")
     pur_thomas_04.setGamertagRemplacant("PuR Thomas")
+    pur_nygraal.setGamertagRemplacant("PuR Nygraal")
 
     # Pénalités en qualification
     # Aucune
@@ -449,6 +450,7 @@ def getPointsD1(stats = False) -> dict:
 
     pur_ilton_07.setGamertagRemplacant("PuR Ilton")
     shz_piccolo.setGamertagRemplacant("SHZ Piccolo")
+    tx3_enzo.setGamertagRemplacant("TX3 Enzo")
 
     # Pénalités en qualification
     # Aucune
@@ -603,6 +605,7 @@ def getPointsD1(stats = False) -> dict:
 
     pur_thomas_09.setDonnees(pur_thomas_08.getDonnees())
     
+    rp1_maldini.setGamertagRemplacant("RP1 Maldini")
     pur_thomas_09.setGamertagRemplacant("PuR Thomas")
     if1_meister_09.setGamertagRemplacant("IF1 Meister")
 
@@ -675,6 +678,8 @@ def getPointsD1(stats = False) -> dict:
 
     pur_vincent_10.setGamertagRemplacant("PuR Vincent")
     pur_ripply_10.setGamertagRemplacant("PuR Ripply")
+    pur_thomas_10.setGamertagRemplacant("PuR Thomas")
+    pur_ilton_10.setGamertagRemplacant("PuR Ilton")
 
     # Pénalités en qualification
     # Aucune
@@ -922,7 +927,7 @@ def getPointsD1(stats = False) -> dict:
             participants = course.getQualification()
             for pilote in participants:
                 gt = pilote.getGamertagRemplacant()
-                pilotes[gt] = pilote    
+                pilotes[gt] = pilote
 
         # print(len(pilotes))
 

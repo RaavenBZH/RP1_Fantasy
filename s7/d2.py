@@ -301,6 +301,7 @@ def getPointsD2(stats = False) -> dict:
     pura_jager_04.setDonnees(pura_jager_03.getDonnees())
     istoozen_eko_04.setDonnees(istoozen_eko_01.getDonnees())
     
+    pur_voltha.setGamertagRemplacant("PuR Voltha")
     ert_niloboo_04.setGamertagRemplacant("ERT Niloboo")
     pura_jager_04.setGamertagRemplacant("PuRa Jager")
     istoozen_eko_04.setGamertagRemplacant("Istoozen Eko")
@@ -701,6 +702,8 @@ def getPointsD2(stats = False) -> dict:
     fct_specktre_09.setDonnees(fct_specktre_08.getDonnees())
     fct_coco_09.setDonnees(fct_coco_08.getDonnees())
 
+    pura_jager.setGamertagRemplacant("PuRa Jager")
+    mirage9150.setGamertagRemplacant("Mirage9150")
     non4me_stuno_09.setGamertagRemplacant("NoN4me Stuno")
     if1_meister_09.setGamertagRemplacant("iF1 Meister")
     vega_elsass_09.setGamertagRemplacant("Vega Elsass")
