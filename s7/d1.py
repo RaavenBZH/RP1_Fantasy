@@ -2,7 +2,7 @@ from packageF1.Ecurie import *
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 
-import csv
+import packageF1.Fonctions as Fonctions
 
 #
 # Saison 7
@@ -897,18 +897,103 @@ def getPointsD1(stats = False) -> dict:
 
     ###############################################################################################
 
+    # Course 6
+    gp06 = GrandPrix("Mexique", sprint = False)
+
+    # Remplaçants
+    pur_lowky_06 = Pilote("RP1 Theo", Ferrari)
+    pur_ilton_06 = Pilote("FRA Raaven" , Mercedes)
+    pur_thomas_06 = Pilote("RP1 Montoya", McLaren)
+    pur_ripply_06 = Pilote("RP1 Noctis", RedBull)
+    f1m_alexgt500_06 = Pilote("PuR Nygraal", Ferrari)
+    pur_vinboy_06 = Pilote("TX3 Enzo", Haas)
+    non4me_geckoz_06 = Pilote("RP1 Winterr", AlphaTauri)
+    rp1_theo_06 = Pilote("PuR Lowky", McLaren)
+
+    pur_lowky_06.setDonnees(pur_lowky_12.getDonnees())
+    pur_ilton_06.setDonnees(pur_ilton_12.getDonnees())
+    pur_thomas_06.setDonnees(pur_thomas_12.getDonnees())
+    pur_ripply_06.setDonnees(pur_ripply_10.getDonnees())
+    f1m_alexgt500_06.setDonnees(f1m_alexgt500_12.getDonnees())
+    pur_vinboy_06.setDonnees(pur_vinboy_06.getDonnees())
+    rp1_theo_06.setDonnees(rp1_theo_12.getDonnees())
+
+    pur_lowky_06.setGamertagRemplacant("PuR Lowky")
+    pur_ilton_06.setGamertagRemplacant("PuR Ilton")
+    pur_thomas_06.setGamertagRemplacant("PuR Thomas")
+    pur_ripply_06.setGamertagRemplacant("PuR Ripply")
+    f1m_alexgt500_06.setGamertagRemplacant("F1M AlexGT500")
+    pur_vinboy_06.setGamertagRemplacant("PuR Vinboy")
+    non4me_geckoz_06.setGamertagRemplacant("Non4me Geckoz")
+    rp1_theo_06.setGamertagRemplacant("RP1 Theo")
+
+    # Pénalités en qualification
+    # Aucune
+
+    q06 = [
+        ert_batxone,
+        pur_lowky_06,
+        pur_rosberg,
+        pur_ilton_06,
+        pur_thomas_06,
+        pur_ripply_06,
+        f1m_alexgt500_06,
+        rp1_adam,
+        ldl_saumon,
+        ldl_oli,
+        pur_vinboy_06,
+        non4me_geckoz_06,
+        rp1_varane,
+        rp1_maldini,
+        mcr_jayrko,
+        xrt_oxygen,
+        mcr_path,
+        xrt_arthur,
+        rp1_theo_06,
+        rp1_chadoo
+    ]
+
+    c06 = [
+        pur_rosberg,
+        pur_ripply_06,
+        ldl_oli,
+        pur_ilton_06,
+        pur_vinboy_06,
+        xrt_arthur,
+        mcr_jayrko,
+        rp1_adam,
+        rp1_maldini,
+        xrt_oxygen,
+        pur_thomas_06,
+        mcr_path,
+        ldl_saumon,
+        f1m_alexgt500_06,
+        rp1_theo_06,
+        non4me_geckoz_06,
+        pur_lowky_06,
+        rp1_varane,
+        ert_batxone,
+        rp1_chadoo
+    ]
+
+    gp06.setQualification(q06)
+    gp06.setCourse(c06)
+    gp06.calcul(abandonsCourse=10)
+
+    ###############################################################################################
+
     final = gp01.getPoints()
     final = sumDict(final, gp02.getPoints())
     final = sumDict(final, gp03.getPoints())
     final = sumDict(final, gp04.getPoints())
     final = sumDict(final, gp05.getPoints())
-    #
     final = sumDict(final, gp07.getPoints())
     final = sumDict(final, gp08.getPoints())
     final = sumDict(final, gp09.getPoints())
     final = sumDict(final, gp10.getPoints())
     final = sumDict(final, gp11.getPoints())
     final = sumDict(final, gp12.getPoints())
+    final = sumDict(final, gp06.getPoints())
     
     # Statistiques ################################################################################
 
@@ -920,65 +1005,11 @@ def getPointsD1(stats = False) -> dict:
             - rp1_varane : 5 places de pénalité
         
         """
-        
-        pilotes = {}
-        courses = [gp01, gp02, gp03, gp04, gp05, gp07, gp08, gp09, gp10, gp11, gp12]
-        for course in courses:
-            participants = course.getQualification()
-            for pilote in participants:
-                gt = pilote.getGamertagRemplacant()
-                pilotes[gt] = pilote
 
-        # print(len(pilotes))
+        courses = [gp01, gp02, gp03, gp04, gp05, gp07, gp08, gp09, gp10, gp11, gp12, gp06]
+        Fonctions.write(courses, "w")
 
-        f = open('.\s7\stats.csv', 'w', newline="")
-        writer = csv.writer(f)
-
-        writer.writerow(["pilote;nb_q;nb_q2;nb_q3;nb_poles_q;best_q;moy_q;vsCoeq_q;nb_s;nb_top8_s;nb_podium_s;nb_win_s;best_s;moy_s;vsCoeq_s;nb_c;nb_top10_c;nb_podium_c;nb_win_c;best_c;moy_c;vsCoeq_c"])
-
-        for gt in pilotes:
-
-            p = pilotes[gt]
-            donnees = p.getDonnees()
-            tabQ = donnees.tabQ()
-            tabS = donnees.tabS()
-            tabC = donnees.tabC()
-
-            line = p.getGamertagRemplacant() + ";"
-
-            line += "{};{};{};{};{};{};{};".format(
-                donnees.nbQ(tabQ),
-                donnees.nbQ2(tabQ),
-                donnees.nbQ3(tabQ),
-                donnees.nbPoles(tabQ),
-                donnees.bestQ(tabQ),
-                donnees.avgQ(tabQ),
-                donnees.getCoeqBattuQ()
-            )
-            line += "{};{};{};{};{};{};{};".format(
-                donnees.nbS(tabS),
-                donnees.nbT8S(tabS),
-                donnees.nbT3S(tabS),
-                donnees.nbVicS(tabS),
-                donnees.bestS(tabS),
-                donnees.avgS(tabS),
-                donnees.getCoeqBattuS()
-            )
-            line += "{};{};{};{};{};{};{}".format(
-                donnees.nbC(tabC),
-                donnees.nbT10C(tabC),
-                donnees.nbT3C(tabC),
-                donnees.nbVicC(tabC),
-                donnees.bestC(tabC),
-                donnees.avgC(tabC),
-                donnees.getCoeqBattuC()
-            )
-
-            writer.writerow([line])
-
-        f.close()
-
-        ###########################################################################################
+    ###############################################################################################
 
     return final
 

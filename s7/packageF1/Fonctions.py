@@ -1,4 +1,5 @@
 import copy
+import csv
 
 """
     Ce fichier fournit des méthodes utiles à l'application.
@@ -75,3 +76,59 @@ def printd(dico):
         if (loops != count):
             print(",")
     print("\n}")
+
+def write(courses, mode) -> None:
+
+    pilotes = {}
+    for course in courses:
+        participants = course.getQualification()
+        for pilote in participants:
+            gt = pilote.getGamertagRemplacant()
+            pilotes[gt] = pilote
+
+    f = open('.\s7\stats.csv', mode, newline="")
+    writer = csv.writer(f)
+
+    writer.writerow(["pilote;nb_q;nb_q2;nb_q3;nb_poles_q;best_q;moy_q;vsCoeq_q;nb_s;nb_top8_s;nb_podium_s;nb_win_s;best_s;moy_s;vsCoeq_s;nb_c;nb_top10_c;nb_podium_c;nb_win_c;best_c;moy_c;vsCoeq_c"])
+
+    for gt in pilotes:
+
+        p = pilotes[gt]
+        donnees = p.getDonnees()
+        tabQ = donnees.tabQ()
+        tabS = donnees.tabS()
+        tabC = donnees.tabC()
+
+        line = p.getGamertagRemplacant() + ";"
+
+        line += "{};{};{};{};{};{};{};".format(
+            donnees.nbQ(tabQ),
+            donnees.nbQ2(tabQ),
+            donnees.nbQ3(tabQ),
+            donnees.nbPoles(tabQ),
+            donnees.bestQ(tabQ),
+            donnees.avgQ(tabQ),
+            donnees.getCoeqBattuQ()
+        )
+        line += "{};{};{};{};{};{};{};".format(
+            donnees.nbS(tabS),
+            donnees.nbT8S(tabS),
+            donnees.nbT3S(tabS),
+            donnees.nbVicS(tabS),
+            donnees.bestS(tabS),
+            donnees.avgS(tabS),
+            donnees.getCoeqBattuS()
+        )
+        line += "{};{};{};{};{};{};{}".format(
+            donnees.nbC(tabC),
+            donnees.nbT10C(tabC),
+            donnees.nbT3C(tabC),
+            donnees.nbVicC(tabC),
+            donnees.bestC(tabC),
+            donnees.avgC(tabC),
+            donnees.getCoeqBattuC()
+        )
+
+        writer.writerow([line])
+
+    f.close()
