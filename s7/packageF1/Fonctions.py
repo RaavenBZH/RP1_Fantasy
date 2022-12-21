@@ -89,7 +89,7 @@ def write(courses, mode) -> None:
     f = open('.\s7\stats.csv', mode, newline="")
     writer = csv.writer(f)
 
-    writer.writerow(["pilote;nb_q;nb_q2;nb_q3;nb_poles_q;best_q;moy_q;vsCoeq_q;nb_s;nb_top8_s;nb_podium_s;nb_win_s;best_s;moy_s;vsCoeq_s;nb_c;nb_top10_c;nb_podium_c;nb_win_c;best_c;moy_c;vsCoeq_c"])
+    writer.writerow(["Pilote;Nombre;Q2;Q3;Poles;Best;Moyenne;Comparaison Coequipier;Sprints;Top 8;Podiums;Victoires;Best;Moyenne;Comparaison Coequipier;Nombre;Top 10;Podiums;Victoires;Best;Moyenne;Comparaison Coequipier"])
 
     for gt in pilotes:
 
