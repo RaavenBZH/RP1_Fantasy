@@ -33,7 +33,7 @@ for i in entrees:
 
 d1, d2, d3, d4 = {}, {}, {}, {}
 
-stats = True
+stats = False
 
 d1 = getPointsD1(stats)
 d2 = getPointsD2(stats)

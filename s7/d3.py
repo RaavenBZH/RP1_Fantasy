@@ -943,7 +943,7 @@ def getPointsD3(stats = False) -> dict:
         """
         
         courses = [gp01, gp02, gp03, gp04, gp05, gp06, gp07, gp08, gp09, gp10, gp11, gp12]
-        Fonctions.write(courses, "a")
+        Fonctions.write(courses, "w", "d3")
 
     ###############################################################################################
 

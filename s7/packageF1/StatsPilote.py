@@ -84,6 +84,17 @@ class StatsPilote:
     def getCoeqBattuC(self) -> str:
         return str(self.__coeqBattuC)
 
+    def tauxCoeqBattuQ(self) -> str:
+        return str(round(self.__coeqBattuQ / len(self.tabQ()), 2))
+
+    def tauxCoeqBattuS(self) -> str:
+        if len(self.tabS()) == 0:
+            return "0"
+        return str(round(self.__coeqBattuS / len(self.tabS()), 2))
+
+    def tauxCoeqBattuC(self) -> str:
+        return str(round(self.__coeqBattuC / len(self.tabC()), 2))
+
     def addQualif(self, qualif) -> None:
         self.__qualif.append(qualif)
 

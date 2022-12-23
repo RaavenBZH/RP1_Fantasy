@@ -77,7 +77,7 @@ def printd(dico):
             print(",")
     print("\n}")
 
-def write(courses, mode) -> None:
+def write(courses, mode, filename) -> None:
 
     pilotes = {}
     for course in courses:
@@ -86,10 +86,10 @@ def write(courses, mode) -> None:
             gt = pilote.getGamertagRemplacant()
             pilotes[gt] = pilote
 
-    f = open('.\s7\stats.csv', mode, newline="")
+    f = open('.\s7\stats_{}.csv'.format(filename), mode, newline="")
     writer = csv.writer(f)
 
-    writer.writerow(["Pilote;Nombre;Q2;Q3;Poles;Best;Moyenne;Comparaison Coequipier;Sprints;Top 8;Podiums;Victoires;Best;Moyenne;Comparaison Coequipier;Nombre;Top 10;Podiums;Victoires;Best;Moyenne;Comparaison Coequipier"])
+    writer.writerow(["Pilote;Nombre;Q2;Q3;Poles;Best;Moyenne;Coequipier battu;Taux;Sprints;Top 8;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux;Nombre;Top 10;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux"])
 
     for gt in pilotes:
 
@@ -101,32 +101,35 @@ def write(courses, mode) -> None:
 
         line = p.getGamertagRemplacant() + ";"
 
-        line += "{};{};{};{};{};{};{};".format(
+        line += "{};{};{};{};{};{};{};{};".format(
             donnees.nbQ(tabQ),
             donnees.nbQ2(tabQ),
             donnees.nbQ3(tabQ),
             donnees.nbPoles(tabQ),
             donnees.bestQ(tabQ),
             donnees.avgQ(tabQ),
-            donnees.getCoeqBattuQ()
+            donnees.getCoeqBattuQ(),
+            donnees.tauxCoeqBattuQ()
         )
-        line += "{};{};{};{};{};{};{};".format(
+        line += "{};{};{};{};{};{};{};{};".format(
             donnees.nbS(tabS),
             donnees.nbT8S(tabS),
             donnees.nbT3S(tabS),
             donnees.nbVicS(tabS),
             donnees.bestS(tabS),
             donnees.avgS(tabS),
-            donnees.getCoeqBattuS()
+            donnees.getCoeqBattuS(),
+            donnees.tauxCoeqBattuS()
         )
-        line += "{};{};{};{};{};{};{}".format(
+        line += "{};{};{};{};{};{};{};{}".format(
             donnees.nbC(tabC),
             donnees.nbT10C(tabC),
             donnees.nbT3C(tabC),
             donnees.nbVicC(tabC),
             donnees.bestC(tabC),
             donnees.avgC(tabC),
-            donnees.getCoeqBattuC()
+            donnees.getCoeqBattuC(),
+            donnees.tauxCoeqBattuC()
         )
 
         writer.writerow([line])

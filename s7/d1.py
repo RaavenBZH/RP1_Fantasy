@@ -978,7 +978,7 @@ def getPointsD1(stats = False) -> dict:
 
     gp06.setQualification(q06)
     gp06.setCourse(c06)
-    gp06.calcul(abandonsCourse=10)
+    gp06.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=9)
 
     ###############################################################################################
 
@@ -1007,10 +1007,8 @@ def getPointsD1(stats = False) -> dict:
         """
 
         courses = [gp01, gp02, gp03, gp04, gp05, gp07, gp08, gp09, gp10, gp11, gp12, gp06]
-        Fonctions.write(courses, "w")
+        Fonctions.write(courses, "w", "d1")
 
     ###############################################################################################
 
     return final
-
-    ###############################################################################################
