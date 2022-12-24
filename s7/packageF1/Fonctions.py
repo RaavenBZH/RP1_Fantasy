@@ -3,12 +3,6 @@ import csv
 
 """
     Ce fichier fournit des méthodes utiles à l'application.
-
-    Méthodes :
-
-        - sortedDict(entree : dict) -> dict : permet de trier un dictionnaire selon ses valeurs.
-        - mergeDict(d1 : dict, d2 : dict) -> dict : permet de fusionner deux dictionnaires.
-        - printd(dico : dict) : permet d'afficher un dictionnaire.
 """
 
 def sortedDict(entree) -> dict:
@@ -89,7 +83,7 @@ def write(courses, mode, filename) -> None:
     f = open('.\s7\stats_{}.csv'.format(filename), mode, newline="")
     writer = csv.writer(f)
 
-    writer.writerow(["Pilote;Nombre;Q2;Q3;Poles;Best;Moyenne;Coequipier battu;Taux;Sprints;Top 8;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux;Nombre;Top 10;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux"])
+    writer.writerow(["Pilote;Nombre;Top 15;Top 10;Poles;Best;Moyenne;Coequipier battu;Taux;Sprints;Top 8;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux;Nombre;Top 10;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux"])
 
     for gt in pilotes:
 

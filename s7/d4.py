@@ -1,6 +1,8 @@
+from packageF1.Analyse import *
 from packageF1.Ecurie import *
-from packageF1.Pilote import *
+from packageF1.Fonctions import *
 from packageF1.GrandPrix import *
+from packageF1.Pilote import *
 
 import packageF1.Fonctions as Fonctions
 
@@ -24,6 +26,9 @@ def getPointsD4(stats = False) -> dict:
     Williams = Ecurie("Williams")
     AlfaRomeo = Ecurie("AlfaRomeo")
     Haas = Ecurie("Haas")
+
+    # Création de l'analyseur
+    al = Analyse()
 
     # Création des pilotes
 
@@ -117,6 +122,8 @@ def getPointsD4(stats = False) -> dict:
     gp01.setCourse(c01)
     gp01.calcul(abandonsCourse = 3)
 
+    al.analyse(gp01)
+
     ###############################################################################################
 
     # Course 2
@@ -206,6 +213,8 @@ def getPointsD4(stats = False) -> dict:
     gp02.setCourse(c02)
     gp02.calcul(abandonsCourse = 10, abandonsSprint=2)
 
+    al.analyse(gp02)
+
     ###############################################################################################
 
     # Course 3
@@ -271,6 +280,8 @@ def getPointsD4(stats = False) -> dict:
     gp03.setQualification(q03)
     gp03.setCourse(c03)
     gp03.calcul(abandonsCourse = 7)
+
+    al.analyse(gp03)
 
     ###############################################################################################
 
@@ -339,6 +350,8 @@ def getPointsD4(stats = False) -> dict:
     gp04.setQualification(q04)
     gp04.setCourse(c04)
     gp04.calcul(abandonsCourse = 6)
+
+    al.analyse(gp04)
     
     ###############################################################################################
 
@@ -415,6 +428,8 @@ def getPointsD4(stats = False) -> dict:
     gp05.setCourse(c05)
     gp05.calcul(abandonsCourse = 7)
 
+    al.analyse(gp05)
+
     ###############################################################################################
 
     # Course 6
@@ -485,6 +500,8 @@ def getPointsD4(stats = False) -> dict:
     gp06.setQualification(q06)
     gp06.setCourse(c06)
     gp06.calcul(abandonsCourse = 5)
+
+    al.analyse(gp06)
 
     ###############################################################################################
 
@@ -562,6 +579,8 @@ def getPointsD4(stats = False) -> dict:
     gp07.setQualification(q07)
     gp07.setCourse(c07)
     gp07.calcul(abandonsCourse = 5)
+
+    al.analyse(gp07)
 
     ###############################################################################################
 
@@ -654,6 +673,8 @@ def getPointsD4(stats = False) -> dict:
     gp08.setCourse(c08)
     gp08.calcul(abandonsCourse = 5, abandonsSprint = 5)
 
+    al.analyse(gp08)
+
     ###############################################################################################
 
     # Course 9
@@ -728,6 +749,8 @@ def getPointsD4(stats = False) -> dict:
     gp09.setCourse(c09)
     gp09.calcul(abandonsCourse = 7)
 
+    al.analyse(gp09)
+
     ###############################################################################################
 
     # Course 10
@@ -796,6 +819,8 @@ def getPointsD4(stats = False) -> dict:
     gp10.setQualification(q10)
     gp10.setCourse(c10)
     gp10.calcul(abandonsCourse = 5)
+
+    al.analyse(gp10)
 
     ###############################################################################################
 
@@ -868,6 +893,8 @@ def getPointsD4(stats = False) -> dict:
     gp11.setCourse(c11)
     gp11.calcul(absentsQualif=1, absentsCourse=1)
 
+    al.analyse(gp11)
+
     ###############################################################################################
 
     # Course 12
@@ -927,6 +954,8 @@ def getPointsD4(stats = False) -> dict:
     gp12.setQualification(q12)
     gp12.setCourse(c12)
     gp12.calcul(abandonsCourse=10)
+
+    al.analyse(gp12)
     
     ###############################################################################################
 
@@ -954,6 +983,17 @@ def getPointsD4(stats = False) -> dict:
 
         courses = [gp01, gp02, gp03, gp04, gp05, gp06, gp07, gp08, gp09, gp10, gp11, gp12]
         Fonctions.write(courses, "w", "d4")
+
+        """
+        versus = al.getQualif()
+        printd(versus)
+
+        versus = al.getSprint()
+        printd(versus)
+
+        versus = al.getCourse()
+        printd(versus)
+        """
 
     ###############################################################################################
 

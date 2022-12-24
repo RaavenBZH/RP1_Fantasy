@@ -27,6 +27,7 @@ class GrandPrix:
         - getQualifName() -> list : récupère les noms des pilotes de la qualification.
         - getSprintName() -> list : récupère les noms des pilotes de la sprint.
         - getCourseName() -> list : récupère les noms des pilotes de la course.
+        - estSprint() -> bool : indique si le grand prix est un sprint.
         - __checkCircuit(circuit : str) -> bool : vérifie si le circuit est connu.
         - __checkSession(session : list) -> bool : vérifie que la session est bien constituée.
         - __checkCorrelation() -> bool : vérifie que les sessions sont bien liées.
@@ -103,6 +104,9 @@ class GrandPrix:
         return list(map(lambda x: x.getGamertag(), self.__course))
     
     # METHODES
+
+    def estSprint(self) -> bool:
+        return self.__estSprint
 
     def __checkCircuit(self, circuit : str) -> bool:
 

@@ -1,5 +1,3 @@
-import csv
-
 class StatsPilote:
     """
     Cette classe mémorise les statistiques d'un pilote.
@@ -20,6 +18,9 @@ class StatsPilote:
         - getCoeqBattuQ() -> str : retourne le nombre de duels remportés face aux coequipiers en qualification.
         - getCoeqBattuS() -> str : retourne le nombre de duels remportés face aux coequipiers en sprint.
         - getCoeqBattuC() -> str : retourne le nombre de duels remportés face aux coequipiers en course.
+        - tauxCoeqBattuQ() -> str : retourne le taux de duels remportés face aux coequipiers en qualification.
+        - tauxCoeqBattuS() -> str : retourne le taux de duels remportés face aux coequipiers en sprint.
+        - tauxCoeqBattuC() -> str : retourne le taux de duels remportés face aux coequipiers en course.
         - addQualif(qualif : int) : ajoute une qualification.
         - addSprint(sprint : int) : ajoute un sprint.
         - addCourse(course : int) : ajoute une course.
@@ -84,6 +85,8 @@ class StatsPilote:
     def getCoeqBattuC(self) -> str:
         return str(self.__coeqBattuC)
 
+    # METHODES
+
     def tauxCoeqBattuQ(self) -> str:
         return str(round(self.__coeqBattuQ / len(self.tabQ()), 2))
 
@@ -103,8 +106,6 @@ class StatsPilote:
 
     def addCourse(self, course) -> None:
         self.__course.append(course)
-
-    # METHODES
 
     def __str__(self) -> str:
         return "Qualif : " + str(self.__qualif) + "\nSprint : " + str(self.__sprint) + "\nCourse : " + str(self.__course)

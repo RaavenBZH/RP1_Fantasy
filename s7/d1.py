@@ -1,4 +1,6 @@
+from packageF1.Analyse import *
 from packageF1.Ecurie import *
+from packageF1.Fonctions import *
 from packageF1.Pilote import *
 from packageF1.GrandPrix import *
 
@@ -24,6 +26,9 @@ def getPointsD1(stats = False) -> dict:
     Williams = Ecurie("Williams")
     AlfaRomeo = Ecurie("AlfaRomeo")
     Haas = Ecurie("Haas")
+
+    # Création de l'analyseur
+    al = Analyse()
 
     # Création des pilotes
 
@@ -91,6 +96,7 @@ def getPointsD1(stats = False) -> dict:
         mcr_jayrko,
         pur_snika
     ]
+
     c01 = [
         rp1_theo,
         pur_rosberg,
@@ -117,6 +123,8 @@ def getPointsD1(stats = False) -> dict:
     gp01.setQualification(q01)
     gp01.setCourse(c01)
     gp01.calcul(abandonsCourse=3)
+
+    al.analyse(gp01)
 
     ###############################################################################################
 
@@ -209,6 +217,8 @@ def getPointsD1(stats = False) -> dict:
     gp02.setCourse(c02)
     gp02.calcul(abandonsSprint=1, abandonsCourse=7)
 
+    al.analyse(gp02)
+
     ###############################################################################################
 
     # Course 3
@@ -274,6 +284,8 @@ def getPointsD1(stats = False) -> dict:
     gp03.setQualification(q03)
     gp03.setCourse(c03)
     gp03.calcul(abandonsCourse=2)
+
+    al.analyse(gp03)
 
     ###############################################################################################
 
@@ -348,6 +360,8 @@ def getPointsD1(stats = False) -> dict:
     gp04.setCourse(c04)
     gp04.calcul(abandonsCourse=3)
 
+    al.analyse(gp04)
+
     ###############################################################################################
 
     # Course 5
@@ -419,6 +433,8 @@ def getPointsD1(stats = False) -> dict:
     gp05.setQualification(q05)
     gp05.setCourse(c05)
     gp05.calcul(abandonsCourse=7)
+
+    al.analyse(gp05)
 
     ###############################################################################################
 
@@ -503,6 +519,8 @@ def getPointsD1(stats = False) -> dict:
     gp07.setQualification(q07)
     gp07.setCourse(c07)
     gp07.calcul(abandonsCourse=4)
+
+    al.analyse(gp07)
 
     ###############################################################################################
 
@@ -593,6 +611,8 @@ def getPointsD1(stats = False) -> dict:
     gp08.setCourse(c08)
     gp08.calcul(abandonsCourse=5, abandonsSprint=2)
 
+    al.analyse(gp08)
+
     ###############################################################################################
 
     # Course 9
@@ -660,6 +680,8 @@ def getPointsD1(stats = False) -> dict:
     gp09.setQualification(q09)
     gp09.setCourse(c09)
     gp09.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=4)
+
+    al.analyse(gp09)
 
     ###############################################################################################
 
@@ -732,6 +754,8 @@ def getPointsD1(stats = False) -> dict:
     gp10.setQualification(q10)
     gp10.setCourse(c10)
     gp10.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=2)
+
+    al.analyse(gp10)
 
     ###############################################################################################
 
@@ -813,6 +837,8 @@ def getPointsD1(stats = False) -> dict:
     gp11.setCourse(c11)
     gp11.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=3)
 
+    al.analyse(gp11)
+
     ###############################################################################################
 
     # Course 12
@@ -820,7 +846,7 @@ def getPointsD1(stats = False) -> dict:
 
     # Remplaçants
     pur_lowky_12 = Pilote("RP1 Theo", Ferrari)
-    rp1_theo_12 = Pilote("PuR Lowky", Ferrari)
+    rp1_theo_12 = Pilote("PuR Lowky", McLaren)
     ert_niloboo_12 = Pilote("RP1 Noctis", RedBull)
     pur_ilton_12 = Pilote("FRA Raaven" , Mercedes)
     pur_thomas_12 = Pilote("RP1 Winterr", AlphaTauri)
@@ -867,7 +893,6 @@ def getPointsD1(stats = False) -> dict:
         tx3_enzo,
         mcr_path
     ]
-
     c12 = [
         pur_nygraal,
         ert_batxone,
@@ -894,6 +919,8 @@ def getPointsD1(stats = False) -> dict:
     gp12.setQualification(q12)
     gp12.setCourse(c12)
     gp12.calcul(abandonsCourse=3)
+
+    al.analyse(gp12)
 
     ###############################################################################################
 
@@ -952,7 +979,6 @@ def getPointsD1(stats = False) -> dict:
         rp1_theo_06,
         rp1_chadoo
     ]
-
     c06 = [
         pur_rosberg,
         pur_ripply_06,
@@ -979,6 +1005,8 @@ def getPointsD1(stats = False) -> dict:
     gp06.setQualification(q06)
     gp06.setCourse(c06)
     gp06.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=9)
+
+    al.analyse(gp06)
 
     ###############################################################################################
 
@@ -1008,6 +1036,17 @@ def getPointsD1(stats = False) -> dict:
 
         courses = [gp01, gp02, gp03, gp04, gp05, gp07, gp08, gp09, gp10, gp11, gp12, gp06]
         Fonctions.write(courses, "w", "d1")
+
+        """
+        versus = al.getQualif()
+        printd(versus)
+
+        versus = al.getSprint()
+        printd(versus)
+
+        versus = al.getCourse()
+        printd(versus)
+        """
 
     ###############################################################################################
 
