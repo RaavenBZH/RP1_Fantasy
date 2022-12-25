@@ -290,7 +290,7 @@ def getPointsD1(stats = False) -> dict:
     ###############################################################################################
 
     # Course 4
-    gp04 = GrandPrix("Espagne", sprint = False)
+    gp04 = GrandPrix("Miami", sprint = False)
 
     # Remplaçants
     fct_lasouche_04 = Pilote("RP1 Adam", AlfaRomeo)

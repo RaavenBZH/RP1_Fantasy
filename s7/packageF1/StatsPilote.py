@@ -267,3 +267,9 @@ class StatsPilote:
             return str(round(sum(tab)/len(tab), 2))
         else:
             return "0"
+
+    def nbAbandons(self) -> str:
+        return str(len([x for x in self.__course if type(x[0]) == bool and x[0] == True]))
+
+    def fiabilite(self) -> str:
+        return str(round(1 - len([x for x in self.__course if type(x[0]) == bool and x[0] == True])/len(self.tabC()), 2))

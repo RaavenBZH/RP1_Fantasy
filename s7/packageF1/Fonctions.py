@@ -83,7 +83,7 @@ def write(courses, mode, filename) -> None:
     f = open('.\s7\stats_{}.csv'.format(filename), mode, newline="")
     writer = csv.writer(f)
 
-    writer.writerow(["Pilote;Nombre;Top 15;Top 10;Poles;Best;Moyenne;Coequipier battu;Taux;Sprints;Top 8;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux;Nombre;Top 10;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux"])
+    writer.writerow(["Pilote;Nombre;Top 15;Top 10;Poles;Best;Moyenne;Coequipier battu;Taux;Sprints;Top 8;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux;Nombre;Abandons;Fiabilite;Top 10;Podiums;Victoires;Best;Moyenne;Coequipier battu;Taux"])
 
     for gt in pilotes:
 
@@ -115,8 +115,10 @@ def write(courses, mode, filename) -> None:
             donnees.getCoeqBattuS(),
             donnees.tauxCoeqBattuS()
         )
-        line += "{};{};{};{};{};{};{};{}".format(
+        line += "{};{};{};{};{};{};{};{};{};{}".format(
             donnees.nbC(tabC),
+            donnees.nbAbandons(),
+            donnees.fiabilite(),
             donnees.nbT10C(tabC),
             donnees.nbT3C(tabC),
             donnees.nbVicC(tabC),
