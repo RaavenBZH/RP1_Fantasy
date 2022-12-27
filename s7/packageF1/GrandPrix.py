@@ -363,6 +363,9 @@ class GrandPrix:
                             break
 
                     gain = posDepart - posArrivee
+
+                    self.__course[i].getDonnees().addDeltaPlace(gain)
+
                     if gain > 3 : gain = 3
                     if gain < -3 : gain = -3
 
@@ -376,7 +379,7 @@ class GrandPrix:
 
             # Statistiques
             self.__statsPilotes(absentsQualif, absentsSprint, abandonsSprint, absentsCourse, abandonsCourse)
-            self.__statsEcuries()
+            self.__statsEcuries(absentsQualif, absentsSprint, abandonsSprint, absentsCourse, abandonsCourse)
 
         else:
             print("GrandPrix.calcul.Erreur : les sessions ne sont pas correctes.")
@@ -396,9 +399,9 @@ class GrandPrix:
             pilote = self.__qualif[i]
             position = i + 1
             if i < len(self.__qualif)-absentsQualif:
-                resultat = (position, position)
+                resultat = [position, position]
             else:
-                resultat = (False, position)
+                resultat = [False, position]
             pilote.getDonnees().addQualif(resultat)
 
         # Sprint
@@ -409,18 +412,18 @@ class GrandPrix:
                 if i < len(self.__sprint)-absentsSprint:
                     # Abandon
                     if i >= len(self.__sprint)-absentsSprint-abandonsSprint:
-                        resultat = (True, position)
+                        resultat = [True, position]
                     # Pas abandon
                     else:
-                        resultat = (position, position)
+                        resultat = [position, position]
                 # Absent
                 else:
                     resultat = (False, position)
-                pilote.getDonnees().addSprint(resultat)    
+                pilote.getDonnees().addSprint(resultat)
         else:
             for i in range(len(self.__qualif)):
                 pilote = self.__qualif[i]
-                pilote.getDonnees().addSprint((False, False))
+                pilote.getDonnees().addSprint([False, False])
 
         # Course
         for i in range(len(self.__course)):
@@ -429,16 +432,16 @@ class GrandPrix:
             if i < len(self.__course)-absentsCourse:
                 # Abandon
                 if i >= len(self.__course)-absentsCourse-abandonsCourse:
-                    resultat = (True, position)
+                    resultat = [True, position]
                 # Pas abandon
                 else:
-                    resultat = (position, position)
+                    resultat = [position, position]
             # Absent
             else:
-                resultat = (False, position)
+                resultat = [False, position]
             pilote.getDonnees().addCourse(resultat)
 
-    def __statsEcuries(self) -> None:
+    def __statsEcuries(self, absentsQualif, absentsSprint, abandonsSprint, absentsCourse, abandonsCourse) -> None:
 
         # Qualifications
         for pilote in self.__qualif:

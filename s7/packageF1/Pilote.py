@@ -21,7 +21,6 @@ class Pilote:
         - setEcurie(ecurie : Ecurie) -> None : modifie l'écurie.
         - setHistorique(historique : list) -> None : modifie l'historique des résultats.
         - setGamertagRemplacant(gamertag : str) -> None : modifie le gamertag du remplacant.
-        - __str__() -> str : renvoie le gamertag, l'écurie et les statistiques du pilote.
         - ajoutHistorique(desc : tuple) -> None : ajoute un résultat à l'historique.
         - retireHistorique(desc : tuple) -> None : retire un résultat de l'historique.
         - resetHistorique() -> None : réinitialise l'historique.
@@ -70,9 +69,6 @@ class Pilote:
         self.__gamertagRemplacant = gamertag
 
     # METHODES
-
-    def __str__(self) -> str:
-        return self.__gamertag
 
     def ajoutHistorique(self, desc : tuple) -> None:
         self.__historique.append(desc)

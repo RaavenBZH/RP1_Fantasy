@@ -7,16 +7,15 @@ class Analyse:
         self.__sprint = {}
         self.__course = {}
 
-    def getQualif(self) -> None:
-        return self.__qualif
+    def affiche(self) -> None:
+        print("Qualification :")
+        printd(self.__qualif)
+        print("Sprint :")
+        printd(self.__sprint)
+        print("Course :")
+        printd(self.__course)
 
-    def getSprint(self) -> None:
-        return self.__sprint
-
-    def getCourse(self) -> None:
-        return self.__course
-
-    def analyse(self, gp):
+    def compareCoequipiers(self, gp):
 
         sessions = [gp.getQualification(), gp.getCourse()]
         if gp.estSprint() == True:
@@ -58,5 +57,5 @@ class Analyse:
                 else:
                     if pilotes_s[0] == pilotes[0]:
                         seance[key][0] += 1
-                    else:
+                    else: 
                         seance[key][1] += 1

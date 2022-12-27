@@ -3,13 +3,14 @@ class StatsPilote:
     Cette classe mémorise les statistiques d'un pilote.
 
     Attributs :
-        - nom : nom du pilote.
-        - __qualif (list) : résultats des qualifications.
-        - __coeqBattuQ (int) : nombre de duels remportés face aux coequipiers en qualification.
-        - __sprint (list) : résultats des sprints.
-        - __coeqBattuS (int) : nombre de duels remportés face aux coequipiers en sprint.
-        - __course (list) : résultats des courses.
-        - __coeqBattuC (int) : nombre de duels remportés face aux coequipiers en course.
+        - nom (str) : nom du pilote.
+        - qualif (list) : résultats des qualifications.
+        - coeqBattuQ (int) : nombre de duels remportés face aux coequipiers en qualification.
+        - sprint (list) : résultats des sprints.
+        - coeqBattuS (int) : nombre de duels remportés face aux coequipiers en sprint.
+        - course (list) : résultats des courses.
+        - coeqBattuC (int) : nombre de duels remportés face aux coequipiers en course.
+        - deltaPlace (list) : delta de place.
 
     Méthodes :
         - getQualif() -> list : retourne les résultats des qualifications.
@@ -18,12 +19,14 @@ class StatsPilote:
         - getCoeqBattuQ() -> str : retourne le nombre de duels remportés face aux coequipiers en qualification.
         - getCoeqBattuS() -> str : retourne le nombre de duels remportés face aux coequipiers en sprint.
         - getCoeqBattuC() -> str : retourne le nombre de duels remportés face aux coequipiers en course.
+        - getDeltaPlace() -> str : retourne le delta de place.
         - tauxCoeqBattuQ() -> str : retourne le taux de duels remportés face aux coequipiers en qualification.
         - tauxCoeqBattuS() -> str : retourne le taux de duels remportés face aux coequipiers en sprint.
         - tauxCoeqBattuC() -> str : retourne le taux de duels remportés face aux coequipiers en course.
         - addQualif(qualif : int) : ajoute une qualification.
         - addSprint(sprint : int) : ajoute un sprint.
         - addCourse(course : int) : ajoute une course.
+        - addDeltaPlace(deltaPlace : int) : ajoute un delta de place.
         - __str__() -> str : retourne les résultats des qualifications, sprints et courses.
         - vsCoequipier(session : str) : ajoute un duel remporté face aux coequipiers.
         - stats() -> str : affiche les statistiques du pilote.
@@ -51,6 +54,9 @@ class StatsPilote:
         - nbVicC(tab : list) -> str : retourne le nombre de courses remportées.
         - bestC(tab : list) -> str : retourne le meilleur résultat en course.
         - avgC(tab : list) -> str : retourne la moyenne des courses.
+        - nbAbandons() -> str : retourne le nombre d'abandons.
+        - fiabilite() -> str : retourne la fiabilité.
+        - moyPosGagnees() -> str : retourne la moyenne des positions gagnées.
     """
 
     # INITIALISATION
@@ -64,6 +70,7 @@ class StatsPilote:
         self.__coeqBattuS = 0
         self.__course = []
         self.__coeqBattuC = 0
+        self.__deltaPlace = []
     
     # GETTERS & SETTERS
 
@@ -84,6 +91,9 @@ class StatsPilote:
 
     def getCoeqBattuC(self) -> str:
         return str(self.__coeqBattuC)
+
+    def getDeltaPlace(self) -> list:
+        return self.__deltaPlace
 
     # METHODES
 
@@ -106,6 +116,9 @@ class StatsPilote:
 
     def addCourse(self, course) -> None:
         self.__course.append(course)
+
+    def addDeltaPlace(self, deltaPlace) -> None:
+        self.__deltaPlace.append(deltaPlace)
 
     def __str__(self) -> str:
         return "Qualif : " + str(self.__qualif) + "\nSprint : " + str(self.__sprint) + "\nCourse : " + str(self.__course)
@@ -269,7 +282,10 @@ class StatsPilote:
             return "0"
 
     def nbAbandons(self) -> str:
-        return str(len([x for x in self.__course if type(x[0]) == bool and x[0] == True]))
+        return str(len([x for x in self.__course if x[0] is True]))
 
     def fiabilite(self) -> str:
-        return str(round(1 - len([x for x in self.__course if type(x[0]) == bool and x[0] == True])/len(self.tabC()), 2))
+        return str(round(1 - len([x for x in self.__course if x[0] is True])/len(self.tabC()), 2))
+
+    def moyPosGagnees(self) -> str:
+        return str(round(sum(self.__deltaPlace)/len(self.__deltaPlace),2))

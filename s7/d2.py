@@ -126,7 +126,7 @@ def getPointsD2(stats = False) -> dict:
     gp01.setCourse(c01)
     gp01.calcul(abandonsCourse=3)
 
-    al.analyse(gp01)
+    al.compareCoequipiers(gp01)
 
     ###############################################################################################
 
@@ -219,7 +219,7 @@ def getPointsD2(stats = False) -> dict:
     gp02.setCourse(c02)
     gp02.calcul(abandonsSprint=2, abandonsCourse=6)
 
-    al.analyse(gp02)
+    al.compareCoequipiers(gp02)
 
     ###############################################################################################
 
@@ -293,7 +293,7 @@ def getPointsD2(stats = False) -> dict:
     gp03.setCourse(c03)
     gp03.calcul(abandonsCourse=9)
 
-    al.analyse(gp03)
+    al.compareCoequipiers(gp03)
 
     ###############################################################################################
 
@@ -371,7 +371,7 @@ def getPointsD2(stats = False) -> dict:
     gp04.setCourse(c04)
     gp04.calcul(abandonsCourse=3)
 
-    al.analyse(gp04)
+    al.compareCoequipiers(gp04)
 
     ###############################################################################################
 
@@ -443,7 +443,7 @@ def getPointsD2(stats = False) -> dict:
     gp05.setCourse(c05)
     gp05.calcul(abandonsCourse=6)
 
-    al.analyse(gp05)
+    al.compareCoequipiers(gp05)
 
     ###############################################################################################
 
@@ -520,7 +520,7 @@ def getPointsD2(stats = False) -> dict:
     gp06.setCourse(c06)
     gp06.calcul(abandonsCourse=4)
 
-    al.analyse(gp06)
+    al.compareCoequipiers(gp06)
 
     ###############################################################################################
 
@@ -594,7 +594,7 @@ def getPointsD2(stats = False) -> dict:
     gp07.setCourse(c07)
     gp07.calcul(abandonsCourse=9, absentsQualif=1)
 
-    al.analyse(gp07)
+    al.compareCoequipiers(gp07)
 
     ###############################################################################################
 
@@ -698,7 +698,7 @@ def getPointsD2(stats = False) -> dict:
     gp08.setCourse(c08)
     gp08.calcul(abandonsCourse=7, abandonsSprint=3)
 
-    al.analyse(gp08)
+    al.compareCoequipiers(gp08)
 
     ###############################################################################################
 
@@ -785,7 +785,7 @@ def getPointsD2(stats = False) -> dict:
     gp09.setCourse(c09)
     gp09.calcul(absentsQualif=2, absentsCourse=1, abandonsCourse=7)
 
-    al.analyse(gp09)
+    al.compareCoequipiers(gp09)
 
     ###############################################################################################
 
@@ -870,7 +870,7 @@ def getPointsD2(stats = False) -> dict:
     gp10.setCourse(c10)
     gp10.calcul(abandonsCourse=10)
 
-    al.analyse(gp10)
+    al.compareCoequipiers(gp10)
 
     ###############################################################################################
 
@@ -957,7 +957,7 @@ def getPointsD2(stats = False) -> dict:
     gp11.setCourse(c11)
     gp11.calcul(absentsQualif=1, absentsCourse=1, abandonsCourse=8)
 
-    al.analyse(gp11)
+    al.compareCoequipiers(gp11)
 
     ###############################################################################################
 
@@ -1051,7 +1051,7 @@ def getPointsD2(stats = False) -> dict:
     gp12.setCourse(c12)
     gp12.calcul(abandonsCourse=3)
 
-    al.analyse(gp12)
+    al.compareCoequipiers(gp12)
 
     ###############################################################################################
 
@@ -1085,14 +1085,7 @@ def getPointsD2(stats = False) -> dict:
         Fonctions.write(courses, "w", "d2")
 
         """
-        versus = al.getQualif()
-        printd(versus)
-
-        versus = al.getSprint()
-        printd(versus)
-
-        versus = al.getCourse()
-        printd(versus)
+        al.affiche()
         """
 
     ###############################################################################################
