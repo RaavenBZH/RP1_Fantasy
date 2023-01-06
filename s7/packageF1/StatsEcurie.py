@@ -173,7 +173,7 @@ Cette classe mémorise les statistiques d'une écurie.
         return str(min([min([resPilote[1] for resPilote in manche if resPilote[0] is not False]) for manche in tab]))
 
     def avgQ(self, tab) -> list:
-        return str(sum([sum([resPilote[1] for resPilote in manche if resPilote[0] is not False]) for manche in tab])/sum([sum([1 for resPilote in manche if resPilote[0] is not False]) for manche in tab]))
+        return str(round(sum([sum([resPilote[1] for resPilote in manche if resPilote[0] is not False]) for manche in tab])/sum([sum([1 for resPilote in manche if resPilote[0] is not False]) for manche in tab]),2))
 
     def tabS(self) -> list:
         tab = []
@@ -198,7 +198,7 @@ Cette classe mémorise les statistiques d'une écurie.
         return str(min([min([resPilote[1] for resPilote in manche if resPilote[0] is not False]) for manche in tab]))
 
     def avgS(self, tab) -> str:
-        return str(sum([sum([resPilote[1] for resPilote in manche if resPilote[0] is not False]) for manche in tab])/sum([sum([1 for resPilote in manche if resPilote[0] is not False]) for manche in tab]))
+        return str(round(sum([sum([resPilote[1] for resPilote in manche if resPilote[0] is not False]) for manche in tab])/sum([sum([1 for resPilote in manche if resPilote[0] is not False]) for manche in tab]),2))
 
     def tabC(self) -> list:
         tab = []

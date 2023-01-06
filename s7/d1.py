@@ -1035,7 +1035,8 @@ def getPointsD1(stats = False) -> dict:
         """
 
         courses = [gp01, gp02, gp03, gp04, gp05, gp07, gp08, gp09, gp10, gp11, gp12, gp06]
-        Fonctions.write(courses, "w", "d1")
+        Fonctions.writeDriverStats(courses, "w", "d1")
+        Fonctions.writeTeamStats([Mercedes, RedBull, Ferrari, McLaren, Alpine, AlphaTauri, AstonMartin, Williams, AlfaRomeo, Haas], "w")
 
         """
         al.affiche()
