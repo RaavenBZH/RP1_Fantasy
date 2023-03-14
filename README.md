@@ -10,4 +10,4 @@ This is a little project whose objective is to adapt the **F1 Fantasy** game for
 
 [F1 Fantasy]: https://fantasy.formula1.com/
 [RolePlayOne]: https://twitter.com/one_rp1
-[le barème]: ./s7/bareme
+[le barème]: ../s7/bareme.png
